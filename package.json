@@ -37,7 +37,8 @@
   "dependencies": {
     "is-mobile": "^0.2.2",
     "qr-image": "^3.1.0",
-    "web3-provider-engine": "^7.8.1"
+    "web3-provider-engine": "^7.8.1",
+    "uport-persona": "git+ssh://git@github.com:ConsenSys/uport-persona.git"
   },
   "devDependencies": {
     "chai": "^3.5.0",
