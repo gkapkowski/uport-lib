@@ -1,51 +1,70 @@
-const UportSubprovider = require('./lib/uportsubprovider.js');
-const MsgServer = require('./lib/msgServer.js');
+// NPM Modules
 const ProviderEngine = require('web3-provider-engine');
 const RpcSubprovider = require('web3-provider-engine/subproviders/rpc.js');
-const QRDisplay = require('./util/qrdisplay.js');
-const isMobile = require('is-mobile');
+const Persona        = require('uport-persona');
+const isMobile       = require('is-mobile');
+const ipfs           = require('ipfs-js');
 
+// Local Modules
+const UportSubprovider = require('./lib/uportsubprovider.js');
+const MsgServer        = require('./lib/msgServer.js');
+const QRDisplay        = require('./util/qrdisplay.js');
+
+// ConsenSys URL's
 const CHASQUI_URL = 'https://chasqui.uport.me/';
-const INFURA_CONSENSYSNET = 'https://consensysnet.infura.io:8545';
 
-module.exports = Uport;
+// These are ConsenSysNet constants,
+// replace with mainnet before release!
+const INFURA_CONSENSYSNET    = 'https://consensysnet.infura.io:8545';
+const UPORT_REGISTRY_ADDRESS = '0xa9be82e93628abaac5ab557a9b3b02f711c0151c';
 
 function Uport(dappName, qrDisplay, chasquiUrl) {
   this.dappName = dappName;
   this.qrdisplay = qrDisplay ? qrDisplay : new QRDisplay();
   this.isOnMobile = isMobile(navigator.userAgent);
+  this.msgServer = new MsgServer(chasquiUrl, this.isOnMobile);
   this.subprovider = this.createUportSubprovider(chasquiUrl);
 }
 
+Uport.prototype.setProviders = function(ipfsProvider, web3Provider) {
+  if (ipfsProvider) {
+    this.ipfsProvider = ipfsProvider;
+    ipfs.setProvider(this.ipfsProvider);
+  }
+  if (web3Provider) {
+    this.web3Provider = web3Provider;
+  }
+}
+
 Uport.prototype.getUportProvider = function(rpcUrl) {
-  var engine = new ProviderEngine();
-
-  engine.addProvider(this.subprovider);
-
-  // default url for now
+  // Default url for now
   if (!rpcUrl) rpcUrl = INFURA_CONSENSYSNET;
-  // data source
-  var rpcSubprovider = new RpcSubprovider({
-    rpcUrl: rpcUrl
-  });
-  engine.addProvider(rpcSubprovider);
 
-  // start polling
-  engine.start();
-  return engine;
+  // Data source provider
+  let rpcSubprovider = new RpcSubprovider({rpcUrl: rpcUrl});
+
+  // Create provider engine
+  this.web3Provider = new ProviderEngine();
+
+  // Add Providers
+  this.web3Provider.addProvider(this.subprovider);
+  this.web3Provider.addProvider(rpcSubprovider);
+
+  // Start polling
+  this.web3Provider.start();
+
+  return this.web3Provider;
 }
 
-Uport.prototype.getUportSubprovider = function() {
-    return self.subprovider;
-}
+Uport.prototype.getUportSubprovider = () => this.subprovider;
 
 Uport.prototype.createUportSubprovider = function(chasquiUrl) {
-  const self = this
+  let self = this;
 
   if (!chasquiUrl) chasquiUrl = CHASQUI_URL;
 
-  var opts = {
-    msgServer: new MsgServer(chasquiUrl, self.isOnMobile),
+  let opts = {
+    msgServer: self.msgServer,
     uportConnectHandler: self.handleURI.bind(self),
     ethUriHandler: self.handleURI.bind(self),
     closeQR: self.qrdisplay.closeQr.bind(self.qrdisplay)
@@ -54,7 +73,8 @@ Uport.prototype.createUportSubprovider = function(chasquiUrl) {
 }
 
 Uport.prototype.handleURI = function(uri) {
-  self = this;
+  let self = this;
+
   uri += "&label=" + encodeURI(self.dappName);
   if (self.isOnMobile) {
     location.assign(uri);
@@ -62,3 +82,98 @@ Uport.prototype.handleURI = function(uri) {
     self.qrdisplay.openQr(uri);
   }
 }
+
+Uport.prototype.getMyPersona = function() {
+  let self = this;
+
+  if (!self.ipfsProvider) throw new Error("ipfsProvider not set");
+  if (!self.web3Provider) throw new Error("web3Provider not set");
+
+  return new Promise((accept, reject) => {
+    self.subprovider.getAddress((err, address) => {
+      if (err) { reject(err); }
+      // TODO - user should be able to specify registry address
+      let persona = new Persona(address, UPORT_REGISTRY_ADDRESS);
+          persona.setProviders(self.ipfsProvider, self.web3Provider);
+          persona = this._replaceMutabilityInPersona(persona);
+          persona.load().then(() => { accept(persona) });
+    });
+  });
+}
+
+Uport.prototype._replaceMutabilityInPersona = function(persona) {
+  let self = this;
+
+  persona.addClaims = (claims) => {
+    self._pushPersonaEdit(true, true, claims);
+  }
+
+  persona.addClaim = (claim) => {
+    persona.addClaims([claim])
+  }
+
+  persona.addAttribute = (attribute) => {
+    self._pushPersonaEdit(true, false, [attribute]);
+  }
+
+  // Will probably rename delete to
+  // Remove in uport-persona in the future
+  persona.deleteAttribute = (attribute) => {
+    self._pushPersonaEdit(false, false, [attribute]);
+  }
+
+  persona.replaceAttribute = (attributeName) => {
+    throw new Error("Not implement yet");
+  }
+
+  return persona;
+}
+
+Uport.prototype._pushPersonaEdit = function(isAdd, isClaim, list) {
+  let self = this;
+
+  return self._createUpdateObject(isAdd, isClaim, list)
+             .then((err, ipfsHash) => {
+                if (err) {reject(err);}
+                self._pushToMobile(ipfsHash);
+             });
+}
+
+Uport.prototype._createUpdateObject = function(isAdd, isClaim, list) {
+  let self = this;
+
+  return new Promise((accept, reject) => {
+    let obj = {};
+
+    let addOrRemove = isAdd   ? "add"    : "remove";
+    let claimOrAttr = isClaim ? "claims" : "attributes";
+
+    obj[addOrRemove] = {};
+    obj[addOrRemove][claimOrAttr] = list;
+
+    // Add to ipfs
+    ipfs.addJson(obj, (err, ipfsHash) => {
+      if (err) {reject(err);}
+      else {accept(ipfsHash);}
+    });
+  });
+}
+
+Uport.prototype._pushToMobile = function(hash) {
+  let self = this;
+
+  return new Promise((accept, reject) => {
+    // We will use the TX topic for now
+    let topic = self.msgServer.newTopic('tx');
+    let uri = "me.uport:claim?data=" + hash;
+
+    self.handleURI(uri);
+    self.msgServer.waitForResult(topic, (err, tx) => {
+        self.qrdisplay.closeQr();
+        if (err) { reject(err); }
+        else { accept(tx); }
+    });
+  });
+}
+
+module.exports = Uport;
