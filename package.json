@@ -1,6 +1,6 @@
 {
   "name": "uport-lib",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Library for integrating uport into your dapp",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     {
       "name" : "Jeff Scott Ward",
       "email" : "jeffscottward@consensys.net",
-      "url" : "http://c:qonsensys.net/"
+      "url" : "http://consensys.net/"
     }
   ],
   "license": "ISC",
@@ -37,8 +37,7 @@
   "dependencies": {
     "is-mobile": "^0.2.2",
     "qr-image": "^3.1.0",
-    "web3-provider-engine": "^7.8.1",
-    "uport-persona": "git+ssh://git@github.com:ConsenSys/uport-persona.git"
+    "web3-provider-engine": "^7.8.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
