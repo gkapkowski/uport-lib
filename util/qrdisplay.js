@@ -1,7 +1,5 @@
 var qr = require('qr-image')
 
-module.exports = QRDisplay
-
 function QRDisplay () {}
 
 QRDisplay.prototype.openQr = function (data) {
@@ -42,3 +40,5 @@ QRDisplay.prototype.getUportQRDisplay = function () {
   document.body.appendChild(bg)
   return bg
 }
+
+export default QRDisplay

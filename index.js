@@ -1,9 +1,9 @@
-const UportSubprovider = require('./lib/uportsubprovider.js')
-const MsgServer = require('./lib/msgServer.js')
-const ProviderEngine = require('web3-provider-engine')
-const RpcSubprovider = require('web3-provider-engine/subproviders/rpc.js')
-const QRDisplay = require('./util/qrdisplay.js')
-const isMobile = require('is-mobile')
+import UportSubprovider from './lib/uportsubprovider'
+import MsgServer from './lib/msgServer'
+import ProviderEngine from 'web3-provider-engine'
+import RpcSubprovider from 'web3-provider-engine/subproviders/rpc'
+import QRDisplay from './util/qrdisplay'
+import isMobile from './util/isMobile'
 
 const CHASQUI_URL = 'https://chasqui.uport.me/'
 const INFURA_CONSENSYSNET = 'https://consensysnet.infura.io:8545'
