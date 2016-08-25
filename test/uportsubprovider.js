@@ -1,5 +1,3 @@
-/* global it, describe, before */
-
 const assert = require('chai').assert
 const UportSubprovider = require('../lib/uportsubprovider.js')
 

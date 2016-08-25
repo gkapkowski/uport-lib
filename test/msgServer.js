@@ -1,5 +1,3 @@
-/* global it, describe, before */
-
 const assert = require('chai').assert
 const xhr = process.browser ? require('xhr') : require('request')
 const MsgServer = require('../lib/msgServer.js')
