@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "buble": "^0.13.1",
+    "is-mobile": "^0.2.2",
     "qr-image": "^3.1.0",
     "web3-provider-engine": "^7.8.1"
   },
@@ -73,6 +74,7 @@
     "ethereumjs-tx": "^1.1.1",
     "istanbul": "^0.4.4",
     "mocha": "^2.5.3",
+    "reify": "^0.3.8",
     "rollup": "^0.34.10",
     "rollup-plugin-buble": "^0.13.0",
     "rollup-plugin-istanbul": "^1.0.0",

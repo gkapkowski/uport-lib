@@ -1,7 +1,7 @@
-const assert = require('chai').assert
-const Web3 = require('web3')
-const Uport = require('../lib/index.js')
-const Autosigner = require('../util/autosigner.js')
+import { assert } from 'chai'
+import Web3 from 'web3'
+import Uport from '../lib/index.js'
+import Autosigner from '../util/autosigner.js'
 
 let rpcUrl = 'http://localhost:8545'
 let web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl))

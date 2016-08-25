@@ -1,1 +1,1 @@
---reporter test/istanbul.reporter.js --recursive --compilers js:buble
+--require reify test --reporter test/istanbul.reporter.js --recursive --compilers js:buble
