@@ -6,7 +6,9 @@ const QRDisplay = require('./util/qrdisplay.js');
 const isMobile = require('is-mobile');
 
 const CHASQUI_URL = 'https://chasqui.uport.me/';
+// these are consensysnet constants, replace with mainnet before release!
 const INFURA_CONSENSYSNET = 'https://consensysnet.infura.io:8545';
+const UPORT_REGISTRY_ADDRESS = '0xa9be82e93628abaac5ab557a9b3b02f711c0151c';
 
 module.exports = Uport;
 
@@ -62,4 +64,29 @@ Uport.prototype.handleURI = function(uri) {
   } else {
     self.qrdisplay.openQr(uri);
   }
+}
+
+Uport.prototype.setProviders = function(ipfsProvider, web3Provider) {
+  if (ipfsProvider) {
+    this.ipfsProvider = ipfsProvider;
+  }
+  if (web3Provider) {
+    this.web3Provider = web3Provider;
+  }
+}
+
+Uport.prototype.getUserPersona = function() {
+  let self = this;
+  if (!self.ipfsProvider) throw new Error("ipfs not set");
+  if (!self.web3Provider) throw new Error("web3Provider not set");
+  return new Promise((accept, reject) => {
+    self.subprovider.getAddress((err, address) => {
+      if (err) { reject(err); }
+      // TODO - user should be able to specify registry address
+      let persona = new MutablePersona(address, self.ipfsProvider, web3Provider, UPORT_REGISTRY_ADDRESS);
+      let persona = new RemoteMutablePersona(address, self.ipfsProvider, web3Provider,
+                                             self.handleURI, self.msgServer, UPORT_REGISTRY_ADDRESS);
+      persona.load().then(() => { accept(persona) });
+    });
+  });
 }
