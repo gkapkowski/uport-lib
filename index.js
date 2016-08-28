@@ -12,30 +12,31 @@ const UPORT_REGISTRY_ADDRESS = '0xa9be82e93628abaac5ab557a9b3b02f711c0151c';
 
 module.exports = Uport;
 
-function Uport(dappName, qrDisplay, chasquiUrl) {
+function Uport(dappName, opts) {
   this.dappName = dappName;
-  this.qrdisplay = qrDisplay ? qrDisplay : new QRDisplay();
+  this.qrdisplay = opts.qrDisplay || new QRDisplay()
+  this.uportRegistryAddress = opts.registryAddress || UPORT_REGISTRY_ADDRESS
+  this.ipfsProvider = opts.ipfsProvider
   this.isOnMobile = isMobile(navigator.userAgent);
-  this.subprovider = this.createUportSubprovider(chasquiUrl);
+  const chasquiUrl = opts.chasquiUrl || CHASQUI_URL
+  this.msgServer = new MsgServer(chasquiUrl, this.isOnMobile)
+  this.subprovider = this.createUportSubprovider();
 }
 
 Uport.prototype.getUportProvider = function(rpcUrl) {
-  var engine = new ProviderEngine();
+  this.web3Provider = new ProviderEngine();
+  this.web3Provider.addProvider(this.subprovider);
 
-  engine.addProvider(this.subprovider);
-
-  // default url for now
-  if (!rpcUrl) rpcUrl = INFURA_CONSENSYSNET;
   // data source
   var rpcSubprovider = new RpcSubprovider({
-    rpcUrl: rpcUrl
+    rpcUrl: rpcUrl || INFURA_CONSENSYSNET
   });
-  engine.addProvider(rpcSubprovider);
+  this.web3Provider.addProvider(rpcSubprovider);
 
   // start polling
-  engine.start();
-  engine.stop();
-  return engine;
+  this.web3Provider.start();
+  this.web3Provider.stop();
+  return this.web3Provider;
 }
 
 Uport.prototype.getUportSubprovider = function() {
@@ -44,11 +45,8 @@ Uport.prototype.getUportSubprovider = function() {
 
 Uport.prototype.createUportSubprovider = function(chasquiUrl) {
   const self = this
-
-  if (!chasquiUrl) chasquiUrl = CHASQUI_URL;
-
   var opts = {
-    msgServer: new MsgServer(chasquiUrl, self.isOnMobile),
+    msgServer: self.msgServer,
     uportConnectHandler: self.handleURI.bind(self),
     ethUriHandler: self.handleURI.bind(self),
     closeQR: self.qrdisplay.closeQr.bind(self.qrdisplay)
@@ -57,7 +55,7 @@ Uport.prototype.createUportSubprovider = function(chasquiUrl) {
 }
 
 Uport.prototype.handleURI = function(uri) {
-  self = this;
+  const self = this;
   uri += "&label=" + encodeURI(self.dappName);
   if (self.isOnMobile) {
     location.assign(uri);
@@ -71,21 +69,25 @@ Uport.prototype.setProviders = function(ipfsProvider, web3Provider) {
     this.ipfsProvider = ipfsProvider;
   }
   if (web3Provider) {
-    this.web3Provider = web3Provider;
+    if (self.web3Provider) {
+      throw new Error("Web3 provider already set.")
+    } else {
+      this.web3Provider = web3Provider;
+    }
   }
 }
 
 Uport.prototype.getUserPersona = function() {
-  let self = this;
+  const self = this;
   if (!self.ipfsProvider) throw new Error("ipfs not set");
   if (!self.web3Provider) throw new Error("web3Provider not set");
   return new Promise((accept, reject) => {
     self.subprovider.getAddress((err, address) => {
       if (err) { reject(err); }
       // TODO - user should be able to specify registry address
-      let persona = new MutablePersona(address, self.ipfsProvider, web3Provider, UPORT_REGISTRY_ADDRESS);
-      let persona = new RemoteMutablePersona(address, self.ipfsProvider, web3Provider,
-                                             self.handleURI, self.msgServer, UPORT_REGISTRY_ADDRESS);
+      let persona = new MutablePersona(address, self.ipfsProvider, self.web3Provider, self.uportRegistryAddress);
+      //let persona = new RemoteMutablePersona(address, self.ipfsProvider, self.web3Provider,
+                                             //self.handleURI, self.msgServer, self.uportRegistryAddress);
       persona.load().then(() => { accept(persona) });
     });
   });
