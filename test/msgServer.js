@@ -1,19 +1,19 @@
 const assert = require('chai').assert
 const xhr = process.browser ? require('xhr') : require('request')
-const MsgServer = require('../lib/msgServer.js')
+import MsgServer from '../lib/msgServer.js'
 
 const chasquiUrl = 'https://chasqui.uport.me/'
 const testHref = 'http://not.real.url/'
 
-let topic1 = ''
-let topic2 = ''
-let msgServer = ''
+let topic1
+let topic2
+let msgServer
 
 describe('MsgServer', function () {
   this.timeout(10000)
 
-  describe('On desktop', () => {
-    before(() => { msgServer = new MsgServer(chasquiUrl, false) })
+  describe('On desktop', function () {
+    before(function () { msgServer = new MsgServer(chasquiUrl, false) })
 
     it('Creates new topics correctly', (done) => {
       topic1 = msgServer.newTopic('address')
@@ -66,10 +66,10 @@ describe('MsgServer', function () {
   })
 
   describe('On Mobile', () => {
-    before(() => {
+    before(function () {
       msgServer = new MsgServer(chasquiUrl, true)
       global.window = {}
-      global.wimdow.location = { href: testHref }
+      global.window.location = { href: testHref }
     })
 
     it('Creates new topics correctly', (done) => {

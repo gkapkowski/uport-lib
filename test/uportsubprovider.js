@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-const UportSubprovider = require('../lib/uportsubprovider.js')
+import UportSubprovider from '../lib/uportsubprovider.js'
 
 var pollShouldFail = false
 var mochMsgServer = {
