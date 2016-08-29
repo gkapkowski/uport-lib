@@ -93,7 +93,7 @@ describe('uport-lib integration tests', function () {
         })
 
         // Send ether to Autosigner
-        web3.eth.sendTransaction({from: accounts[0], to: autosinger.address, value: web3.toWei(1000)}, () => {
+        web3.eth.sendTransaction({from: accounts[0], to: autosinger.address, value: web3.toWei(90)}, (e, r) => {
           // Change provider
           // Autosigner is a qrDisplay
           // that automatically signs transactions
