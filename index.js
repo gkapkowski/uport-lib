@@ -10,8 +10,24 @@ const CHASQUI_URL = 'https://chasqui.uport.me/';
 const INFURA_CONSENSYSNET = 'https://consensysnet.infura.io:8545';
 const UPORT_REGISTRY_ADDRESS = '0xa9be82e93628abaac5ab557a9b3b02f711c0151c';
 
+/**
+ * This class is the main entry point for interaction with uport.
+ */
 module.exports = Uport;
 
+/**
+ * Creates a new uport object.
+ *
+ * @memberof    Uport
+ * @method      constructor
+ * @param       {String}            dappName                the name of your dapp
+ * @param       {Object}            opts                    optional parameters
+ * @param       {Object}            opts.qrDisplay          custom QR-code displaying
+ * @param       {String}            opts.registryAddress    the address of an uport-registry
+ * @param       {Object}            opts.ipfsProvider       an ipfsProvider
+ * @param       {String}            opts.chasquiUrl         a custom chasqui url
+ * @return      {Object}            self
+ */
 function Uport(dappName, opts) {
   this.dappName = dappName;
   this.qrdisplay = opts.qrDisplay || new QRDisplay()
@@ -23,6 +39,14 @@ function Uport(dappName, opts) {
   this.subprovider = this.createUportSubprovider();
 }
 
+/**
+ * Get the uport flavored web3 provider. It's implemented using provider engine.
+ *
+ * @memberof    Uport
+ * @method      getUportProvider
+ * @param       {String}            rpcUrl                  the rpc client to use
+ * @return      {Object}            the uport web3 provider
+ */
 Uport.prototype.getUportProvider = function(rpcUrl) {
   this.web3Provider = new ProviderEngine();
   this.web3Provider.addProvider(this.subprovider);
@@ -39,6 +63,13 @@ Uport.prototype.getUportProvider = function(rpcUrl) {
   return this.web3Provider;
 }
 
+/**
+ * Get the subprovider that handles signing transactions using uport. Use this if you want to customize your provider engine instance.
+ *
+ * @memberof    Uport
+ * @method      getUportProvider
+ * @return      {Object}            the uport subprovider
+ */
 Uport.prototype.getUportSubprovider = function() {
     return self.subprovider;
 }
@@ -64,6 +95,14 @@ Uport.prototype.handleURI = function(uri) {
   }
 }
 
+/**
+ * A method for setting providers if not done previously. This is useful if you are using a custom provider engine for example.
+ *
+ * @memberof    Uport
+ * @method      setProviders
+ * @param       {Object}            ipfsProvider            the ipfs provider to use
+ * @param       {Object}            web3Provider            the web3 provider to use
+ */
 Uport.prototype.setProviders = function(ipfsProvider, web3Provider) {
   if (ipfsProvider) {
     this.ipfsProvider = ipfsProvider;
@@ -77,6 +116,13 @@ Uport.prototype.setProviders = function(ipfsProvider, web3Provider) {
   }
 }
 
+/**
+ * This method returns an instance of MutablePersona of the current uport user.
+ *
+ * @memberof    Uport
+ * @method      getUserPersona
+ * @return      {MutablePersona}    a MutablePersona instantiated with the address of the connected uport user
+ */
 Uport.prototype.getUserPersona = function() {
   const self = this;
   if (!self.ipfsProvider) throw new Error("ipfs not set");
