@@ -95,7 +95,8 @@ describe('uport-lib integration tests', function () {
         // Send ether to Autosigner
         web3.eth.sendTransaction({from: accounts[0], to: autosinger.address, value: web3.toWei(1000)}, () => {
           // Change provider
-          // Autosigner is a qrDisplay that automatically signs transactions
+          // Autosigner is a qrDisplay
+          // that automatically signs transactions
           let uport = new Uport('Integration Tests', autosinger)
           let uportProvider = uport.getUportProvider(rpcUrl)
 
@@ -110,7 +111,6 @@ describe('uport-lib integration tests', function () {
     web3.eth.getCoinbase((err, address) => {
       if (err) { throw err }
       assert.equal(address, autosinger.address)
-      // set the default account
       web3.eth.defaultAccount = address
       done()
     })

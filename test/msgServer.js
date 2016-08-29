@@ -4,9 +4,10 @@ const MsgServer = require('../lib/msgServer.js')
 
 const chasquiUrl = 'https://chasqui.uport.me/'
 const testHref = 'http://not.real.url/'
-let msgServer
-let topic1
-let topic2
+
+let topic1 = ''
+let topic2 = ''
+let msgServer = ''
 
 describe('MsgServer', function () {
   this.timeout(10000)
@@ -110,7 +111,7 @@ describe('MsgServer', function () {
 function postData (topic, data, cb) {
   let body = {}
   body[topic.name] = data
-  if (!cb) cb = function () {}
+  if (!cb) cb = () => {}
   xhr({
     uri: topic.url,
     method: 'POST',
