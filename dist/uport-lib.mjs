@@ -1,7 +1,9 @@
+import { inherits } from 'util';
+import * as require$$2 from 'util';
 import * as request from 'request';
+import request__default from 'request';
 import isMobile from 'is-mobile';
 import ProviderEngine from 'web3-provider-engine';
-import * as require$$2 from 'util';
 import qrImage from 'qr-image';
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {}
@@ -1286,34 +1288,6 @@ var async = createCommonjsModule(function (module) {
 
 var async$1 = interopDefault(async);
 
-var inherits_browser = createCommonjsModule(function (module) {
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-});
-
-var inherits = interopDefault(inherits_browser);
-
 var randomId = createCommonjsModule(function (module) {
 // gotta keep it within MAX_SAFE_INTEGER
 var extraDigits = 3
@@ -1451,30 +1425,27 @@ var __cov_i0o4KAobeztXCtW656hOqA = (Function('return this'))();
 if (!__cov_i0o4KAobeztXCtW656hOqA.__coverage__) { __cov_i0o4KAobeztXCtW656hOqA.__coverage__ = {}; }
 __cov_i0o4KAobeztXCtW656hOqA = __cov_i0o4KAobeztXCtW656hOqA.__coverage__;
 if (!(__cov_i0o4KAobeztXCtW656hOqA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js'])) {
-   __cov_i0o4KAobeztXCtW656hOqA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js","s":{"1":0,"2":1,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0,"66":0,"67":0,"68":0,"69":0,"70":0,"71":0,"72":0,"73":0,"74":0,"75":0},"b":{"1":[0,0,0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0],"10":[0,0],"11":[0,0],"12":[0,0],"13":[0,0],"14":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0},"fnMap":{"1":{"name":"UportSubprovider","line":25,"loc":{"start":{"line":25,"column":0},"end":{"line":25,"column":33}}},"2":{"name":"(anonymous_2)","line":44,"loc":{"start":{"line":44,"column":43},"end":{"line":44,"column":73}}},"3":{"name":"(anonymous_3)","line":50,"loc":{"start":{"line":50,"column":22},"end":{"line":50,"column":46}}},"4":{"name":"(anonymous_4)","line":56,"loc":{"start":{"line":56,"column":22},"end":{"line":56,"column":46}}},"5":{"name":"(anonymous_5)","line":98,"loc":{"start":{"line":98,"column":43},"end":{"line":98,"column":67}}},"6":{"name":"(anonymous_6)","line":118,"loc":{"start":{"line":118,"column":49},"end":{"line":118,"column":71}}},"7":{"name":"(anonymous_7)","line":124,"loc":{"start":{"line":124,"column":38},"end":{"line":124,"column":61}}},"8":{"name":"(anonymous_8)","line":130,"loc":{"start":{"line":130,"column":40},"end":{"line":130,"column":54}}},"9":{"name":"(anonymous_9)","line":139,"loc":{"start":{"line":139,"column":40},"end":{"line":139,"column":64}}},"10":{"name":"(anonymous_10)","line":147,"loc":{"start":{"line":147,"column":49},"end":{"line":147,"column":73}}},"11":{"name":"(anonymous_11)","line":149,"loc":{"start":{"line":149,"column":37},"end":{"line":149,"column":67}}},"12":{"name":"(anonymous_12)","line":156,"loc":{"start":{"line":156,"column":45},"end":{"line":156,"column":70}}},"13":{"name":"(anonymous_13)","line":158,"loc":{"start":{"line":158,"column":38},"end":{"line":158,"column":68}}},"14":{"name":"(anonymous_14)","line":165,"loc":{"start":{"line":165,"column":44},"end":{"line":165,"column":73}}}},"statementMap":{"1":{"start":{"line":23,"column":0},"end":{"line":23,"column":39}},"2":{"start":{"line":25,"column":0},"end":{"line":42,"column":1}},"3":{"start":{"line":27,"column":2},"end":{"line":27,"column":33}},"4":{"start":{"line":31,"column":2},"end":{"line":31,"column":53}},"5":{"start":{"line":36,"column":2},"end":{"line":36,"column":41}},"6":{"start":{"line":38,"column":2},"end":{"line":38,"column":29}},"7":{"start":{"line":41,"column":2},"end":{"line":41,"column":29}},"8":{"start":{"line":44,"column":0},"end":{"line":96,"column":1}},"9":{"start":{"line":45,"column":2},"end":{"line":45,"column":17}},"10":{"start":{"line":47,"column":2},"end":{"line":95,"column":3}},"11":{"start":{"line":50,"column":6},"end":{"line":52,"column":8}},"12":{"start":{"line":51,"column":8},"end":{"line":51,"column":25}},"13":{"start":{"line":53,"column":6},"end":{"line":53,"column":12}},"14":{"start":{"line":56,"column":6},"end":{"line":59,"column":8}},"15":{"start":{"line":58,"column":8},"end":{"line":58,"column":27}},"16":{"start":{"line":60,"column":6},"end":{"line":60,"column":12}},"17":{"start":{"line":63,"column":6},"end":{"line":63,"column":38}},"18":{"start":{"line":64,"column":6},"end":{"line":68,"column":13}},"19":{"start":{"line":69,"column":6},"end":{"line":69,"column":12}},"20":{"start":{"line":92,"column":6},"end":{"line":92,"column":12}},"21":{"start":{"line":93,"column":6},"end":{"line":93,"column":12}},"22":{"start":{"line":98,"column":0},"end":{"line":116,"column":1}},"23":{"start":{"line":99,"column":2},"end":{"line":99,"column":37}},"24":{"start":{"line":100,"column":2},"end":{"line":100,"column":12}},"25":{"start":{"line":101,"column":2},"end":{"line":103,"column":3}},"26":{"start":{"line":102,"column":4},"end":{"line":102,"column":79}},"27":{"start":{"line":104,"column":2},"end":{"line":106,"column":3}},"28":{"start":{"line":105,"column":4},"end":{"line":105,"column":51}},"29":{"start":{"line":107,"column":2},"end":{"line":110,"column":3}},"30":{"start":{"line":108,"column":4},"end":{"line":108,"column":39}},"31":{"start":{"line":109,"column":4},"end":{"line":109,"column":47}},"32":{"start":{"line":111,"column":2},"end":{"line":114,"column":3}},"33":{"start":{"line":112,"column":4},"end":{"line":112,"column":56}},"34":{"start":{"line":113,"column":4},"end":{"line":113,"column":55}},"35":{"start":{"line":115,"column":2},"end":{"line":115,"column":15}},"36":{"start":{"line":118,"column":0},"end":{"line":128,"column":1}},"37":{"start":{"line":119,"column":2},"end":{"line":119,"column":17}},"38":{"start":{"line":121,"column":2},"end":{"line":121,"column":43}},"39":{"start":{"line":122,"column":2},"end":{"line":122,"column":40}},"40":{"start":{"line":123,"column":2},"end":{"line":123,"column":28}},"41":{"start":{"line":124,"column":2},"end":{"line":127,"column":4}},"42":{"start":{"line":125,"column":4},"end":{"line":125,"column":18}},"43":{"start":{"line":126,"column":4},"end":{"line":126,"column":19}},"44":{"start":{"line":130,"column":0},"end":{"line":145,"column":1}},"45":{"start":{"line":131,"column":2},"end":{"line":131,"column":17}},"46":{"start":{"line":133,"column":2},"end":{"line":144,"column":3}},"47":{"start":{"line":134,"column":4},"end":{"line":134,"column":26}},"48":{"start":{"line":136,"column":4},"end":{"line":136,"column":50}},"49":{"start":{"line":137,"column":4},"end":{"line":137,"column":56}},"50":{"start":{"line":138,"column":4},"end":{"line":138,"column":36}},"51":{"start":{"line":139,"column":4},"end":{"line":143,"column":6}},"52":{"start":{"line":140,"column":6},"end":{"line":140,"column":20}},"53":{"start":{"line":141,"column":6},"end":{"line":141,"column":38}},"54":{"start":{"line":141,"column":16},"end":{"line":141,"column":38}},"55":{"start":{"line":142,"column":6},"end":{"line":142,"column":22}},"56":{"start":{"line":147,"column":0},"end":{"line":154,"column":1}},"57":{"start":{"line":148,"column":2},"end":{"line":148,"column":17}},"58":{"start":{"line":149,"column":2},"end":{"line":153,"column":4}},"59":{"start":{"line":150,"column":4},"end":{"line":150,"column":27}},"60":{"start":{"line":150,"column":13},"end":{"line":150,"column":27}},"61":{"start":{"line":151,"column":4},"end":{"line":151,"column":110}},"62":{"start":{"line":151,"column":24},"end":{"line":151,"column":110}},"63":{"start":{"line":152,"column":4},"end":{"line":152,"column":8}},"64":{"start":{"line":156,"column":0},"end":{"line":163,"column":1}},"65":{"start":{"line":157,"column":2},"end":{"line":157,"column":17}},"66":{"start":{"line":158,"column":2},"end":{"line":162,"column":4}},"67":{"start":{"line":159,"column":4},"end":{"line":159,"column":27}},"68":{"start":{"line":159,"column":13},"end":{"line":159,"column":27}},"69":{"start":{"line":160,"column":4},"end":{"line":160,"column":106}},"70":{"start":{"line":160,"column":24},"end":{"line":160,"column":106}},"71":{"start":{"line":161,"column":4},"end":{"line":161,"column":8}},"72":{"start":{"line":165,"column":0},"end":{"line":170,"column":1}},"73":{"start":{"line":166,"column":2},"end":{"line":166,"column":17}},"74":{"start":{"line":168,"column":2},"end":{"line":168,"column":52}},"75":{"start":{"line":169,"column":2},"end":{"line":169,"column":25}}},"branchMap":{"1":{"line":47,"type":"switch","locations":[{"start":{"line":49,"column":4},"end":{"line":53,"column":12}},{"start":{"line":55,"column":4},"end":{"line":60,"column":12}},{"start":{"line":62,"column":4},"end":{"line":69,"column":12}},{"start":{"line":91,"column":4},"end":{"line":93,"column":12}}]},"2":{"line":101,"type":"if","locations":[{"start":{"line":101,"column":2},"end":{"line":101,"column":2}},{"start":{"line":101,"column":2},"end":{"line":101,"column":2}}]},"3":{"line":104,"type":"if","locations":[{"start":{"line":104,"column":2},"end":{"line":104,"column":2}},{"start":{"line":104,"column":2},"end":{"line":104,"column":2}}]},"4":{"line":107,"type":"if","locations":[{"start":{"line":107,"column":2},"end":{"line":107,"column":2}},{"start":{"line":107,"column":2},"end":{"line":107,"column":2}}]},"5":{"line":108,"type":"cond-expr","locations":[{"start":{"line":108,"column":30},"end":{"line":108,"column":33}},{"start":{"line":108,"column":36},"end":{"line":108,"column":39}}]},"6":{"line":111,"type":"if","locations":[{"start":{"line":111,"column":2},"end":{"line":111,"column":2}},{"start":{"line":111,"column":2},"end":{"line":111,"column":2}}]},"7":{"line":112,"type":"cond-expr","locations":[{"start":{"line":112,"column":47},"end":{"line":112,"column":50}},{"start":{"line":112,"column":53},"end":{"line":112,"column":56}}]},"8":{"line":112,"type":"binary-expr","locations":[{"start":{"line":112,"column":13},"end":{"line":112,"column":27}},{"start":{"line":112,"column":31},"end":{"line":112,"column":44}}]},"9":{"line":133,"type":"if","locations":[{"start":{"line":133,"column":2},"end":{"line":133,"column":2}},{"start":{"line":133,"column":2},"end":{"line":133,"column":2}}]},"10":{"line":141,"type":"if","locations":[{"start":{"line":141,"column":6},"end":{"line":141,"column":6}},{"start":{"line":141,"column":6},"end":{"line":141,"column":6}}]},"11":{"line":150,"type":"if","locations":[{"start":{"line":150,"column":4},"end":{"line":150,"column":4}},{"start":{"line":150,"column":4},"end":{"line":150,"column":4}}]},"12":{"line":151,"type":"if","locations":[{"start":{"line":151,"column":4},"end":{"line":151,"column":4}},{"start":{"line":151,"column":4},"end":{"line":151,"column":4}}]},"13":{"line":159,"type":"if","locations":[{"start":{"line":159,"column":4},"end":{"line":159,"column":4}},{"start":{"line":159,"column":4},"end":{"line":159,"column":4}}]},"14":{"line":160,"type":"if","locations":[{"start":{"line":160,"column":4},"end":{"line":160,"column":4}},{"start":{"line":160,"column":4},"end":{"line":160,"column":4}}]}}};
+   __cov_i0o4KAobeztXCtW656hOqA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js","s":{"1":0,"2":1,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0,"66":0,"67":0,"68":0,"69":0,"70":0,"71":0,"72":0,"73":0,"74":0,"75":0},"b":{"1":[0,0,0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0],"10":[0,0],"11":[0,0],"12":[0,0],"13":[0,0],"14":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0},"fnMap":{"1":{"name":"UportSubprovider","line":20,"loc":{"start":{"line":20,"column":0},"end":{"line":20,"column":33}}},"2":{"name":"(anonymous_2)","line":39,"loc":{"start":{"line":39,"column":43},"end":{"line":39,"column":73}}},"3":{"name":"(anonymous_3)","line":45,"loc":{"start":{"line":45,"column":22},"end":{"line":45,"column":46}}},"4":{"name":"(anonymous_4)","line":51,"loc":{"start":{"line":51,"column":22},"end":{"line":51,"column":46}}},"5":{"name":"(anonymous_5)","line":93,"loc":{"start":{"line":93,"column":43},"end":{"line":93,"column":67}}},"6":{"name":"(anonymous_6)","line":113,"loc":{"start":{"line":113,"column":49},"end":{"line":113,"column":71}}},"7":{"name":"(anonymous_7)","line":119,"loc":{"start":{"line":119,"column":38},"end":{"line":119,"column":61}}},"8":{"name":"(anonymous_8)","line":125,"loc":{"start":{"line":125,"column":40},"end":{"line":125,"column":54}}},"9":{"name":"(anonymous_9)","line":134,"loc":{"start":{"line":134,"column":40},"end":{"line":134,"column":64}}},"10":{"name":"(anonymous_10)","line":142,"loc":{"start":{"line":142,"column":49},"end":{"line":142,"column":73}}},"11":{"name":"(anonymous_11)","line":144,"loc":{"start":{"line":144,"column":37},"end":{"line":144,"column":67}}},"12":{"name":"(anonymous_12)","line":151,"loc":{"start":{"line":151,"column":45},"end":{"line":151,"column":70}}},"13":{"name":"(anonymous_13)","line":153,"loc":{"start":{"line":153,"column":38},"end":{"line":153,"column":68}}},"14":{"name":"(anonymous_14)","line":160,"loc":{"start":{"line":160,"column":44},"end":{"line":160,"column":73}}}},"statementMap":{"1":{"start":{"line":18,"column":0},"end":{"line":18,"column":39}},"2":{"start":{"line":20,"column":0},"end":{"line":37,"column":1}},"3":{"start":{"line":22,"column":2},"end":{"line":22,"column":33}},"4":{"start":{"line":26,"column":2},"end":{"line":26,"column":53}},"5":{"start":{"line":31,"column":2},"end":{"line":31,"column":41}},"6":{"start":{"line":33,"column":2},"end":{"line":33,"column":29}},"7":{"start":{"line":36,"column":2},"end":{"line":36,"column":29}},"8":{"start":{"line":39,"column":0},"end":{"line":91,"column":1}},"9":{"start":{"line":40,"column":2},"end":{"line":40,"column":17}},"10":{"start":{"line":42,"column":2},"end":{"line":90,"column":3}},"11":{"start":{"line":45,"column":6},"end":{"line":47,"column":8}},"12":{"start":{"line":46,"column":8},"end":{"line":46,"column":25}},"13":{"start":{"line":48,"column":6},"end":{"line":48,"column":12}},"14":{"start":{"line":51,"column":6},"end":{"line":54,"column":8}},"15":{"start":{"line":53,"column":8},"end":{"line":53,"column":27}},"16":{"start":{"line":55,"column":6},"end":{"line":55,"column":12}},"17":{"start":{"line":58,"column":6},"end":{"line":58,"column":38}},"18":{"start":{"line":59,"column":6},"end":{"line":63,"column":13}},"19":{"start":{"line":64,"column":6},"end":{"line":64,"column":12}},"20":{"start":{"line":87,"column":6},"end":{"line":87,"column":12}},"21":{"start":{"line":88,"column":6},"end":{"line":88,"column":12}},"22":{"start":{"line":93,"column":0},"end":{"line":111,"column":1}},"23":{"start":{"line":94,"column":2},"end":{"line":94,"column":37}},"24":{"start":{"line":95,"column":2},"end":{"line":95,"column":12}},"25":{"start":{"line":96,"column":2},"end":{"line":98,"column":3}},"26":{"start":{"line":97,"column":4},"end":{"line":97,"column":79}},"27":{"start":{"line":99,"column":2},"end":{"line":101,"column":3}},"28":{"start":{"line":100,"column":4},"end":{"line":100,"column":51}},"29":{"start":{"line":102,"column":2},"end":{"line":105,"column":3}},"30":{"start":{"line":103,"column":4},"end":{"line":103,"column":39}},"31":{"start":{"line":104,"column":4},"end":{"line":104,"column":47}},"32":{"start":{"line":106,"column":2},"end":{"line":109,"column":3}},"33":{"start":{"line":107,"column":4},"end":{"line":107,"column":56}},"34":{"start":{"line":108,"column":4},"end":{"line":108,"column":55}},"35":{"start":{"line":110,"column":2},"end":{"line":110,"column":15}},"36":{"start":{"line":113,"column":0},"end":{"line":123,"column":1}},"37":{"start":{"line":114,"column":2},"end":{"line":114,"column":17}},"38":{"start":{"line":116,"column":2},"end":{"line":116,"column":43}},"39":{"start":{"line":117,"column":2},"end":{"line":117,"column":40}},"40":{"start":{"line":118,"column":2},"end":{"line":118,"column":28}},"41":{"start":{"line":119,"column":2},"end":{"line":122,"column":4}},"42":{"start":{"line":120,"column":4},"end":{"line":120,"column":18}},"43":{"start":{"line":121,"column":4},"end":{"line":121,"column":19}},"44":{"start":{"line":125,"column":0},"end":{"line":140,"column":1}},"45":{"start":{"line":126,"column":2},"end":{"line":126,"column":17}},"46":{"start":{"line":128,"column":2},"end":{"line":139,"column":3}},"47":{"start":{"line":129,"column":4},"end":{"line":129,"column":26}},"48":{"start":{"line":131,"column":4},"end":{"line":131,"column":50}},"49":{"start":{"line":132,"column":4},"end":{"line":132,"column":56}},"50":{"start":{"line":133,"column":4},"end":{"line":133,"column":36}},"51":{"start":{"line":134,"column":4},"end":{"line":138,"column":6}},"52":{"start":{"line":135,"column":6},"end":{"line":135,"column":20}},"53":{"start":{"line":136,"column":6},"end":{"line":136,"column":38}},"54":{"start":{"line":136,"column":16},"end":{"line":136,"column":38}},"55":{"start":{"line":137,"column":6},"end":{"line":137,"column":22}},"56":{"start":{"line":142,"column":0},"end":{"line":149,"column":1}},"57":{"start":{"line":143,"column":2},"end":{"line":143,"column":17}},"58":{"start":{"line":144,"column":2},"end":{"line":148,"column":4}},"59":{"start":{"line":145,"column":4},"end":{"line":145,"column":27}},"60":{"start":{"line":145,"column":13},"end":{"line":145,"column":27}},"61":{"start":{"line":146,"column":4},"end":{"line":146,"column":110}},"62":{"start":{"line":146,"column":24},"end":{"line":146,"column":110}},"63":{"start":{"line":147,"column":4},"end":{"line":147,"column":8}},"64":{"start":{"line":151,"column":0},"end":{"line":158,"column":1}},"65":{"start":{"line":152,"column":2},"end":{"line":152,"column":17}},"66":{"start":{"line":153,"column":2},"end":{"line":157,"column":4}},"67":{"start":{"line":154,"column":4},"end":{"line":154,"column":27}},"68":{"start":{"line":154,"column":13},"end":{"line":154,"column":27}},"69":{"start":{"line":155,"column":4},"end":{"line":155,"column":106}},"70":{"start":{"line":155,"column":24},"end":{"line":155,"column":106}},"71":{"start":{"line":156,"column":4},"end":{"line":156,"column":8}},"72":{"start":{"line":160,"column":0},"end":{"line":165,"column":1}},"73":{"start":{"line":161,"column":2},"end":{"line":161,"column":17}},"74":{"start":{"line":163,"column":2},"end":{"line":163,"column":52}},"75":{"start":{"line":164,"column":2},"end":{"line":164,"column":25}}},"branchMap":{"1":{"line":42,"type":"switch","locations":[{"start":{"line":44,"column":4},"end":{"line":48,"column":12}},{"start":{"line":50,"column":4},"end":{"line":55,"column":12}},{"start":{"line":57,"column":4},"end":{"line":64,"column":12}},{"start":{"line":86,"column":4},"end":{"line":88,"column":12}}]},"2":{"line":96,"type":"if","locations":[{"start":{"line":96,"column":2},"end":{"line":96,"column":2}},{"start":{"line":96,"column":2},"end":{"line":96,"column":2}}]},"3":{"line":99,"type":"if","locations":[{"start":{"line":99,"column":2},"end":{"line":99,"column":2}},{"start":{"line":99,"column":2},"end":{"line":99,"column":2}}]},"4":{"line":102,"type":"if","locations":[{"start":{"line":102,"column":2},"end":{"line":102,"column":2}},{"start":{"line":102,"column":2},"end":{"line":102,"column":2}}]},"5":{"line":103,"type":"cond-expr","locations":[{"start":{"line":103,"column":30},"end":{"line":103,"column":33}},{"start":{"line":103,"column":36},"end":{"line":103,"column":39}}]},"6":{"line":106,"type":"if","locations":[{"start":{"line":106,"column":2},"end":{"line":106,"column":2}},{"start":{"line":106,"column":2},"end":{"line":106,"column":2}}]},"7":{"line":107,"type":"cond-expr","locations":[{"start":{"line":107,"column":47},"end":{"line":107,"column":50}},{"start":{"line":107,"column":53},"end":{"line":107,"column":56}}]},"8":{"line":107,"type":"binary-expr","locations":[{"start":{"line":107,"column":13},"end":{"line":107,"column":27}},{"start":{"line":107,"column":31},"end":{"line":107,"column":44}}]},"9":{"line":128,"type":"if","locations":[{"start":{"line":128,"column":2},"end":{"line":128,"column":2}},{"start":{"line":128,"column":2},"end":{"line":128,"column":2}}]},"10":{"line":136,"type":"if","locations":[{"start":{"line":136,"column":6},"end":{"line":136,"column":6}},{"start":{"line":136,"column":6},"end":{"line":136,"column":6}}]},"11":{"line":145,"type":"if","locations":[{"start":{"line":145,"column":4},"end":{"line":145,"column":4}},{"start":{"line":145,"column":4},"end":{"line":145,"column":4}}]},"12":{"line":146,"type":"if","locations":[{"start":{"line":146,"column":4},"end":{"line":146,"column":4}},{"start":{"line":146,"column":4},"end":{"line":146,"column":4}}]},"13":{"line":154,"type":"if","locations":[{"start":{"line":154,"column":4},"end":{"line":154,"column":4}},{"start":{"line":154,"column":4},"end":{"line":154,"column":4}}]},"14":{"line":155,"type":"if","locations":[{"start":{"line":155,"column":4},"end":{"line":155,"column":4}},{"start":{"line":155,"column":4},"end":{"line":155,"column":4}}]}}};
 }
 __cov_i0o4KAobeztXCtW656hOqA = __cov_i0o4KAobeztXCtW656hOqA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/uportsubprovider.js'];
-__cov_i0o4KAobeztXCtW656hOqA.s['1']++;inherits(UportSubprovider,Subprovider);function UportSubprovider(opts){__cov_i0o4KAobeztXCtW656hOqA.f['1']++;__cov_i0o4KAobeztXCtW656hOqA.s['3']++;this.msgServer=opts.msgServer;__cov_i0o4KAobeztXCtW656hOqA.s['4']++;this.uportConnectHandler=opts.uportConnectHandler;__cov_i0o4KAobeztXCtW656hOqA.s['5']++;this.ethUriHandler=opts.ethUriHandler;__cov_i0o4KAobeztXCtW656hOqA.s['6']++;this.closeQR=opts.closeQR;__cov_i0o4KAobeztXCtW656hOqA.s['7']++;this.address=opts.address;}__cov_i0o4KAobeztXCtW656hOqA.s['8']++;UportSubprovider.prototype.handleRequest=function(payload,next,end){__cov_i0o4KAobeztXCtW656hOqA.f['2']++;__cov_i0o4KAobeztXCtW656hOqA.s['9']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['10']++;switch(payload.method){case'eth_coinbase':__cov_i0o4KAobeztXCtW656hOqA.b['1'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['11']++;self.getAddress(function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['3']++;__cov_i0o4KAobeztXCtW656hOqA.s['12']++;end(err,address);});__cov_i0o4KAobeztXCtW656hOqA.s['13']++;return;case'eth_accounts':__cov_i0o4KAobeztXCtW656hOqA.b['1'][1]++;__cov_i0o4KAobeztXCtW656hOqA.s['14']++;self.getAddress(function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['4']++;__cov_i0o4KAobeztXCtW656hOqA.s['15']++;end(err,[address]);});__cov_i0o4KAobeztXCtW656hOqA.s['16']++;return;case'eth_sendTransaction':__cov_i0o4KAobeztXCtW656hOqA.b['1'][2]++;__cov_i0o4KAobeztXCtW656hOqA.s['17']++;var txParams=payload.params[0];__cov_i0o4KAobeztXCtW656hOqA.s['18']++;async$1.waterfall([self.validateTransaction.bind(self,txParams),self.txParamsToUri.bind(self,txParams),self.signAndReturnTxHash.bind(self)],end);__cov_i0o4KAobeztXCtW656hOqA.s['19']++;return;default:__cov_i0o4KAobeztXCtW656hOqA.b['1'][3]++;__cov_i0o4KAobeztXCtW656hOqA.s['20']++;next();__cov_i0o4KAobeztXCtW656hOqA.s['21']++;return;}};__cov_i0o4KAobeztXCtW656hOqA.s['22']++;UportSubprovider.prototype.txParamsToUri=function(txParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['5']++;__cov_i0o4KAobeztXCtW656hOqA.s['23']++;var uri='ethereum:'+txParams.to;__cov_i0o4KAobeztXCtW656hOqA.s['24']++;var symbol;__cov_i0o4KAobeztXCtW656hOqA.s['25']++;if(!txParams.to){__cov_i0o4KAobeztXCtW656hOqA.b['2'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['26']++;return cb(new Error('Contract creation is not supported by uportProvider'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['2'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['27']++;if(txParams.value){__cov_i0o4KAobeztXCtW656hOqA.b['3'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['28']++;uri+='?value='+parseInt(txParams.value,16);}else{__cov_i0o4KAobeztXCtW656hOqA.b['3'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['29']++;if(txParams.data){__cov_i0o4KAobeztXCtW656hOqA.b['4'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['30']++;symbol=txParams.value?(__cov_i0o4KAobeztXCtW656hOqA.b['5'][0]++,'&'):(__cov_i0o4KAobeztXCtW656hOqA.b['5'][1]++,'?');__cov_i0o4KAobeztXCtW656hOqA.s['31']++;uri+=symbol+'bytecode='+txParams.data;}else{__cov_i0o4KAobeztXCtW656hOqA.b['4'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['32']++;if(txParams.gas){__cov_i0o4KAobeztXCtW656hOqA.b['6'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['33']++;symbol=(__cov_i0o4KAobeztXCtW656hOqA.b['8'][0]++,txParams.value)||(__cov_i0o4KAobeztXCtW656hOqA.b['8'][1]++,txParams.data)?(__cov_i0o4KAobeztXCtW656hOqA.b['7'][0]++,'&'):(__cov_i0o4KAobeztXCtW656hOqA.b['7'][1]++,'?');__cov_i0o4KAobeztXCtW656hOqA.s['34']++;uri+=symbol+'gas='+parseInt(txParams.gas,16);}else{__cov_i0o4KAobeztXCtW656hOqA.b['6'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['35']++;cb(null,uri);};__cov_i0o4KAobeztXCtW656hOqA.s['36']++;UportSubprovider.prototype.signAndReturnTxHash=function(ethUri,cb){__cov_i0o4KAobeztXCtW656hOqA.f['6']++;__cov_i0o4KAobeztXCtW656hOqA.s['37']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['38']++;var topic=self.msgServer.newTopic('tx');__cov_i0o4KAobeztXCtW656hOqA.s['39']++;ethUri+='&callback_url='+topic.url;__cov_i0o4KAobeztXCtW656hOqA.s['40']++;self.ethUriHandler(ethUri);__cov_i0o4KAobeztXCtW656hOqA.s['41']++;self.msgServer.waitForResult(topic,function(err,txHash){__cov_i0o4KAobeztXCtW656hOqA.f['7']++;__cov_i0o4KAobeztXCtW656hOqA.s['42']++;self.closeQR();__cov_i0o4KAobeztXCtW656hOqA.s['43']++;cb(err,txHash);});};__cov_i0o4KAobeztXCtW656hOqA.s['44']++;UportSubprovider.prototype.getAddress=function(cb){__cov_i0o4KAobeztXCtW656hOqA.f['8']++;__cov_i0o4KAobeztXCtW656hOqA.s['45']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['46']++;if(self.address){__cov_i0o4KAobeztXCtW656hOqA.b['9'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['47']++;cb(null,self.address);}else{__cov_i0o4KAobeztXCtW656hOqA.b['9'][1]++;__cov_i0o4KAobeztXCtW656hOqA.s['48']++;var topic=self.msgServer.newTopic('address');__cov_i0o4KAobeztXCtW656hOqA.s['49']++;var ethUri='ethereum:me?callback_url='+topic.url;__cov_i0o4KAobeztXCtW656hOqA.s['50']++;self.uportConnectHandler(ethUri);__cov_i0o4KAobeztXCtW656hOqA.s['51']++;self.msgServer.waitForResult(topic,function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['9']++;__cov_i0o4KAobeztXCtW656hOqA.s['52']++;self.closeQR();__cov_i0o4KAobeztXCtW656hOqA.s['53']++;if(!err){__cov_i0o4KAobeztXCtW656hOqA.b['10'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['54']++;self.address=address;}else{__cov_i0o4KAobeztXCtW656hOqA.b['10'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['55']++;cb(err,address);});}};__cov_i0o4KAobeztXCtW656hOqA.s['56']++;UportSubprovider.prototype.validateTransaction=function(txParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['10']++;__cov_i0o4KAobeztXCtW656hOqA.s['57']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['58']++;self.validateSender(txParams.from,function(err,senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.f['11']++;__cov_i0o4KAobeztXCtW656hOqA.s['59']++;if(err){__cov_i0o4KAobeztXCtW656hOqA.b['11'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['60']++;return cb(err);}else{__cov_i0o4KAobeztXCtW656hOqA.b['11'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['61']++;if(!senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.b['12'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['62']++;return cb(new Error('Unknown address - unable to sign transaction for this address.'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['12'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['63']++;cb();});};__cov_i0o4KAobeztXCtW656hOqA.s['64']++;UportSubprovider.prototype.validateMessage=function(msgParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['12']++;__cov_i0o4KAobeztXCtW656hOqA.s['65']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['66']++;self.validateSender(msgParams.from,function(err,senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.f['13']++;__cov_i0o4KAobeztXCtW656hOqA.s['67']++;if(err){__cov_i0o4KAobeztXCtW656hOqA.b['13'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['68']++;return cb(err);}else{__cov_i0o4KAobeztXCtW656hOqA.b['13'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['69']++;if(!senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.b['14'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['70']++;return cb(new Error('Unknown address - unable to sign message for this address.'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['14'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['71']++;cb();});};__cov_i0o4KAobeztXCtW656hOqA.s['72']++;UportSubprovider.prototype.validateSender=function(senderAddress,cb){__cov_i0o4KAobeztXCtW656hOqA.f['14']++;__cov_i0o4KAobeztXCtW656hOqA.s['73']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['74']++;var senderIsValid=senderAddress===self.address;__cov_i0o4KAobeztXCtW656hOqA.s['75']++;cb(null,senderIsValid);};
+__cov_i0o4KAobeztXCtW656hOqA.s['1']++;require$$2.inherits(UportSubprovider,Subprovider);function UportSubprovider(opts){__cov_i0o4KAobeztXCtW656hOqA.f['1']++;__cov_i0o4KAobeztXCtW656hOqA.s['3']++;this.msgServer=opts.msgServer;__cov_i0o4KAobeztXCtW656hOqA.s['4']++;this.uportConnectHandler=opts.uportConnectHandler;__cov_i0o4KAobeztXCtW656hOqA.s['5']++;this.ethUriHandler=opts.ethUriHandler;__cov_i0o4KAobeztXCtW656hOqA.s['6']++;this.closeQR=opts.closeQR;__cov_i0o4KAobeztXCtW656hOqA.s['7']++;this.address=opts.address;}__cov_i0o4KAobeztXCtW656hOqA.s['8']++;UportSubprovider.prototype.handleRequest=function(payload,next,end){__cov_i0o4KAobeztXCtW656hOqA.f['2']++;__cov_i0o4KAobeztXCtW656hOqA.s['9']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['10']++;switch(payload.method){case'eth_coinbase':__cov_i0o4KAobeztXCtW656hOqA.b['1'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['11']++;self.getAddress(function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['3']++;__cov_i0o4KAobeztXCtW656hOqA.s['12']++;end(err,address);});__cov_i0o4KAobeztXCtW656hOqA.s['13']++;return;case'eth_accounts':__cov_i0o4KAobeztXCtW656hOqA.b['1'][1]++;__cov_i0o4KAobeztXCtW656hOqA.s['14']++;self.getAddress(function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['4']++;__cov_i0o4KAobeztXCtW656hOqA.s['15']++;end(err,[address]);});__cov_i0o4KAobeztXCtW656hOqA.s['16']++;return;case'eth_sendTransaction':__cov_i0o4KAobeztXCtW656hOqA.b['1'][2]++;__cov_i0o4KAobeztXCtW656hOqA.s['17']++;var txParams=payload.params[0];__cov_i0o4KAobeztXCtW656hOqA.s['18']++;async$1.waterfall([self.validateTransaction.bind(self,txParams),self.txParamsToUri.bind(self,txParams),self.signAndReturnTxHash.bind(self)],end);__cov_i0o4KAobeztXCtW656hOqA.s['19']++;return;default:__cov_i0o4KAobeztXCtW656hOqA.b['1'][3]++;__cov_i0o4KAobeztXCtW656hOqA.s['20']++;next();__cov_i0o4KAobeztXCtW656hOqA.s['21']++;return;}};__cov_i0o4KAobeztXCtW656hOqA.s['22']++;UportSubprovider.prototype.txParamsToUri=function(txParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['5']++;__cov_i0o4KAobeztXCtW656hOqA.s['23']++;var uri='ethereum:'+txParams.to;__cov_i0o4KAobeztXCtW656hOqA.s['24']++;var symbol;__cov_i0o4KAobeztXCtW656hOqA.s['25']++;if(!txParams.to){__cov_i0o4KAobeztXCtW656hOqA.b['2'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['26']++;return cb(new Error('Contract creation is not supported by uportProvider'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['2'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['27']++;if(txParams.value){__cov_i0o4KAobeztXCtW656hOqA.b['3'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['28']++;uri+='?value='+parseInt(txParams.value,16);}else{__cov_i0o4KAobeztXCtW656hOqA.b['3'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['29']++;if(txParams.data){__cov_i0o4KAobeztXCtW656hOqA.b['4'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['30']++;symbol=txParams.value?(__cov_i0o4KAobeztXCtW656hOqA.b['5'][0]++,'&'):(__cov_i0o4KAobeztXCtW656hOqA.b['5'][1]++,'?');__cov_i0o4KAobeztXCtW656hOqA.s['31']++;uri+=symbol+'bytecode='+txParams.data;}else{__cov_i0o4KAobeztXCtW656hOqA.b['4'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['32']++;if(txParams.gas){__cov_i0o4KAobeztXCtW656hOqA.b['6'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['33']++;symbol=(__cov_i0o4KAobeztXCtW656hOqA.b['8'][0]++,txParams.value)||(__cov_i0o4KAobeztXCtW656hOqA.b['8'][1]++,txParams.data)?(__cov_i0o4KAobeztXCtW656hOqA.b['7'][0]++,'&'):(__cov_i0o4KAobeztXCtW656hOqA.b['7'][1]++,'?');__cov_i0o4KAobeztXCtW656hOqA.s['34']++;uri+=symbol+'gas='+parseInt(txParams.gas,16);}else{__cov_i0o4KAobeztXCtW656hOqA.b['6'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['35']++;cb(null,uri);};__cov_i0o4KAobeztXCtW656hOqA.s['36']++;UportSubprovider.prototype.signAndReturnTxHash=function(ethUri,cb){__cov_i0o4KAobeztXCtW656hOqA.f['6']++;__cov_i0o4KAobeztXCtW656hOqA.s['37']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['38']++;var topic=self.msgServer.newTopic('tx');__cov_i0o4KAobeztXCtW656hOqA.s['39']++;ethUri+='&callback_url='+topic.url;__cov_i0o4KAobeztXCtW656hOqA.s['40']++;self.ethUriHandler(ethUri);__cov_i0o4KAobeztXCtW656hOqA.s['41']++;self.msgServer.waitForResult(topic,function(err,txHash){__cov_i0o4KAobeztXCtW656hOqA.f['7']++;__cov_i0o4KAobeztXCtW656hOqA.s['42']++;self.closeQR();__cov_i0o4KAobeztXCtW656hOqA.s['43']++;cb(err,txHash);});};__cov_i0o4KAobeztXCtW656hOqA.s['44']++;UportSubprovider.prototype.getAddress=function(cb){__cov_i0o4KAobeztXCtW656hOqA.f['8']++;__cov_i0o4KAobeztXCtW656hOqA.s['45']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['46']++;if(self.address){__cov_i0o4KAobeztXCtW656hOqA.b['9'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['47']++;cb(null,self.address);}else{__cov_i0o4KAobeztXCtW656hOqA.b['9'][1]++;__cov_i0o4KAobeztXCtW656hOqA.s['48']++;var topic=self.msgServer.newTopic('address');__cov_i0o4KAobeztXCtW656hOqA.s['49']++;var ethUri='ethereum:me?callback_url='+topic.url;__cov_i0o4KAobeztXCtW656hOqA.s['50']++;self.uportConnectHandler(ethUri);__cov_i0o4KAobeztXCtW656hOqA.s['51']++;self.msgServer.waitForResult(topic,function(err,address){__cov_i0o4KAobeztXCtW656hOqA.f['9']++;__cov_i0o4KAobeztXCtW656hOqA.s['52']++;self.closeQR();__cov_i0o4KAobeztXCtW656hOqA.s['53']++;if(!err){__cov_i0o4KAobeztXCtW656hOqA.b['10'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['54']++;self.address=address;}else{__cov_i0o4KAobeztXCtW656hOqA.b['10'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['55']++;cb(err,address);});}};__cov_i0o4KAobeztXCtW656hOqA.s['56']++;UportSubprovider.prototype.validateTransaction=function(txParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['10']++;__cov_i0o4KAobeztXCtW656hOqA.s['57']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['58']++;self.validateSender(txParams.from,function(err,senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.f['11']++;__cov_i0o4KAobeztXCtW656hOqA.s['59']++;if(err){__cov_i0o4KAobeztXCtW656hOqA.b['11'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['60']++;return cb(err);}else{__cov_i0o4KAobeztXCtW656hOqA.b['11'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['61']++;if(!senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.b['12'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['62']++;return cb(new Error('Unknown address - unable to sign transaction for this address.'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['12'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['63']++;cb();});};__cov_i0o4KAobeztXCtW656hOqA.s['64']++;UportSubprovider.prototype.validateMessage=function(msgParams,cb){__cov_i0o4KAobeztXCtW656hOqA.f['12']++;__cov_i0o4KAobeztXCtW656hOqA.s['65']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['66']++;self.validateSender(msgParams.from,function(err,senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.f['13']++;__cov_i0o4KAobeztXCtW656hOqA.s['67']++;if(err){__cov_i0o4KAobeztXCtW656hOqA.b['13'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['68']++;return cb(err);}else{__cov_i0o4KAobeztXCtW656hOqA.b['13'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['69']++;if(!senderIsValid){__cov_i0o4KAobeztXCtW656hOqA.b['14'][0]++;__cov_i0o4KAobeztXCtW656hOqA.s['70']++;return cb(new Error('Unknown address - unable to sign message for this address.'));}else{__cov_i0o4KAobeztXCtW656hOqA.b['14'][1]++;}__cov_i0o4KAobeztXCtW656hOqA.s['71']++;cb();});};__cov_i0o4KAobeztXCtW656hOqA.s['72']++;UportSubprovider.prototype.validateSender=function(senderAddress,cb){__cov_i0o4KAobeztXCtW656hOqA.f['14']++;__cov_i0o4KAobeztXCtW656hOqA.s['73']++;var self=this;__cov_i0o4KAobeztXCtW656hOqA.s['74']++;var senderIsValid=senderAddress===self.address;__cov_i0o4KAobeztXCtW656hOqA.s['75']++;cb(null,senderIsValid);};
 
 var utils = createCommonjsModule(function (module, exports) {
-// Load modules
+'use strict';
 
+var hexTable = (function () {
+    var array = new Array(256);
+    for (var i = 0; i < 256; ++i) {
+        array[i] = '%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase();
+    }
 
-// Declare internals
-
-var internals = {};
-internals.hexTable = new Array(256);
-for (var h = 0; h < 256; ++h) {
-    internals.hexTable[h] = '%' + ((h < 16 ? '0' : '') + h.toString(16)).toUpperCase();
-}
-
+    return array;
+}());
 
 exports.arrayToObject = function (source, options) {
-
     var obj = options.plainObjects ? Object.create(null) : {};
-    for (var i = 0, il = source.length; i < il; ++i) {
+    for (var i = 0; i < source.length; ++i) {
         if (typeof source[i] !== 'undefined') {
-
             obj[i] = source[i];
         }
     }
@@ -1482,9 +1453,7 @@ exports.arrayToObject = function (source, options) {
     return obj;
 };
 
-
 exports.merge = function (target, source, options) {
-
     if (!source) {
         return target;
     }
@@ -1492,47 +1461,37 @@ exports.merge = function (target, source, options) {
     if (typeof source !== 'object') {
         if (Array.isArray(target)) {
             target.push(source);
-        }
-        else if (typeof target === 'object') {
+        } else if (typeof target === 'object') {
             target[source] = true;
-        }
-        else {
-            target = [target, source];
+        } else {
+            return [target, source];
         }
 
         return target;
     }
 
     if (typeof target !== 'object') {
-        target = [target].concat(source);
-        return target;
+        return [target].concat(source);
     }
 
-    if (Array.isArray(target) &&
-        !Array.isArray(source)) {
-
-        target = exports.arrayToObject(target, options);
+    var mergeTarget = target;
+    if (Array.isArray(target) && !Array.isArray(source)) {
+        mergeTarget = exports.arrayToObject(target, options);
     }
 
-    var keys = Object.keys(source);
-    for (var k = 0, kl = keys.length; k < kl; ++k) {
-        var key = keys[k];
+    return Object.keys(source).reduce(function (acc, key) {
         var value = source[key];
 
-        if (!Object.prototype.hasOwnProperty.call(target, key)) {
-            target[key] = value;
+        if (Object.prototype.hasOwnProperty.call(acc, key)) {
+            acc[key] = exports.merge(acc[key], value, options);
+        } else {
+            acc[key] = value;
         }
-        else {
-            target[key] = exports.merge(target[key], value, options);
-        }
-    }
-
-    return target;
+        return acc;
+    }, mergeTarget);
 };
 
-
 exports.decode = function (str) {
-
     try {
         return decodeURIComponent(str.replace(/\+/g, ' '));
     } catch (e) {
@@ -1541,65 +1500,60 @@ exports.decode = function (str) {
 };
 
 exports.encode = function (str) {
-
     // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
     // It has been adapted here for stricter adherence to RFC 3986
     if (str.length === 0) {
         return str;
     }
 
-    if (typeof str !== 'string') {
-        str = '' + str;
-    }
+    var string = typeof str === 'string' ? str : String(str);
 
     var out = '';
-    for (var i = 0, il = str.length; i < il; ++i) {
-        var c = str.charCodeAt(i);
+    for (var i = 0; i < string.length; ++i) {
+        var c = string.charCodeAt(i);
 
-        if (c === 0x2D || // -
+        if (
+            c === 0x2D || // -
             c === 0x2E || // .
             c === 0x5F || // _
             c === 0x7E || // ~
             (c >= 0x30 && c <= 0x39) || // 0-9
             (c >= 0x41 && c <= 0x5A) || // a-z
-            (c >= 0x61 && c <= 0x7A)) { // A-Z
-
-            out += str[i];
+            (c >= 0x61 && c <= 0x7A) // A-Z
+        ) {
+            out += string.charAt(i);
             continue;
         }
 
         if (c < 0x80) {
-            out += internals.hexTable[c];
+            out = out + hexTable[c];
             continue;
         }
 
         if (c < 0x800) {
-            out += internals.hexTable[0xC0 | (c >> 6)] + internals.hexTable[0x80 | (c & 0x3F)];
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
             continue;
         }
 
         if (c < 0xD800 || c >= 0xE000) {
-            out += internals.hexTable[0xE0 | (c >> 12)] + internals.hexTable[0x80 | ((c >> 6) & 0x3F)] + internals.hexTable[0x80 | (c & 0x3F)];
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
             continue;
         }
 
-        ++i;
-        c = 0x10000 + (((c & 0x3FF) << 10) | (str.charCodeAt(i) & 0x3FF));
-        out += internals.hexTable[0xF0 | (c >> 18)] + internals.hexTable[0x80 | ((c >> 12) & 0x3F)] + internals.hexTable[0x80 | ((c >> 6) & 0x3F)] + internals.hexTable[0x80 | (c & 0x3F)];
+        i += 1;
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        out += hexTable[0xF0 | (c >> 18)] + hexTable[0x80 | ((c >> 12) & 0x3F)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)];
     }
 
     return out;
 };
 
-exports.compact = function (obj, refs) {
-
-    if (typeof obj !== 'object' ||
-        obj === null) {
-
+exports.compact = function (obj, references) {
+    if (typeof obj !== 'object' || obj === null) {
         return obj;
     }
 
-    refs = refs || [];
+    var refs = references || [];
     var lookup = refs.indexOf(obj);
     if (lookup !== -1) {
         return refs[lookup];
@@ -1610,8 +1564,10 @@ exports.compact = function (obj, refs) {
     if (Array.isArray(obj)) {
         var compacted = [];
 
-        for (var i = 0, il = obj.length; i < il; ++i) {
-            if (typeof obj[i] !== 'undefined') {
+        for (var i = 0; i < obj.length; ++i) {
+            if (obj[i] && typeof obj[i] === 'object') {
+                compacted.push(exports.compact(obj[i], refs));
+            } else if (typeof obj[i] !== 'undefined') {
                 compacted.push(obj[i]);
             }
         }
@@ -1620,32 +1576,24 @@ exports.compact = function (obj, refs) {
     }
 
     var keys = Object.keys(obj);
-    for (i = 0, il = keys.length; i < il; ++i) {
-        var key = keys[i];
+    for (var j = 0; j < keys.length; ++j) {
+        var key = keys[j];
         obj[key] = exports.compact(obj[key], refs);
     }
 
     return obj;
 };
 
-
 exports.isRegExp = function (obj) {
-
     return Object.prototype.toString.call(obj) === '[object RegExp]';
 };
 
-
 exports.isBuffer = function (obj) {
-
-    if (obj === null ||
-        typeof obj === 'undefined') {
-
+    if (obj === null || typeof obj === 'undefined') {
         return false;
     }
 
-    return !!(obj.constructor &&
-              obj.constructor.isBuffer &&
-              obj.constructor.isBuffer(obj));
+    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
 };
 });
 
@@ -1681,62 +1629,49 @@ var require$$0$2 = Object.freeze({
 });
 
 var stringify$1 = createCommonjsModule(function (module) {
-// Load modules
+'use strict';
 
 var Utils = interopDefault(require$$0$2);
 
-
-// Declare internals
-
-var internals = {
-    delimiter: '&',
-    arrayPrefixGenerators: {
-        brackets: function (prefix, key) {
-
-            return prefix + '[]';
-        },
-        indices: function (prefix, key) {
-
-            return prefix + '[' + key + ']';
-        },
-        repeat: function (prefix, key) {
-
-            return prefix;
-        }
+var arrayPrefixGenerators = {
+    brackets: function brackets(prefix) {
+        return prefix + '[]';
     },
-    strictNullHandling: false,
-    skipNulls: false,
-    encode: true
+    indices: function indices(prefix, key) {
+        return prefix + '[' + key + ']';
+    },
+    repeat: function repeat(prefix) {
+        return prefix;
+    }
 };
 
+var defaults = {
+    delimiter: '&',
+    strictNullHandling: false,
+    skipNulls: false,
+    encode: true,
+    encoder: Utils.encode
+};
 
-internals.stringify = function (obj, prefix, generateArrayPrefix, strictNullHandling, skipNulls, encode, filter, sort) {
-
+var stringify = function stringify(object, prefix, generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots) {
+    var obj = object;
     if (typeof filter === 'function') {
         obj = filter(prefix, obj);
-    }
-    else if (Utils.isBuffer(obj)) {
-        obj = obj.toString();
-    }
-    else if (obj instanceof Date) {
+    } else if (obj instanceof Date) {
         obj = obj.toISOString();
-    }
-    else if (obj === null) {
+    } else if (obj === null) {
         if (strictNullHandling) {
-            return encode ? Utils.encode(prefix) : prefix;
+            return encoder ? encoder(prefix) : prefix;
         }
 
         obj = '';
     }
 
-    if (typeof obj === 'string' ||
-        typeof obj === 'number' ||
-        typeof obj === 'boolean') {
-
-        if (encode) {
-            return [Utils.encode(prefix) + '=' + Utils.encode(obj)];
+    if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean' || Utils.isBuffer(obj)) {
+        if (encoder) {
+            return [encoder(prefix) + '=' + encoder(obj)];
         }
-        return [prefix + '=' + obj];
+        return [prefix + '=' + String(obj)];
     }
 
     var values = [];
@@ -1753,65 +1688,63 @@ internals.stringify = function (obj, prefix, generateArrayPrefix, strictNullHand
         objKeys = sort ? keys.sort(sort) : keys;
     }
 
-    for (var i = 0, il = objKeys.length; i < il; ++i) {
+    for (var i = 0; i < objKeys.length; ++i) {
         var key = objKeys[i];
 
-        if (skipNulls &&
-            obj[key] === null) {
-
+        if (skipNulls && obj[key] === null) {
             continue;
         }
 
         if (Array.isArray(obj)) {
-            values = values.concat(internals.stringify(obj[key], generateArrayPrefix(prefix, key), generateArrayPrefix, strictNullHandling, skipNulls, encode, filter));
-        }
-        else {
-            values = values.concat(internals.stringify(obj[key], prefix + '[' + key + ']', generateArrayPrefix, strictNullHandling, skipNulls, encode, filter));
+            values = values.concat(stringify(obj[key], generateArrayPrefix(prefix, key), generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots));
+        } else {
+            values = values.concat(stringify(obj[key], prefix + (allowDots ? '.' + key : '[' + key + ']'), generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots));
         }
     }
 
     return values;
 };
 
-
-module.exports = function (obj, options) {
-
-    options = options || {};
-    var delimiter = typeof options.delimiter === 'undefined' ? internals.delimiter : options.delimiter;
-    var strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : internals.strictNullHandling;
-    var skipNulls = typeof options.skipNulls === 'boolean' ? options.skipNulls : internals.skipNulls;
-    var encode = typeof options.encode === 'boolean' ? options.encode : internals.encode;
+module.exports = function (object, opts) {
+    var obj = object;
+    var options = opts || {};
+    var delimiter = typeof options.delimiter === 'undefined' ? defaults.delimiter : options.delimiter;
+    var strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : defaults.strictNullHandling;
+    var skipNulls = typeof options.skipNulls === 'boolean' ? options.skipNulls : defaults.skipNulls;
+    var encode = typeof options.encode === 'boolean' ? options.encode : defaults.encode;
+    var encoder = encode ? (typeof options.encoder === 'function' ? options.encoder : defaults.encoder) : null;
     var sort = typeof options.sort === 'function' ? options.sort : null;
+    var allowDots = typeof options.allowDots === 'undefined' ? false : options.allowDots;
     var objKeys;
     var filter;
+
+    if (options.encoder !== null && options.encoder !== undefined && typeof options.encoder !== 'function') {
+        throw new TypeError('Encoder has to be a function.');
+    }
+
     if (typeof options.filter === 'function') {
         filter = options.filter;
         obj = filter('', obj);
-    }
-    else if (Array.isArray(options.filter)) {
+    } else if (Array.isArray(options.filter)) {
         objKeys = filter = options.filter;
     }
 
     var keys = [];
 
-    if (typeof obj !== 'object' ||
-        obj === null) {
-
+    if (typeof obj !== 'object' || obj === null) {
         return '';
     }
 
     var arrayFormat;
-    if (options.arrayFormat in internals.arrayPrefixGenerators) {
+    if (options.arrayFormat in arrayPrefixGenerators) {
         arrayFormat = options.arrayFormat;
-    }
-    else if ('indices' in options) {
+    } else if ('indices' in options) {
         arrayFormat = options.indices ? 'indices' : 'repeat';
-    }
-    else {
+    } else {
         arrayFormat = 'indices';
     }
 
-    var generateArrayPrefix = internals.arrayPrefixGenerators[arrayFormat];
+    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
 
     if (!objKeys) {
         objKeys = Object.keys(obj);
@@ -1821,16 +1754,14 @@ module.exports = function (obj, options) {
         objKeys.sort(sort);
     }
 
-    for (var i = 0, il = objKeys.length; i < il; ++i) {
+    for (var i = 0; i < objKeys.length; ++i) {
         var key = objKeys[i];
 
-        if (skipNulls &&
-            obj[key] === null) {
-
+        if (skipNulls && obj[key] === null) {
             continue;
         }
 
-        keys = keys.concat(internals.stringify(obj[key], key, generateArrayPrefix, strictNullHandling, skipNulls, encode, filter, sort));
+        keys = keys.concat(stringify(obj[key], key, generateArrayPrefix, strictNullHandling, skipNulls, encoder, filter, sort, allowDots));
     }
 
     return keys.join(delimiter);
@@ -1849,14 +1780,13 @@ var require$$1$2 = Object.freeze({
 });
 
 var parse$1 = createCommonjsModule(function (module) {
-// Load modules
+'use strict';
 
 var Utils = interopDefault(require$$0$2);
 
+var has = Object.prototype.hasOwnProperty;
 
-// Declare internals
-
-var internals = {
+var defaults = {
     delimiter: '&',
     depth: 5,
     arrayLimit: 20,
@@ -1864,28 +1794,27 @@ var internals = {
     strictNullHandling: false,
     plainObjects: false,
     allowPrototypes: false,
-    allowDots: false
+    allowDots: false,
+    decoder: Utils.decode
 };
 
-
-internals.parseValues = function (str, options) {
-
+var parseValues = function parseValues(str, options) {
     var obj = {};
     var parts = str.split(options.delimiter, options.parameterLimit === Infinity ? undefined : options.parameterLimit);
 
-    for (var i = 0, il = parts.length; i < il; ++i) {
+    for (var i = 0; i < parts.length; ++i) {
         var part = parts[i];
         var pos = part.indexOf(']=') === -1 ? part.indexOf('=') : part.indexOf(']=') + 1;
 
         var key, val;
         if (pos === -1) {
-            key = Utils.decode(part);
+            key = options.decoder(part);
             val = options.strictNullHandling ? null : '';
         } else {
-            key = Utils.decode(part.slice(0, pos));
-            val = Utils.decode(part.slice(pos + 1));
+            key = options.decoder(part.slice(0, pos));
+            val = options.decoder(part.slice(pos + 1));
         }
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        if (has.call(obj, key)) {
             obj[key] = [].concat(obj[key]).concat(val);
         } else {
             obj[key] = val;
@@ -1895,9 +1824,7 @@ internals.parseValues = function (str, options) {
     return obj;
 };
 
-
-internals.parseObject = function (chain, val, options) {
-
+var parseObject = function parseObject(chain, val, options) {
     if (!chain.length) {
         return val;
     }
@@ -1907,43 +1834,35 @@ internals.parseObject = function (chain, val, options) {
     var obj;
     if (root === '[]') {
         obj = [];
-        obj = obj.concat(internals.parseObject(chain, val, options));
-    }
-    else {
+        obj = obj.concat(parseObject(chain, val, options));
+    } else {
         obj = options.plainObjects ? Object.create(null) : {};
         var cleanRoot = root[0] === '[' && root[root.length - 1] === ']' ? root.slice(1, root.length - 1) : root;
         var index = parseInt(cleanRoot, 10);
-        var indexString = '' + index;
-        if (!isNaN(index) &&
+        if (
+            !isNaN(index) &&
             root !== cleanRoot &&
-            indexString === cleanRoot &&
+            String(index) === cleanRoot &&
             index >= 0 &&
-            (options.parseArrays &&
-             index <= options.arrayLimit)) {
-
+            (options.parseArrays && index <= options.arrayLimit)
+        ) {
             obj = [];
-            obj[index] = internals.parseObject(chain, val, options);
-        }
-        else {
-            obj[cleanRoot] = internals.parseObject(chain, val, options);
+            obj[index] = parseObject(chain, val, options);
+        } else {
+            obj[cleanRoot] = parseObject(chain, val, options);
         }
     }
 
     return obj;
 };
 
-
-internals.parseKeys = function (key, val, options) {
-
-    if (!key) {
+var parseKeys = function parseKeys(givenKey, val, options) {
+    if (!givenKey) {
         return;
     }
 
     // Transform dot notation to bracket notation
-
-    if (options.allowDots) {
-        key = key.replace(/\.([^\.\[]+)/g, '[$1]');
-    }
+    var key = options.allowDots ? givenKey.replace(/\.([^\.\[]+)/g, '[$1]') : givenKey;
 
     // The regex chunks
 
@@ -1960,9 +1879,7 @@ internals.parseKeys = function (key, val, options) {
     if (segment[1]) {
         // If we aren't using plain objects, optionally prefix keys
         // that would overwrite object prototype properties
-        if (!options.plainObjects &&
-            Object.prototype.hasOwnProperty(segment[1])) {
-
+        if (!options.plainObjects && has.call(Object.prototype, segment[1])) {
             if (!options.allowPrototypes) {
                 return;
             }
@@ -1975,11 +1892,8 @@ internals.parseKeys = function (key, val, options) {
 
     var i = 0;
     while ((segment = child.exec(key)) !== null && i < options.depth) {
-
-        ++i;
-        if (!options.plainObjects &&
-            Object.prototype.hasOwnProperty(segment[1].replace(/\[|\]/g, ''))) {
-
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].replace(/\[|\]/g, ''))) {
             if (!options.allowPrototypes) {
                 continue;
             }
@@ -1993,39 +1907,40 @@ internals.parseKeys = function (key, val, options) {
         keys.push('[' + key.slice(segment.index) + ']');
     }
 
-    return internals.parseObject(keys, val, options);
+    return parseObject(keys, val, options);
 };
 
+module.exports = function (str, opts) {
+    var options = opts || {};
 
-module.exports = function (str, options) {
+    if (options.decoder !== null && options.decoder !== undefined && typeof options.decoder !== 'function') {
+        throw new TypeError('Decoder has to be a function.');
+    }
 
-    options = options || {};
-    options.delimiter = typeof options.delimiter === 'string' || Utils.isRegExp(options.delimiter) ? options.delimiter : internals.delimiter;
-    options.depth = typeof options.depth === 'number' ? options.depth : internals.depth;
-    options.arrayLimit = typeof options.arrayLimit === 'number' ? options.arrayLimit : internals.arrayLimit;
+    options.delimiter = typeof options.delimiter === 'string' || Utils.isRegExp(options.delimiter) ? options.delimiter : defaults.delimiter;
+    options.depth = typeof options.depth === 'number' ? options.depth : defaults.depth;
+    options.arrayLimit = typeof options.arrayLimit === 'number' ? options.arrayLimit : defaults.arrayLimit;
     options.parseArrays = options.parseArrays !== false;
-    options.allowDots = typeof options.allowDots === 'boolean' ? options.allowDots : internals.allowDots;
-    options.plainObjects = typeof options.plainObjects === 'boolean' ? options.plainObjects : internals.plainObjects;
-    options.allowPrototypes = typeof options.allowPrototypes === 'boolean' ? options.allowPrototypes : internals.allowPrototypes;
-    options.parameterLimit = typeof options.parameterLimit === 'number' ? options.parameterLimit : internals.parameterLimit;
-    options.strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : internals.strictNullHandling;
+    options.decoder = typeof options.decoder === 'function' ? options.decoder : defaults.decoder;
+    options.allowDots = typeof options.allowDots === 'boolean' ? options.allowDots : defaults.allowDots;
+    options.plainObjects = typeof options.plainObjects === 'boolean' ? options.plainObjects : defaults.plainObjects;
+    options.allowPrototypes = typeof options.allowPrototypes === 'boolean' ? options.allowPrototypes : defaults.allowPrototypes;
+    options.parameterLimit = typeof options.parameterLimit === 'number' ? options.parameterLimit : defaults.parameterLimit;
+    options.strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : defaults.strictNullHandling;
 
-    if (str === '' ||
-        str === null ||
-        typeof str === 'undefined') {
-
+    if (str === '' || str === null || typeof str === 'undefined') {
         return options.plainObjects ? Object.create(null) : {};
     }
 
-    var tempObj = typeof str === 'string' ? internals.parseValues(str, options) : str;
+    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
     var obj = options.plainObjects ? Object.create(null) : {};
 
     // Iterate over the keys and setup the new object
 
     var keys = Object.keys(tempObj);
-    for (var i = 0, il = keys.length; i < il; ++i) {
+    for (var i = 0; i < keys.length; ++i) {
         var key = keys[i];
-        var newObj = internals.parseKeys(key, tempObj[key], options);
+        var newObj = parseKeys(key, tempObj[key], options);
         obj = Utils.merge(obj, newObj, options);
     }
 
@@ -2045,16 +1960,10 @@ var require$$0$3 = Object.freeze({
 });
 
 var index = createCommonjsModule(function (module) {
-// Load modules
+'use strict';
 
 var Stringify = interopDefault(require$$1$2);
 var Parse = interopDefault(require$$0$3);
-
-
-// Declare internals
-
-var internals = {};
-
 
 module.exports = {
     stringify: Stringify,
@@ -2064,14 +1973,14 @@ module.exports = {
 
 var qs = interopDefault(index);
 
-var __cov_XWF6MCAnppYo7eQwzAi3bQ = (Function('return this'))();
-if (!__cov_XWF6MCAnppYo7eQwzAi3bQ.__coverage__) { __cov_XWF6MCAnppYo7eQwzAi3bQ.__coverage__ = {}; }
-__cov_XWF6MCAnppYo7eQwzAi3bQ = __cov_XWF6MCAnppYo7eQwzAi3bQ.__coverage__;
-if (!(__cov_XWF6MCAnppYo7eQwzAi3bQ['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/randomString.js'])) {
-   __cov_XWF6MCAnppYo7eQwzAi3bQ['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/randomString.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/randomString.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0},"b":{},"f":{"1":0},"fnMap":{"1":{"name":"randomString","line":4,"loc":{"start":{"line":4,"column":15},"end":{"line":4,"column":46}}}},"statementMap":{"1":{"start":{"line":4,"column":15},"end":{"line":9,"column":1}},"2":{"start":{"line":5,"column":2},"end":{"line":5,"column":78}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":17}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":92}},"5":{"start":{"line":7,"column":35},"end":{"line":7,"column":92}},"6":{"start":{"line":8,"column":2},"end":{"line":8,"column":15}}},"branchMap":{}};
+var __cov_2SshV8v65rKQ$bCVkBkWaA = (Function('return this'))();
+if (!__cov_2SshV8v65rKQ$bCVkBkWaA.__coverage__) { __cov_2SshV8v65rKQ$bCVkBkWaA.__coverage__ = {}; }
+__cov_2SshV8v65rKQ$bCVkBkWaA = __cov_2SshV8v65rKQ$bCVkBkWaA.__coverage__;
+if (!(__cov_2SshV8v65rKQ$bCVkBkWaA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/randomString.js'])) {
+   __cov_2SshV8v65rKQ$bCVkBkWaA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/randomString.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/randomString.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0},"b":{},"f":{"1":0},"fnMap":{"1":{"name":"randomString","line":4,"loc":{"start":{"line":4,"column":15},"end":{"line":4,"column":46}}}},"statementMap":{"1":{"start":{"line":4,"column":15},"end":{"line":9,"column":1}},"2":{"start":{"line":5,"column":2},"end":{"line":5,"column":78}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":17}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":92}},"5":{"start":{"line":7,"column":35},"end":{"line":7,"column":92}},"6":{"start":{"line":8,"column":2},"end":{"line":8,"column":15}}},"branchMap":{}};
 }
-__cov_XWF6MCAnppYo7eQwzAi3bQ = __cov_XWF6MCAnppYo7eQwzAi3bQ['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/randomString.js'];
-function randomString(length){__cov_XWF6MCAnppYo7eQwzAi3bQ.f['1']++;__cov_XWF6MCAnppYo7eQwzAi3bQ.s['2']++;var chars='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';__cov_XWF6MCAnppYo7eQwzAi3bQ.s['3']++;var result='';__cov_XWF6MCAnppYo7eQwzAi3bQ.s['4']++;for(var i=length;i>0;--i){__cov_XWF6MCAnppYo7eQwzAi3bQ.s['5']++;result+=chars[Math.floor(Math.random()*chars.length)];}__cov_XWF6MCAnppYo7eQwzAi3bQ.s['6']++;return result;}
+__cov_2SshV8v65rKQ$bCVkBkWaA = __cov_2SshV8v65rKQ$bCVkBkWaA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/randomString.js'];
+function randomString(length){__cov_2SshV8v65rKQ$bCVkBkWaA.f['1']++;__cov_2SshV8v65rKQ$bCVkBkWaA.s['2']++;var chars='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';__cov_2SshV8v65rKQ$bCVkBkWaA.s['3']++;var result='';__cov_2SshV8v65rKQ$bCVkBkWaA.s['4']++;for(var i=length;i>0;--i){__cov_2SshV8v65rKQ$bCVkBkWaA.s['5']++;result+=chars[Math.floor(Math.random()*chars.length)];}__cov_2SshV8v65rKQ$bCVkBkWaA.s['6']++;return result;}
 
 var __cov_88DDRgD7Fna15rhQ2GTKAA = (Function('return this'))();
 if (!__cov_88DDRgD7Fna15rhQ2GTKAA.__coverage__) { __cov_88DDRgD7Fna15rhQ2GTKAA.__coverage__ = {}; }
@@ -2080,7 +1989,7 @@ if (!(__cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/G
    __cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0},"fnMap":{"1":{"name":"MsgServer","line":5,"loc":{"start":{"line":5,"column":0},"end":{"line":5,"column":44}}},"2":{"name":"(anonymous_2)","line":11,"loc":{"start":{"line":11,"column":31},"end":{"line":11,"column":52}}},"3":{"name":"(anonymous_3)","line":30,"loc":{"start":{"line":30,"column":36},"end":{"line":30,"column":57}}},"4":{"name":"(anonymous_4)","line":37,"loc":{"start":{"line":37,"column":40},"end":{"line":37,"column":61}}},"5":{"name":"(anonymous_5)","line":38,"loc":{"start":{"line":38,"column":24},"end":{"line":38,"column":36}}},"6":{"name":"(anonymous_6)","line":42,"loc":{"start":{"line":42,"column":30},"end":{"line":42,"column":42}}},"7":{"name":"(anonymous_7)","line":46,"loc":{"start":{"line":46,"column":32},"end":{"line":46,"column":44}}},"8":{"name":"(anonymous_8)","line":54,"loc":{"start":{"line":54,"column":36},"end":{"line":54,"column":57}}},"9":{"name":"(anonymous_9)","line":58,"loc":{"start":{"line":58,"column":4},"end":{"line":58,"column":16}}},"10":{"name":"(anonymous_10)","line":59,"loc":{"start":{"line":59,"column":25},"end":{"line":59,"column":56}}},"11":{"name":"(anonymous_11)","line":85,"loc":{"start":{"line":85,"column":33},"end":{"line":85,"column":48}}}},"statementMap":{"1":{"start":{"line":5,"column":0},"end":{"line":9,"column":1}},"2":{"start":{"line":6,"column":2},"end":{"line":6,"column":30}},"3":{"start":{"line":7,"column":2},"end":{"line":7,"column":23}},"4":{"start":{"line":8,"column":2},"end":{"line":8,"column":30}},"5":{"start":{"line":11,"column":0},"end":{"line":28,"column":1}},"6":{"start":{"line":12,"column":2},"end":{"line":15,"column":3}},"7":{"start":{"line":16,"column":2},"end":{"line":26,"column":3}},"8":{"start":{"line":17,"column":4},"end":{"line":17,"column":36}},"9":{"start":{"line":19,"column":4},"end":{"line":19,"column":31}},"10":{"start":{"line":20,"column":4},"end":{"line":25,"column":5}},"11":{"start":{"line":22,"column":6},"end":{"line":22,"column":37}},"12":{"start":{"line":24,"column":6},"end":{"line":24,"column":45}},"13":{"start":{"line":27,"column":2},"end":{"line":27,"column":14}},"14":{"start":{"line":30,"column":0},"end":{"line":36,"column":1}},"15":{"start":{"line":31,"column":2},"end":{"line":35,"column":3}},"16":{"start":{"line":32,"column":4},"end":{"line":32,"column":37}},"17":{"start":{"line":34,"column":4},"end":{"line":34,"column":33}},"18":{"start":{"line":37,"column":0},"end":{"line":52,"column":1}},"19":{"start":{"line":38,"column":2},"end":{"line":51,"column":3}},"20":{"start":{"line":39,"column":4},"end":{"line":50,"column":5}},"21":{"start":{"line":40,"column":6},"end":{"line":40,"column":58}},"22":{"start":{"line":41,"column":6},"end":{"line":49,"column":7}},"23":{"start":{"line":42,"column":8},"end":{"line":42,"column":44}},"24":{"start":{"line":43,"column":8},"end":{"line":43,"column":36}},"25":{"start":{"line":45,"column":8},"end":{"line":48,"column":9}},"26":{"start":{"line":46,"column":10},"end":{"line":46,"column":46}},"27":{"start":{"line":47,"column":10},"end":{"line":47,"column":26}},"28":{"start":{"line":54,"column":0},"end":{"line":83,"column":1}},"29":{"start":{"line":55,"column":2},"end":{"line":55,"column":17}},"30":{"start":{"line":57,"column":2},"end":{"line":82,"column":12}},"31":{"start":{"line":59,"column":6},"end":{"line":81,"column":8}},"32":{"start":{"line":60,"column":8},"end":{"line":60,"column":31}},"33":{"start":{"line":60,"column":17},"end":{"line":60,"column":31}},"34":{"start":{"line":62,"column":8},"end":{"line":62,"column":16}},"35":{"start":{"line":63,"column":8},"end":{"line":73,"column":9}},"36":{"start":{"line":64,"column":10},"end":{"line":64,"column":33}},"37":{"start":{"line":65,"column":10},"end":{"line":68,"column":11}},"38":{"start":{"line":66,"column":12},"end":{"line":66,"column":53}},"39":{"start":{"line":67,"column":12},"end":{"line":67,"column":33}},"40":{"start":{"line":70,"column":10},"end":{"line":70,"column":34}},"41":{"start":{"line":71,"column":10},"end":{"line":71,"column":51}},"42":{"start":{"line":72,"column":10},"end":{"line":72,"column":24}},"43":{"start":{"line":75,"column":8},"end":{"line":80,"column":9}},"44":{"start":{"line":76,"column":10},"end":{"line":76,"column":51}},"45":{"start":{"line":77,"column":10},"end":{"line":77,"column":43}},"46":{"start":{"line":78,"column":10},"end":{"line":78,"column":36}},"47":{"start":{"line":79,"column":10},"end":{"line":79,"column":43}},"48":{"start":{"line":85,"column":0},"end":{"line":85,"column":68}},"49":{"start":{"line":85,"column":50},"end":{"line":85,"column":67}}},"branchMap":{"1":{"line":16,"type":"if","locations":[{"start":{"line":16,"column":2},"end":{"line":16,"column":2}},{"start":{"line":16,"column":2},"end":{"line":16,"column":2}}]},"2":{"line":20,"type":"if","locations":[{"start":{"line":20,"column":4},"end":{"line":20,"column":4}},{"start":{"line":20,"column":4},"end":{"line":20,"column":4}}]},"3":{"line":31,"type":"if","locations":[{"start":{"line":31,"column":2},"end":{"line":31,"column":2}},{"start":{"line":31,"column":2},"end":{"line":31,"column":2}}]},"4":{"line":39,"type":"if","locations":[{"start":{"line":39,"column":4},"end":{"line":39,"column":4}},{"start":{"line":39,"column":4},"end":{"line":39,"column":4}}]},"5":{"line":41,"type":"if","locations":[{"start":{"line":41,"column":6},"end":{"line":41,"column":6}},{"start":{"line":41,"column":6},"end":{"line":41,"column":6}}]},"6":{"line":45,"type":"if","locations":[{"start":{"line":45,"column":8},"end":{"line":45,"column":8}},{"start":{"line":45,"column":8},"end":{"line":45,"column":8}}]},"7":{"line":60,"type":"if","locations":[{"start":{"line":60,"column":8},"end":{"line":60,"column":8}},{"start":{"line":60,"column":8},"end":{"line":60,"column":8}}]},"8":{"line":65,"type":"if","locations":[{"start":{"line":65,"column":10},"end":{"line":65,"column":10}},{"start":{"line":65,"column":10},"end":{"line":65,"column":10}}]},"9":{"line":75,"type":"if","locations":[{"start":{"line":75,"column":8},"end":{"line":75,"column":8}},{"start":{"line":75,"column":8},"end":{"line":75,"column":8}}]}}};
 }
 __cov_88DDRgD7Fna15rhQ2GTKAA = __cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js'];
-function MsgServer(chasquiUrl,isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.f['1']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['2']++;this.chasquiUrl=chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['3']++;this.intervalIds={};__cov_88DDRgD7Fna15rhQ2GTKAA.s['4']++;this.isOnMobile=isOnMobile;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['5']++;MsgServer.prototype.newTopic=function(topicName){__cov_88DDRgD7Fna15rhQ2GTKAA.f['2']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['6']++;var topic={name:topicName,id:randomString(16)};__cov_88DDRgD7Fna15rhQ2GTKAA.s['7']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['8']++;topic.url=window.location.href;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['9']++;topic.url=this.chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['10']++;if(topicName==='address'){__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['11']++;topic.url+='addr/'+topic.id;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['12']++;topic.url+=topicName+'/'+topic.id;}}__cov_88DDRgD7Fna15rhQ2GTKAA.s['13']++;return topic;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['14']++;MsgServer.prototype.waitForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['3']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['15']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['16']++;this.waitForHashChange(topic,cb);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['17']++;this.pollForResult(topic,cb);}};__cov_88DDRgD7Fna15rhQ2GTKAA.s['18']++;MsgServer.prototype.waitForHashChange=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['4']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['19']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['5']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['20']++;if(window.location.hash){__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['21']++;var params=qs.parse(window.location.hash.slice(1));__cov_88DDRgD7Fna15rhQ2GTKAA.s['22']++;if(params[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['23']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['6']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['24']++;cb(null,params[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['25']++;if(params.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['26']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['7']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['27']++;cb(params.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][1]++;}}}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][1]++;}};};__cov_88DDRgD7Fna15rhQ2GTKAA.s['28']++;MsgServer.prototype.pollForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['8']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['29']++;var self=this;__cov_88DDRgD7Fna15rhQ2GTKAA.s['30']++;self.intervalIds[topic.id]=setInterval(function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['9']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['31']++;request(topic.url,function(err,response,body){__cov_88DDRgD7Fna15rhQ2GTKAA.f['10']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['32']++;if(err){__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['33']++;return cb(err);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][1]++;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['34']++;var data;__cov_88DDRgD7Fna15rhQ2GTKAA.s['35']++;try{__cov_88DDRgD7Fna15rhQ2GTKAA.s['36']++;data=JSON.parse(body);__cov_88DDRgD7Fna15rhQ2GTKAA.s['37']++;if(data.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['38']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['39']++;return cb(data.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][1]++;}}catch(err){__cov_88DDRgD7Fna15rhQ2GTKAA.s['40']++;console.error(err.stack);__cov_88DDRgD7Fna15rhQ2GTKAA.s['41']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['42']++;return cb(err);}__cov_88DDRgD7Fna15rhQ2GTKAA.s['43']++;if(data[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['44']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['45']++;self.intervalIds[topic.id]=null;__cov_88DDRgD7Fna15rhQ2GTKAA.s['46']++;self.clearTopic(topic.url);__cov_88DDRgD7Fna15rhQ2GTKAA.s['47']++;return cb(null,data[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][1]++;}});},2000);};__cov_88DDRgD7Fna15rhQ2GTKAA.s['48']++;MsgServer.prototype.clearTopic=function(url){__cov_88DDRgD7Fna15rhQ2GTKAA.f['11']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['49']++;request.del(url);};
+function MsgServer(chasquiUrl,isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.f['1']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['2']++;this.chasquiUrl=chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['3']++;this.intervalIds={};__cov_88DDRgD7Fna15rhQ2GTKAA.s['4']++;this.isOnMobile=isOnMobile;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['5']++;MsgServer.prototype.newTopic=function(topicName){__cov_88DDRgD7Fna15rhQ2GTKAA.f['2']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['6']++;var topic={name:topicName,id:randomString(16)};__cov_88DDRgD7Fna15rhQ2GTKAA.s['7']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['8']++;topic.url=window.location.href;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['9']++;topic.url=this.chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['10']++;if(topicName==='address'){__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['11']++;topic.url+='addr/'+topic.id;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['12']++;topic.url+=topicName+'/'+topic.id;}}__cov_88DDRgD7Fna15rhQ2GTKAA.s['13']++;return topic;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['14']++;MsgServer.prototype.waitForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['3']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['15']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['16']++;this.waitForHashChange(topic,cb);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['17']++;this.pollForResult(topic,cb);}};__cov_88DDRgD7Fna15rhQ2GTKAA.s['18']++;MsgServer.prototype.waitForHashChange=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['4']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['19']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['5']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['20']++;if(window.location.hash){__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['21']++;var params=qs.parse(window.location.hash.slice(1));__cov_88DDRgD7Fna15rhQ2GTKAA.s['22']++;if(params[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['23']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['6']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['24']++;cb(null,params[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['25']++;if(params.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['26']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['7']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['27']++;cb(params.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][1]++;}}}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][1]++;}};};__cov_88DDRgD7Fna15rhQ2GTKAA.s['28']++;MsgServer.prototype.pollForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['8']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['29']++;var self=this;__cov_88DDRgD7Fna15rhQ2GTKAA.s['30']++;self.intervalIds[topic.id]=setInterval(function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['9']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['31']++;request__default(topic.url,function(err,response,body){__cov_88DDRgD7Fna15rhQ2GTKAA.f['10']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['32']++;if(err){__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['33']++;return cb(err);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][1]++;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['34']++;var data;__cov_88DDRgD7Fna15rhQ2GTKAA.s['35']++;try{__cov_88DDRgD7Fna15rhQ2GTKAA.s['36']++;data=JSON.parse(body);__cov_88DDRgD7Fna15rhQ2GTKAA.s['37']++;if(data.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['38']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['39']++;return cb(data.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][1]++;}}catch(err){__cov_88DDRgD7Fna15rhQ2GTKAA.s['40']++;console.error(err.stack);__cov_88DDRgD7Fna15rhQ2GTKAA.s['41']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['42']++;return cb(err);}__cov_88DDRgD7Fna15rhQ2GTKAA.s['43']++;if(data[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['44']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['45']++;self.intervalIds[topic.id]=null;__cov_88DDRgD7Fna15rhQ2GTKAA.s['46']++;self.clearTopic(topic.url);__cov_88DDRgD7Fna15rhQ2GTKAA.s['47']++;return cb(null,data[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][1]++;}});},2000);};__cov_88DDRgD7Fna15rhQ2GTKAA.s['48']++;MsgServer.prototype.clearTopic=function(url){__cov_88DDRgD7Fna15rhQ2GTKAA.f['11']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['49']++;request__default.del(url);};
 
 var window$1 = createCommonjsModule(function (module) {
 if (typeof window$1 !== "undefined") {
@@ -2582,14 +2491,14 @@ RpcSource.prototype.handleRequest = function(payload, next, end){
 
 var RpcSubprovider = interopDefault(rpc);
 
-var __cov_82v_ah80xzzTDekWrLie5A = (Function('return this'))();
-if (!__cov_82v_ah80xzzTDekWrLie5A.__coverage__) { __cov_82v_ah80xzzTDekWrLie5A.__coverage__ = {}; }
-__cov_82v_ah80xzzTDekWrLie5A = __cov_82v_ah80xzzTDekWrLie5A.__coverage__;
-if (!(__cov_82v_ah80xzzTDekWrLie5A['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/qrdisplay.js'])) {
-   __cov_82v_ah80xzzTDekWrLie5A['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/qrdisplay.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/qrdisplay.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0},"b":{"1":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0},"fnMap":{"1":{"name":"QRDisplay","line":3,"loc":{"start":{"line":3,"column":0},"end":{"line":3,"column":22}}},"2":{"name":"(anonymous_2)","line":5,"loc":{"start":{"line":5,"column":29},"end":{"line":5,"column":45}}},"3":{"name":"(anonymous_3)","line":15,"loc":{"start":{"line":15,"column":30},"end":{"line":15,"column":42}}},"4":{"name":"(anonymous_4)","line":20,"loc":{"start":{"line":20,"column":40},"end":{"line":20,"column":52}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":3,"column":24}},"2":{"start":{"line":5,"column":0},"end":{"line":13,"column":1}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":40}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":33}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":56}},"6":{"start":{"line":10,"column":2},"end":{"line":10,"column":86}},"7":{"start":{"line":11,"column":2},"end":{"line":11,"column":45}},"8":{"start":{"line":12,"column":2},"end":{"line":12,"column":36}},"9":{"start":{"line":15,"column":0},"end":{"line":18,"column":1}},"10":{"start":{"line":16,"column":2},"end":{"line":16,"column":40}},"11":{"start":{"line":17,"column":2},"end":{"line":17,"column":32}},"12":{"start":{"line":20,"column":0},"end":{"line":42,"column":1}},"13":{"start":{"line":21,"column":2},"end":{"line":21,"column":46}},"14":{"start":{"line":22,"column":2},"end":{"line":22,"column":19}},"15":{"start":{"line":22,"column":10},"end":{"line":22,"column":19}},"16":{"start":{"line":24,"column":2},"end":{"line":24,"column":36}},"17":{"start":{"line":25,"column":2},"end":{"line":25,"column":35}},"18":{"start":{"line":26,"column":2},"end":{"line":26,"column":138}},"19":{"start":{"line":28,"column":2},"end":{"line":28,"column":41}},"20":{"start":{"line":29,"column":2},"end":{"line":29,"column":159}},"21":{"start":{"line":31,"column":2},"end":{"line":31,"column":40}},"22":{"start":{"line":32,"column":2},"end":{"line":32,"column":47}},"23":{"start":{"line":34,"column":2},"end":{"line":34,"column":43}},"24":{"start":{"line":35,"column":2},"end":{"line":35,"column":45}},"25":{"start":{"line":37,"column":2},"end":{"line":37,"column":24}},"26":{"start":{"line":38,"column":2},"end":{"line":38,"column":23}},"27":{"start":{"line":39,"column":2},"end":{"line":39,"column":21}},"28":{"start":{"line":40,"column":2},"end":{"line":40,"column":31}},"29":{"start":{"line":41,"column":2},"end":{"line":41,"column":11}}},"branchMap":{"1":{"line":22,"type":"if","locations":[{"start":{"line":22,"column":2},"end":{"line":22,"column":2}},{"start":{"line":22,"column":2},"end":{"line":22,"column":2}}]}}};
+var __cov_8hskTyruYSTwj$YGk8z4$Q = (Function('return this'))();
+if (!__cov_8hskTyruYSTwj$YGk8z4$Q.__coverage__) { __cov_8hskTyruYSTwj$YGk8z4$Q.__coverage__ = {}; }
+__cov_8hskTyruYSTwj$YGk8z4$Q = __cov_8hskTyruYSTwj$YGk8z4$Q.__coverage__;
+if (!(__cov_8hskTyruYSTwj$YGk8z4$Q['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/qrdisplay.js'])) {
+   __cov_8hskTyruYSTwj$YGk8z4$Q['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/qrdisplay.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/qrdisplay.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0},"b":{"1":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0},"fnMap":{"1":{"name":"QRDisplay","line":3,"loc":{"start":{"line":3,"column":0},"end":{"line":3,"column":22}}},"2":{"name":"(anonymous_2)","line":5,"loc":{"start":{"line":5,"column":29},"end":{"line":5,"column":45}}},"3":{"name":"(anonymous_3)","line":15,"loc":{"start":{"line":15,"column":30},"end":{"line":15,"column":42}}},"4":{"name":"(anonymous_4)","line":20,"loc":{"start":{"line":20,"column":40},"end":{"line":20,"column":52}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":3,"column":24}},"2":{"start":{"line":5,"column":0},"end":{"line":13,"column":1}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":40}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":33}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":56}},"6":{"start":{"line":10,"column":2},"end":{"line":10,"column":86}},"7":{"start":{"line":11,"column":2},"end":{"line":11,"column":45}},"8":{"start":{"line":12,"column":2},"end":{"line":12,"column":36}},"9":{"start":{"line":15,"column":0},"end":{"line":18,"column":1}},"10":{"start":{"line":16,"column":2},"end":{"line":16,"column":40}},"11":{"start":{"line":17,"column":2},"end":{"line":17,"column":32}},"12":{"start":{"line":20,"column":0},"end":{"line":42,"column":1}},"13":{"start":{"line":21,"column":2},"end":{"line":21,"column":46}},"14":{"start":{"line":22,"column":2},"end":{"line":22,"column":19}},"15":{"start":{"line":22,"column":10},"end":{"line":22,"column":19}},"16":{"start":{"line":24,"column":2},"end":{"line":24,"column":36}},"17":{"start":{"line":25,"column":2},"end":{"line":25,"column":35}},"18":{"start":{"line":26,"column":2},"end":{"line":26,"column":138}},"19":{"start":{"line":28,"column":2},"end":{"line":28,"column":41}},"20":{"start":{"line":29,"column":2},"end":{"line":29,"column":159}},"21":{"start":{"line":31,"column":2},"end":{"line":31,"column":40}},"22":{"start":{"line":32,"column":2},"end":{"line":32,"column":47}},"23":{"start":{"line":34,"column":2},"end":{"line":34,"column":43}},"24":{"start":{"line":35,"column":2},"end":{"line":35,"column":45}},"25":{"start":{"line":37,"column":2},"end":{"line":37,"column":24}},"26":{"start":{"line":38,"column":2},"end":{"line":38,"column":23}},"27":{"start":{"line":39,"column":2},"end":{"line":39,"column":21}},"28":{"start":{"line":40,"column":2},"end":{"line":40,"column":31}},"29":{"start":{"line":41,"column":2},"end":{"line":41,"column":11}}},"branchMap":{"1":{"line":22,"type":"if","locations":[{"start":{"line":22,"column":2},"end":{"line":22,"column":2}},{"start":{"line":22,"column":2},"end":{"line":22,"column":2}}]}}};
 }
-__cov_82v_ah80xzzTDekWrLie5A = __cov_82v_ah80xzzTDekWrLie5A['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/util/qrdisplay.js'];
-function QRDisplay(){__cov_82v_ah80xzzTDekWrLie5A.f['1']++;}__cov_82v_ah80xzzTDekWrLie5A.s['2']++;QRDisplay.prototype.openQr=function(data){__cov_82v_ah80xzzTDekWrLie5A.f['2']++;__cov_82v_ah80xzzTDekWrLie5A.s['3']++;var uportQR=this.getUportQRDisplay();__cov_82v_ah80xzzTDekWrLie5A.s['4']++;uportQR.style.display='block';__cov_82v_ah80xzzTDekWrLie5A.s['5']++;var pngBuffer=qrImage.imageSync(data,{type:'png'});__cov_82v_ah80xzzTDekWrLie5A.s['6']++;var dataUri='data:image/png;charset=utf-8;base64, '+pngBuffer.toString('base64');__cov_82v_ah80xzzTDekWrLie5A.s['7']++;var qrImg=uportQR.children[0].children[0];__cov_82v_ah80xzzTDekWrLie5A.s['8']++;qrImg.setAttribute('src',dataUri);};__cov_82v_ah80xzzTDekWrLie5A.s['9']++;QRDisplay.prototype.closeQr=function(){__cov_82v_ah80xzzTDekWrLie5A.f['3']++;__cov_82v_ah80xzzTDekWrLie5A.s['10']++;var uportQR=this.getUportQRDisplay();__cov_82v_ah80xzzTDekWrLie5A.s['11']++;uportQR.style.display='none';};__cov_82v_ah80xzzTDekWrLie5A.s['12']++;QRDisplay.prototype.getUportQRDisplay=function(){__cov_82v_ah80xzzTDekWrLie5A.f['4']++;__cov_82v_ah80xzzTDekWrLie5A.s['13']++;var bg=document.getElementById('uport-qr');__cov_82v_ah80xzzTDekWrLie5A.s['14']++;if(bg){__cov_82v_ah80xzzTDekWrLie5A.b['1'][0]++;__cov_82v_ah80xzzTDekWrLie5A.s['15']++;return bg;}else{__cov_82v_ah80xzzTDekWrLie5A.b['1'][1]++;}__cov_82v_ah80xzzTDekWrLie5A.s['16']++;bg=document.createElement('div');__cov_82v_ah80xzzTDekWrLie5A.s['17']++;bg.setAttribute('id','uport-qr');__cov_82v_ah80xzzTDekWrLie5A.s['18']++;bg.setAttribute('style','position:fixed;top: 0;width:100%;height:100%;z-index:100;background-color:rgba(0,0,0,0.5);text-align:center;');__cov_82v_ah80xzzTDekWrLie5A.s['19']++;var box=document.createElement('div');__cov_82v_ah80xzzTDekWrLie5A.s['20']++;box.setAttribute('style','position:relative;top:50%;display:inline-block;z-index:101;background:#fff;transform:translateY(-50%);margin:0 auto;padding:20px');__cov_82v_ah80xzzTDekWrLie5A.s['21']++;var text=document.createElement('p');__cov_82v_ah80xzzTDekWrLie5A.s['22']++;text.innerHTML='Please scan with uport app';__cov_82v_ah80xzzTDekWrLie5A.s['23']++;var qrImg=document.createElement('img');__cov_82v_ah80xzzTDekWrLie5A.s['24']++;qrImg.setAttribute('style','z-index:102;');__cov_82v_ah80xzzTDekWrLie5A.s['25']++;box.appendChild(qrImg);__cov_82v_ah80xzzTDekWrLie5A.s['26']++;box.appendChild(text);__cov_82v_ah80xzzTDekWrLie5A.s['27']++;bg.appendChild(box);__cov_82v_ah80xzzTDekWrLie5A.s['28']++;document.body.appendChild(bg);__cov_82v_ah80xzzTDekWrLie5A.s['29']++;return bg;};
+__cov_8hskTyruYSTwj$YGk8z4$Q = __cov_8hskTyruYSTwj$YGk8z4$Q['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/utils/qrdisplay.js'];
+function QRDisplay(){__cov_8hskTyruYSTwj$YGk8z4$Q.f['1']++;}__cov_8hskTyruYSTwj$YGk8z4$Q.s['2']++;QRDisplay.prototype.openQr=function(data){__cov_8hskTyruYSTwj$YGk8z4$Q.f['2']++;__cov_8hskTyruYSTwj$YGk8z4$Q.s['3']++;var uportQR=this.getUportQRDisplay();__cov_8hskTyruYSTwj$YGk8z4$Q.s['4']++;uportQR.style.display='block';__cov_8hskTyruYSTwj$YGk8z4$Q.s['5']++;var pngBuffer=qrImage.imageSync(data,{type:'png'});__cov_8hskTyruYSTwj$YGk8z4$Q.s['6']++;var dataUri='data:image/png;charset=utf-8;base64, '+pngBuffer.toString('base64');__cov_8hskTyruYSTwj$YGk8z4$Q.s['7']++;var qrImg=uportQR.children[0].children[0];__cov_8hskTyruYSTwj$YGk8z4$Q.s['8']++;qrImg.setAttribute('src',dataUri);};__cov_8hskTyruYSTwj$YGk8z4$Q.s['9']++;QRDisplay.prototype.closeQr=function(){__cov_8hskTyruYSTwj$YGk8z4$Q.f['3']++;__cov_8hskTyruYSTwj$YGk8z4$Q.s['10']++;var uportQR=this.getUportQRDisplay();__cov_8hskTyruYSTwj$YGk8z4$Q.s['11']++;uportQR.style.display='none';};__cov_8hskTyruYSTwj$YGk8z4$Q.s['12']++;QRDisplay.prototype.getUportQRDisplay=function(){__cov_8hskTyruYSTwj$YGk8z4$Q.f['4']++;__cov_8hskTyruYSTwj$YGk8z4$Q.s['13']++;var bg=document.getElementById('uport-qr');__cov_8hskTyruYSTwj$YGk8z4$Q.s['14']++;if(bg){__cov_8hskTyruYSTwj$YGk8z4$Q.b['1'][0]++;__cov_8hskTyruYSTwj$YGk8z4$Q.s['15']++;return bg;}else{__cov_8hskTyruYSTwj$YGk8z4$Q.b['1'][1]++;}__cov_8hskTyruYSTwj$YGk8z4$Q.s['16']++;bg=document.createElement('div');__cov_8hskTyruYSTwj$YGk8z4$Q.s['17']++;bg.setAttribute('id','uport-qr');__cov_8hskTyruYSTwj$YGk8z4$Q.s['18']++;bg.setAttribute('style','position:fixed;top: 0;width:100%;height:100%;z-index:100;background-color:rgba(0,0,0,0.5);text-align:center;');__cov_8hskTyruYSTwj$YGk8z4$Q.s['19']++;var box=document.createElement('div');__cov_8hskTyruYSTwj$YGk8z4$Q.s['20']++;box.setAttribute('style','position:relative;top:50%;display:inline-block;z-index:101;background:#fff;transform:translateY(-50%);margin:0 auto;padding:20px');__cov_8hskTyruYSTwj$YGk8z4$Q.s['21']++;var text=document.createElement('p');__cov_8hskTyruYSTwj$YGk8z4$Q.s['22']++;text.innerHTML='Please scan with uport app';__cov_8hskTyruYSTwj$YGk8z4$Q.s['23']++;var qrImg=document.createElement('img');__cov_8hskTyruYSTwj$YGk8z4$Q.s['24']++;qrImg.setAttribute('style','z-index:102;');__cov_8hskTyruYSTwj$YGk8z4$Q.s['25']++;box.appendChild(qrImg);__cov_8hskTyruYSTwj$YGk8z4$Q.s['26']++;box.appendChild(text);__cov_8hskTyruYSTwj$YGk8z4$Q.s['27']++;bg.appendChild(box);__cov_8hskTyruYSTwj$YGk8z4$Q.s['28']++;document.body.appendChild(bg);__cov_8hskTyruYSTwj$YGk8z4$Q.s['29']++;return bg;};
 
 var __cov_0w$a9L99VOCm5RN5H9bjaw = (Function('return this'))();
 if (!__cov_0w$a9L99VOCm5RN5H9bjaw.__coverage__) { __cov_0w$a9L99VOCm5RN5H9bjaw.__coverage__ = {}; }

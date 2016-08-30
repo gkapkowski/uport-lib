@@ -1,7 +1,7 @@
 import { assert } from 'chai'
 import Web3 from 'web3'
 import Uport from '../lib/index.js'
-import Autosigner from '../util/autosigner.js'
+import Autosigner from '../utils/autosigner.js'
 
 let rpcUrl = 'http://localhost:8545'
 let web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl))
