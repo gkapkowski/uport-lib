@@ -97,7 +97,7 @@ describe('uport-lib integration tests', function () {
           // Change provider
           // Autosigner is a qrDisplay
           // that automatically signs transactions
-          let uport = new Uport('Integration Tests', autosinger)
+          let uport = new Uport('Integration Tests', { qrDisplay: autosinger })
           let uportProvider = uport.getUportProvider(rpcUrl)
 
           web3.setProvider(uportProvider)
