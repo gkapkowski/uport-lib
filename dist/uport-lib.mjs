@@ -1,8 +1,6 @@
 import * as request from 'request';
-import request__default from 'request';
 import isMobile from 'is-mobile';
 import ProviderEngine from 'web3-provider-engine';
-import * as require$$4 from 'xhr';
 import * as require$$2 from 'util';
 import qrImage from 'qr-image';
 
@@ -2082,7 +2080,445 @@ if (!(__cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/G
    __cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js'] = {"path":"/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js","s":{"1":1,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0},"fnMap":{"1":{"name":"MsgServer","line":5,"loc":{"start":{"line":5,"column":0},"end":{"line":5,"column":44}}},"2":{"name":"(anonymous_2)","line":11,"loc":{"start":{"line":11,"column":31},"end":{"line":11,"column":52}}},"3":{"name":"(anonymous_3)","line":30,"loc":{"start":{"line":30,"column":36},"end":{"line":30,"column":57}}},"4":{"name":"(anonymous_4)","line":37,"loc":{"start":{"line":37,"column":40},"end":{"line":37,"column":61}}},"5":{"name":"(anonymous_5)","line":38,"loc":{"start":{"line":38,"column":24},"end":{"line":38,"column":36}}},"6":{"name":"(anonymous_6)","line":42,"loc":{"start":{"line":42,"column":30},"end":{"line":42,"column":42}}},"7":{"name":"(anonymous_7)","line":46,"loc":{"start":{"line":46,"column":32},"end":{"line":46,"column":44}}},"8":{"name":"(anonymous_8)","line":54,"loc":{"start":{"line":54,"column":36},"end":{"line":54,"column":57}}},"9":{"name":"(anonymous_9)","line":58,"loc":{"start":{"line":58,"column":4},"end":{"line":58,"column":16}}},"10":{"name":"(anonymous_10)","line":59,"loc":{"start":{"line":59,"column":25},"end":{"line":59,"column":56}}},"11":{"name":"(anonymous_11)","line":85,"loc":{"start":{"line":85,"column":33},"end":{"line":85,"column":48}}}},"statementMap":{"1":{"start":{"line":5,"column":0},"end":{"line":9,"column":1}},"2":{"start":{"line":6,"column":2},"end":{"line":6,"column":30}},"3":{"start":{"line":7,"column":2},"end":{"line":7,"column":23}},"4":{"start":{"line":8,"column":2},"end":{"line":8,"column":30}},"5":{"start":{"line":11,"column":0},"end":{"line":28,"column":1}},"6":{"start":{"line":12,"column":2},"end":{"line":15,"column":3}},"7":{"start":{"line":16,"column":2},"end":{"line":26,"column":3}},"8":{"start":{"line":17,"column":4},"end":{"line":17,"column":36}},"9":{"start":{"line":19,"column":4},"end":{"line":19,"column":31}},"10":{"start":{"line":20,"column":4},"end":{"line":25,"column":5}},"11":{"start":{"line":22,"column":6},"end":{"line":22,"column":37}},"12":{"start":{"line":24,"column":6},"end":{"line":24,"column":45}},"13":{"start":{"line":27,"column":2},"end":{"line":27,"column":14}},"14":{"start":{"line":30,"column":0},"end":{"line":36,"column":1}},"15":{"start":{"line":31,"column":2},"end":{"line":35,"column":3}},"16":{"start":{"line":32,"column":4},"end":{"line":32,"column":37}},"17":{"start":{"line":34,"column":4},"end":{"line":34,"column":33}},"18":{"start":{"line":37,"column":0},"end":{"line":52,"column":1}},"19":{"start":{"line":38,"column":2},"end":{"line":51,"column":3}},"20":{"start":{"line":39,"column":4},"end":{"line":50,"column":5}},"21":{"start":{"line":40,"column":6},"end":{"line":40,"column":58}},"22":{"start":{"line":41,"column":6},"end":{"line":49,"column":7}},"23":{"start":{"line":42,"column":8},"end":{"line":42,"column":44}},"24":{"start":{"line":43,"column":8},"end":{"line":43,"column":36}},"25":{"start":{"line":45,"column":8},"end":{"line":48,"column":9}},"26":{"start":{"line":46,"column":10},"end":{"line":46,"column":46}},"27":{"start":{"line":47,"column":10},"end":{"line":47,"column":26}},"28":{"start":{"line":54,"column":0},"end":{"line":83,"column":1}},"29":{"start":{"line":55,"column":2},"end":{"line":55,"column":17}},"30":{"start":{"line":57,"column":2},"end":{"line":82,"column":12}},"31":{"start":{"line":59,"column":6},"end":{"line":81,"column":8}},"32":{"start":{"line":60,"column":8},"end":{"line":60,"column":31}},"33":{"start":{"line":60,"column":17},"end":{"line":60,"column":31}},"34":{"start":{"line":62,"column":8},"end":{"line":62,"column":16}},"35":{"start":{"line":63,"column":8},"end":{"line":73,"column":9}},"36":{"start":{"line":64,"column":10},"end":{"line":64,"column":33}},"37":{"start":{"line":65,"column":10},"end":{"line":68,"column":11}},"38":{"start":{"line":66,"column":12},"end":{"line":66,"column":53}},"39":{"start":{"line":67,"column":12},"end":{"line":67,"column":33}},"40":{"start":{"line":70,"column":10},"end":{"line":70,"column":34}},"41":{"start":{"line":71,"column":10},"end":{"line":71,"column":51}},"42":{"start":{"line":72,"column":10},"end":{"line":72,"column":24}},"43":{"start":{"line":75,"column":8},"end":{"line":80,"column":9}},"44":{"start":{"line":76,"column":10},"end":{"line":76,"column":51}},"45":{"start":{"line":77,"column":10},"end":{"line":77,"column":43}},"46":{"start":{"line":78,"column":10},"end":{"line":78,"column":36}},"47":{"start":{"line":79,"column":10},"end":{"line":79,"column":43}},"48":{"start":{"line":85,"column":0},"end":{"line":85,"column":68}},"49":{"start":{"line":85,"column":50},"end":{"line":85,"column":67}}},"branchMap":{"1":{"line":16,"type":"if","locations":[{"start":{"line":16,"column":2},"end":{"line":16,"column":2}},{"start":{"line":16,"column":2},"end":{"line":16,"column":2}}]},"2":{"line":20,"type":"if","locations":[{"start":{"line":20,"column":4},"end":{"line":20,"column":4}},{"start":{"line":20,"column":4},"end":{"line":20,"column":4}}]},"3":{"line":31,"type":"if","locations":[{"start":{"line":31,"column":2},"end":{"line":31,"column":2}},{"start":{"line":31,"column":2},"end":{"line":31,"column":2}}]},"4":{"line":39,"type":"if","locations":[{"start":{"line":39,"column":4},"end":{"line":39,"column":4}},{"start":{"line":39,"column":4},"end":{"line":39,"column":4}}]},"5":{"line":41,"type":"if","locations":[{"start":{"line":41,"column":6},"end":{"line":41,"column":6}},{"start":{"line":41,"column":6},"end":{"line":41,"column":6}}]},"6":{"line":45,"type":"if","locations":[{"start":{"line":45,"column":8},"end":{"line":45,"column":8}},{"start":{"line":45,"column":8},"end":{"line":45,"column":8}}]},"7":{"line":60,"type":"if","locations":[{"start":{"line":60,"column":8},"end":{"line":60,"column":8}},{"start":{"line":60,"column":8},"end":{"line":60,"column":8}}]},"8":{"line":65,"type":"if","locations":[{"start":{"line":65,"column":10},"end":{"line":65,"column":10}},{"start":{"line":65,"column":10},"end":{"line":65,"column":10}}]},"9":{"line":75,"type":"if","locations":[{"start":{"line":75,"column":8},"end":{"line":75,"column":8}},{"start":{"line":75,"column":8},"end":{"line":75,"column":8}}]}}};
 }
 __cov_88DDRgD7Fna15rhQ2GTKAA = __cov_88DDRgD7Fna15rhQ2GTKAA['/Users/jeffscottward/Documents/Development/Github/ConsenSys/core/uPort/libs/uport-lib/lib/msgServer.js'];
-function MsgServer(chasquiUrl,isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.f['1']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['2']++;this.chasquiUrl=chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['3']++;this.intervalIds={};__cov_88DDRgD7Fna15rhQ2GTKAA.s['4']++;this.isOnMobile=isOnMobile;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['5']++;MsgServer.prototype.newTopic=function(topicName){__cov_88DDRgD7Fna15rhQ2GTKAA.f['2']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['6']++;var topic={name:topicName,id:randomString(16)};__cov_88DDRgD7Fna15rhQ2GTKAA.s['7']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['8']++;topic.url=window.location.href;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['9']++;topic.url=this.chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['10']++;if(topicName==='address'){__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['11']++;topic.url+='addr/'+topic.id;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['12']++;topic.url+=topicName+'/'+topic.id;}}__cov_88DDRgD7Fna15rhQ2GTKAA.s['13']++;return topic;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['14']++;MsgServer.prototype.waitForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['3']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['15']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['16']++;this.waitForHashChange(topic,cb);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['17']++;this.pollForResult(topic,cb);}};__cov_88DDRgD7Fna15rhQ2GTKAA.s['18']++;MsgServer.prototype.waitForHashChange=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['4']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['19']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['5']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['20']++;if(window.location.hash){__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['21']++;var params=qs.parse(window.location.hash.slice(1));__cov_88DDRgD7Fna15rhQ2GTKAA.s['22']++;if(params[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['23']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['6']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['24']++;cb(null,params[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['25']++;if(params.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['26']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['7']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['27']++;cb(params.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][1]++;}}}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][1]++;}};};__cov_88DDRgD7Fna15rhQ2GTKAA.s['28']++;MsgServer.prototype.pollForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['8']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['29']++;var self=this;__cov_88DDRgD7Fna15rhQ2GTKAA.s['30']++;self.intervalIds[topic.id]=setInterval(function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['9']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['31']++;request__default(topic.url,function(err,response,body){__cov_88DDRgD7Fna15rhQ2GTKAA.f['10']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['32']++;if(err){__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['33']++;return cb(err);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][1]++;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['34']++;var data;__cov_88DDRgD7Fna15rhQ2GTKAA.s['35']++;try{__cov_88DDRgD7Fna15rhQ2GTKAA.s['36']++;data=JSON.parse(body);__cov_88DDRgD7Fna15rhQ2GTKAA.s['37']++;if(data.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['38']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['39']++;return cb(data.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][1]++;}}catch(err){__cov_88DDRgD7Fna15rhQ2GTKAA.s['40']++;console.error(err.stack);__cov_88DDRgD7Fna15rhQ2GTKAA.s['41']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['42']++;return cb(err);}__cov_88DDRgD7Fna15rhQ2GTKAA.s['43']++;if(data[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['44']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['45']++;self.intervalIds[topic.id]=null;__cov_88DDRgD7Fna15rhQ2GTKAA.s['46']++;self.clearTopic(topic.url);__cov_88DDRgD7Fna15rhQ2GTKAA.s['47']++;return cb(null,data[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][1]++;}});},2000);};__cov_88DDRgD7Fna15rhQ2GTKAA.s['48']++;MsgServer.prototype.clearTopic=function(url){__cov_88DDRgD7Fna15rhQ2GTKAA.f['11']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['49']++;request__default.del(url);};
+function MsgServer(chasquiUrl,isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.f['1']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['2']++;this.chasquiUrl=chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['3']++;this.intervalIds={};__cov_88DDRgD7Fna15rhQ2GTKAA.s['4']++;this.isOnMobile=isOnMobile;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['5']++;MsgServer.prototype.newTopic=function(topicName){__cov_88DDRgD7Fna15rhQ2GTKAA.f['2']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['6']++;var topic={name:topicName,id:randomString(16)};__cov_88DDRgD7Fna15rhQ2GTKAA.s['7']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['8']++;topic.url=window.location.href;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['1'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['9']++;topic.url=this.chasquiUrl;__cov_88DDRgD7Fna15rhQ2GTKAA.s['10']++;if(topicName==='address'){__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['11']++;topic.url+='addr/'+topic.id;}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['2'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['12']++;topic.url+=topicName+'/'+topic.id;}}__cov_88DDRgD7Fna15rhQ2GTKAA.s['13']++;return topic;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['14']++;MsgServer.prototype.waitForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['3']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['15']++;if(this.isOnMobile){__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['16']++;this.waitForHashChange(topic,cb);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['3'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['17']++;this.pollForResult(topic,cb);}};__cov_88DDRgD7Fna15rhQ2GTKAA.s['18']++;MsgServer.prototype.waitForHashChange=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['4']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['19']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['5']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['20']++;if(window.location.hash){__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['21']++;var params=qs.parse(window.location.hash.slice(1));__cov_88DDRgD7Fna15rhQ2GTKAA.s['22']++;if(params[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['23']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['6']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['24']++;cb(null,params[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['5'][1]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['25']++;if(params.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['26']++;window.onhashchange=function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['7']++;};__cov_88DDRgD7Fna15rhQ2GTKAA.s['27']++;cb(params.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['6'][1]++;}}}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['4'][1]++;}};};__cov_88DDRgD7Fna15rhQ2GTKAA.s['28']++;MsgServer.prototype.pollForResult=function(topic,cb){__cov_88DDRgD7Fna15rhQ2GTKAA.f['8']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['29']++;var self=this;__cov_88DDRgD7Fna15rhQ2GTKAA.s['30']++;self.intervalIds[topic.id]=setInterval(function(){__cov_88DDRgD7Fna15rhQ2GTKAA.f['9']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['31']++;request(topic.url,function(err,response,body){__cov_88DDRgD7Fna15rhQ2GTKAA.f['10']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['32']++;if(err){__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['33']++;return cb(err);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['7'][1]++;}__cov_88DDRgD7Fna15rhQ2GTKAA.s['34']++;var data;__cov_88DDRgD7Fna15rhQ2GTKAA.s['35']++;try{__cov_88DDRgD7Fna15rhQ2GTKAA.s['36']++;data=JSON.parse(body);__cov_88DDRgD7Fna15rhQ2GTKAA.s['37']++;if(data.error){__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['38']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['39']++;return cb(data.error);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['8'][1]++;}}catch(err){__cov_88DDRgD7Fna15rhQ2GTKAA.s['40']++;console.error(err.stack);__cov_88DDRgD7Fna15rhQ2GTKAA.s['41']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['42']++;return cb(err);}__cov_88DDRgD7Fna15rhQ2GTKAA.s['43']++;if(data[topic.name]){__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][0]++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['44']++;clearInterval(self.intervalIds[topic.id]);__cov_88DDRgD7Fna15rhQ2GTKAA.s['45']++;self.intervalIds[topic.id]=null;__cov_88DDRgD7Fna15rhQ2GTKAA.s['46']++;self.clearTopic(topic.url);__cov_88DDRgD7Fna15rhQ2GTKAA.s['47']++;return cb(null,data[topic.name]);}else{__cov_88DDRgD7Fna15rhQ2GTKAA.b['9'][1]++;}});},2000);};__cov_88DDRgD7Fna15rhQ2GTKAA.s['48']++;MsgServer.prototype.clearTopic=function(url){__cov_88DDRgD7Fna15rhQ2GTKAA.f['11']++;__cov_88DDRgD7Fna15rhQ2GTKAA.s['49']++;request.del(url);};
+
+var window$1 = createCommonjsModule(function (module) {
+if (typeof window$1 !== "undefined") {
+    module.exports = window$1;
+} else if (typeof commonjsGlobal !== "undefined") {
+    module.exports = commonjsGlobal;
+} else if (typeof self !== "undefined"){
+    module.exports = self;
+} else {
+    module.exports = {};
+}
+});
+
+var window$2 = interopDefault(window$1);
+
+
+var require$$3 = Object.freeze({
+    default: window$2
+});
+
+var require$$3 = Object.freeze({
+    default: window$2
+});
+
+var index$3 = createCommonjsModule(function (module) {
+module.exports = isFunction
+
+var toString = Object.prototype.toString
+
+function isFunction (fn) {
+  var string = toString.call(fn)
+  return string === '[object Function]' ||
+    (typeof fn === 'function' && string !== '[object RegExp]') ||
+    (typeof window !== 'undefined' &&
+     // IE8 and below
+     (fn === window.setTimeout ||
+      fn === window.alert ||
+      fn === window.confirm ||
+      fn === window.prompt))
+};
+});
+
+var index$4 = interopDefault(index$3);
+
+
+var require$$0$4 = Object.freeze({
+  default: index$4
+});
+
+var require$$0$4 = Object.freeze({
+  default: index$4
+});
+
+var index$5 = createCommonjsModule(function (module, exports) {
+exports = module.exports = trim;
+
+function trim(str){
+  return str.replace(/^\s*|\s*$/g, '');
+}
+
+exports.left = function(str){
+  return str.replace(/^\s*/, '');
+};
+
+exports.right = function(str){
+  return str.replace(/\s*$/, '');
+};
+});
+
+var index$6 = interopDefault(index$5);
+var right = index$5.right;
+var left = index$5.left;
+
+var require$$1$4 = Object.freeze({
+  default: index$6,
+  right: right,
+  left: left
+});
+
+var require$$1$4 = Object.freeze({
+  default: index$6,
+  right: right,
+  left: left
+});
+
+var index$7 = createCommonjsModule(function (module) {
+var isFunction = interopDefault(require$$0$4)
+
+module.exports = forEach
+
+var toString = Object.prototype.toString
+var hasOwnProperty = Object.prototype.hasOwnProperty
+
+function forEach(list, iterator, context) {
+    if (!isFunction(iterator)) {
+        throw new TypeError('iterator must be a function')
+    }
+
+    if (arguments.length < 3) {
+        context = this
+    }
+    
+    if (toString.call(list) === '[object Array]')
+        forEachArray(list, iterator, context)
+    else if (typeof list === 'string')
+        forEachString(list, iterator, context)
+    else
+        forEachObject(list, iterator, context)
+}
+
+function forEachArray(array, iterator, context) {
+    for (var i = 0, len = array.length; i < len; i++) {
+        if (hasOwnProperty.call(array, i)) {
+            iterator.call(context, array[i], i, array)
+        }
+    }
+}
+
+function forEachString(string, iterator, context) {
+    for (var i = 0, len = string.length; i < len; i++) {
+        // no such thing as a sparse string.
+        iterator.call(context, string.charAt(i), i, string)
+    }
+}
+
+function forEachObject(object, iterator, context) {
+    for (var k in object) {
+        if (hasOwnProperty.call(object, k)) {
+            iterator.call(context, object[k], k, object)
+        }
+    }
+}
+});
+
+var index$8 = interopDefault(index$7);
+
+
+var require$$0$5 = Object.freeze({
+    default: index$8
+});
+
+var require$$0$5 = Object.freeze({
+    default: index$8
+});
+
+var parseHeaders = createCommonjsModule(function (module) {
+var trim = interopDefault(require$$1$4)
+  , forEach = interopDefault(require$$0$5)
+  , isArray = function(arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]';
+    }
+
+module.exports = function (headers) {
+  if (!headers)
+    return {}
+
+  var result = {}
+
+  forEach(
+      trim(headers).split('\n')
+    , function (row) {
+        var index = row.indexOf(':')
+          , key = trim(row.slice(0, index)).toLowerCase()
+          , value = trim(row.slice(index + 1))
+
+        if (typeof(result[key]) === 'undefined') {
+          result[key] = value
+        } else if (isArray(result[key])) {
+          result[key].push(value)
+        } else {
+          result[key] = [ result[key], value ]
+        }
+      }
+  )
+
+  return result
+}
+});
+
+var parseHeaders$1 = interopDefault(parseHeaders);
+
+
+var require$$1$3 = Object.freeze({
+  default: parseHeaders$1
+});
+
+var require$$1$3 = Object.freeze({
+  default: parseHeaders$1
+});
+
+var index$1 = createCommonjsModule(function (module) {
+"use strict";
+var window = interopDefault(require$$3)
+var isFunction = interopDefault(require$$0$4)
+var parseHeaders = interopDefault(require$$1$3)
+var xtend = interopDefault(require$$0$1)
+
+module.exports = createXHR
+createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
+createXHR.XDomainRequest = "withCredentials" in (new createXHR.XMLHttpRequest()) ? createXHR.XMLHttpRequest : window.XDomainRequest
+
+forEachArray(["get", "put", "post", "patch", "head", "delete"], function(method) {
+    createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
+        options = initParams(uri, options, callback)
+        options.method = method.toUpperCase()
+        return _createXHR(options)
+    }
+})
+
+function forEachArray(array, iterator) {
+    for (var i = 0; i < array.length; i++) {
+        iterator(array[i])
+    }
+}
+
+function isEmpty(obj){
+    for(var i in obj){
+        if(obj.hasOwnProperty(i)) return false
+    }
+    return true
+}
+
+function initParams(uri, options, callback) {
+    var params = uri
+
+    if (isFunction(options)) {
+        callback = options
+        if (typeof uri === "string") {
+            params = {uri:uri}
+        }
+    } else {
+        params = xtend(options, {uri: uri})
+    }
+
+    params.callback = callback
+    return params
+}
+
+function createXHR(uri, options, callback) {
+    options = initParams(uri, options, callback)
+    return _createXHR(options)
+}
+
+function _createXHR(options) {
+    if(typeof options.callback === "undefined"){
+        throw new Error("callback argument missing")
+    }
+
+    var called = false
+    var callback = function cbOnce(err, response, body){
+        if(!called){
+            called = true
+            options.callback(err, response, body)
+        }
+    }
+
+    function readystatechange() {
+        if (xhr.readyState === 4) {
+            loadFunc()
+        }
+    }
+
+    function getBody() {
+        // Chrome with requestType=blob throws errors arround when even testing access to responseText
+        var body = undefined
+
+        if (xhr.response) {
+            body = xhr.response
+        } else {
+            body = xhr.responseText || getXml(xhr)
+        }
+
+        if (isJson) {
+            try {
+                body = JSON.parse(body)
+            } catch (e) {}
+        }
+
+        return body
+    }
+
+    var failureResponse = {
+                body: undefined,
+                headers: {},
+                statusCode: 0,
+                method: method,
+                url: uri,
+                rawRequest: xhr
+            }
+
+    function errorFunc(evt) {
+        clearTimeout(timeoutTimer)
+        if(!(evt instanceof Error)){
+            evt = new Error("" + (evt || "Unknown XMLHttpRequest Error") )
+        }
+        evt.statusCode = 0
+        return callback(evt, failureResponse)
+    }
+
+    // will load the data & process the response in a special response object
+    function loadFunc() {
+        if (aborted) return
+        var status
+        clearTimeout(timeoutTimer)
+        if(options.useXDR && xhr.status===undefined) {
+            //IE8 CORS GET successful response doesn't have a status field, but body is fine
+            status = 200
+        } else {
+            status = (xhr.status === 1223 ? 204 : xhr.status)
+        }
+        var response = failureResponse
+        var err = null
+
+        if (status !== 0){
+            response = {
+                body: getBody(),
+                statusCode: status,
+                method: method,
+                headers: {},
+                url: uri,
+                rawRequest: xhr
+            }
+            if(xhr.getAllResponseHeaders){ //remember xhr can in fact be XDR for CORS in IE
+                response.headers = parseHeaders(xhr.getAllResponseHeaders())
+            }
+        } else {
+            err = new Error("Internal XMLHttpRequest Error")
+        }
+        return callback(err, response, response.body)
+    }
+
+    var xhr = options.xhr || null
+
+    if (!xhr) {
+        if (options.cors || options.useXDR) {
+            xhr = new createXHR.XDomainRequest()
+        }else{
+            xhr = new createXHR.XMLHttpRequest()
+        }
+    }
+
+    var key
+    var aborted
+    var uri = xhr.url = options.uri || options.url
+    var method = xhr.method = options.method || "GET"
+    var body = options.body || options.data || null
+    var headers = xhr.headers = options.headers || {}
+    var sync = !!options.sync
+    var isJson = false
+    var timeoutTimer
+
+    if ("json" in options) {
+        isJson = true
+        headers["accept"] || headers["Accept"] || (headers["Accept"] = "application/json") //Don't override existing accept header declared by user
+        if (method !== "GET" && method !== "HEAD") {
+            headers["content-type"] || headers["Content-Type"] || (headers["Content-Type"] = "application/json") //Don't override existing accept header declared by user
+            body = JSON.stringify(options.json)
+        }
+    }
+
+    xhr.onreadystatechange = readystatechange
+    xhr.onload = loadFunc
+    xhr.onerror = errorFunc
+    // IE9 must have onprogress be set to a unique function.
+    xhr.onprogress = function () {
+        // IE must die
+    }
+    xhr.ontimeout = errorFunc
+    xhr.open(method, uri, !sync, options.username, options.password)
+    //has to be after open
+    if(!sync) {
+        xhr.withCredentials = !!options.withCredentials
+    }
+    // Cannot set timeout with sync request
+    // not setting timeout on the xhr object, because of old webkits etc. not handling that correctly
+    // both npm's request and jquery 1.x use this kind of timeout, so this is being consistent
+    if (!sync && options.timeout > 0 ) {
+        timeoutTimer = setTimeout(function(){
+            aborted=true//IE9 may still call readystatechange
+            xhr.abort("timeout")
+            var e = new Error("XMLHttpRequest timeout")
+            e.code = "ETIMEDOUT"
+            errorFunc(e)
+        }, options.timeout )
+    }
+
+    if (xhr.setRequestHeader) {
+        for(key in headers){
+            if(headers.hasOwnProperty(key)){
+                xhr.setRequestHeader(key, headers[key])
+            }
+        }
+    } else if (options.headers && !isEmpty(options.headers)) {
+        throw new Error("Headers cannot be set on an XDomainRequest object")
+    }
+
+    if ("responseType" in options) {
+        xhr.responseType = options.responseType
+    }
+
+    if ("beforeSend" in options &&
+        typeof options.beforeSend === "function"
+    ) {
+        options.beforeSend(xhr)
+    }
+
+    xhr.send(body)
+
+    return xhr
+
+
+}
+
+function getXml(xhr) {
+    if (xhr.responseType === "document") {
+        return xhr.responseXML
+    }
+    var firefoxBugTakenEffect = xhr.status === 204 && xhr.responseXML && xhr.responseXML.documentElement.nodeName === "parsererror"
+    if (xhr.responseType === "" && !firefoxBugTakenEffect) {
+        return xhr.responseXML
+    }
+
+    return null
+}
+
+function noop() {}
+});
+
+var index$2 = interopDefault(index$1);
+
+
+var require$$4 = Object.freeze({
+    default: index$2
+});
+
+var require$$4 = Object.freeze({
+    default: index$2
+});
 
 var rpc = createCommonjsModule(function (module) {
 var xhr = process.browser ? interopDefault(require$$4) : interopDefault(request)

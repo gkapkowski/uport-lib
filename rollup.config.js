@@ -22,9 +22,7 @@ export default {
     'web3-provider-engine': 'ProviderEngine',
     'request': 'request',
     'util': 'util',
-    'qr-image': 'qrImage',
-    'xhr': 'xhr',
-    'request': 'request'
+    'qr-image': 'qrImage'
   },
   plugins: [
     nodeResolve({
