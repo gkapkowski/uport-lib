@@ -21,7 +21,8 @@ export default {
     'is-mobile': 'isMobile',
     'web3-provider-engine': 'ProviderEngine',
     'request': 'request',
-    'qr-image': 'qrImage'
+    'qr-image': 'qrImage',
+    'util': 'util'
   },
   plugins: [
     nodeResolve({

@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('util'), require('request'), require('is-mobile'), require('web3-provider-engine'), require('qr-image')) :
 	typeof define === 'function' && define.amd ? define(['util', 'request', 'is-mobile', 'web3-provider-engine', 'qr-image'], factory) :
-	(global.uportLib = factory(global.require$$2,global.request,global.isMobile,global.ProviderEngine,global.qrImage));
+	(global.uportLib = factory(global.util,global.request,global.isMobile,global.ProviderEngine,global.qrImage));
 }(this, (function (require$$2,request,isMobile,ProviderEngine,qrImage) { 'use strict';
 
 var request__default = request['default'];
