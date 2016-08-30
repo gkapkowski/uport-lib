@@ -1,5 +1,7 @@
 ![uport](https://ipfs.pics/ipfs/QmVHY83dQyym1gDWeMBom7vLJfQ6iGycSWDYZgt2n9Lzah)
 
+Join our online chat at [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/ConsenSys/uport-lib)
+
 <!--[![NPM version][npm-image]][npm-url] [![Gitter chat][gitter-image]][gitter-url] [![Downloads][downloads-image]][downloads-url]-->
 
 <!--[![NPM][nodei-image]][nodei-url]-->
@@ -15,7 +17,7 @@
 
 <!--[![BADGINATOR][badginator-image]][badginator-url]-->
 
-<!--[documentation](https://webpack.github.io/docs/?utm_source=github&utm_medium=readme&utm_campaign=top)-->
+<!-- TODO: JSNEXT:MAIN -->
 
 # Introduction
 
