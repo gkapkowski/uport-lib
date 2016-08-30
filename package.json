@@ -67,6 +67,7 @@
     "is-mobile": "^0.2.2",
     "qr-image": "^3.1.0",
     "request": "^2.74.0",
+    "uport-persona": "git+ssh://git@github.com:ConsenSys/uport-persona.git",
     "web3-provider-engine": "^7.8.1"
   },
   "devDependencies": {
