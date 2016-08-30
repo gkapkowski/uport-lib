@@ -25,6 +25,7 @@ export default {
     'util': 'util'
   },
   plugins: [
+    // builtins(),
     nodeResolve({
       module: true,
       jsnext: true,
