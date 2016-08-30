@@ -23,7 +23,8 @@ export default {
     'request': 'request',
     'util': 'util',
     'qr-image': 'qrImage',
-    'xhr': 'xhr'
+    'xhr': 'xhr',
+    'request': 'request'
   },
   plugins: [
     nodeResolve({
