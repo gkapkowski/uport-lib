@@ -7,7 +7,7 @@
 
 import buble from 'rollup-plugin-buble'
 import commonjs from 'rollup-plugin-commonjs'
-import istanbul from 'rollup-plugin-istanbul'
+// import istanbul from 'rollup-plugin-istanbul'
 // import builtins from 'rollup-plugin-node-builtins'
 // import globals from 'rollup-plugin-node-globals'
 import nodeResolve from 'rollup-plugin-node-resolve'
@@ -29,7 +29,7 @@ export default {
     }),
     commonjs(),
     buble(),
-    istanbul({ exclude: ['test/**/*', 'node_modules/**/*', 'dist/**/*', 'coverage/**/*'] })
+    // istanbul({ exclude: ['test/**/*', 'node_modules/**/*', 'dist/**/*', 'coverage/**/*'] })
   ],
   external: external,
   targets: [
