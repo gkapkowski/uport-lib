@@ -28,7 +28,7 @@ export default {
       preferBuiltins: true
     }),
     commonjs(),
-    buble(),
+    buble()
     // istanbul({ exclude: ['test/**/*', 'node_modules/**/*', 'dist/**/*', 'coverage/**/*'] })
   ],
   external: external,
