@@ -25,7 +25,7 @@ export default {
       main: true,
       browser: true,
       extensions: [ '.js', '.json' ],
-      preferBuiltins: true
+      preferBuiltins: false
     }),
     commonjs(),
     buble()
