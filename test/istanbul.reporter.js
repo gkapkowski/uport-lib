@@ -1,5 +1,5 @@
-const instanbul = require('istanbul')
-const MochaSpecReporter = require('mocha/lib/reporters/spec')
+import instanbul from 'istanbul'
+import MochaSpecReporter from 'mocha/lib/reporters/spec'
 
 module.exports = function (runner) {
   const collector = new instanbul.Collector()

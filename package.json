@@ -1,6 +1,6 @@
 {
   "name": "uport-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library for integrating uPort into your DApp",
   "main": "dist/uport-lib.js",
   "module": "dist/uport-lib.mjs",
@@ -81,6 +81,7 @@
     "rollup-plugin-commonjs": "^3.3.1",
     "rollup-plugin-istanbul": "^1.0.0",
     "rollup-plugin-node-builtins": "^1.0.7",
+    "rollup-plugin-node-globals": "^1.0.6",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-watch": "^2.5.0",
     "snazzy": "^4.0.1",

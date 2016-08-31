@@ -1,5 +1,5 @@
-const assert = require('chai').assert
-const xhr = process.browser ? require('xhr') : require('request')
+import { assert } from 'chai'
+import request from 'request'
 import MsgServer from '../lib/msgServer.js'
 
 const chasquiUrl = 'https://chasqui.uport.me/'
@@ -30,7 +30,7 @@ describe('MsgServer', function () {
     })
 
     it('Correctly polls for data', (done) => {
-      var data = '0x123456789'
+      let data = '0x123456789'
       msgServer.waitForResult(topic1, function (err, res) {
         assert.equal(res, data, 'Should get correct data from server.')
         assert.isNull(err)
@@ -43,13 +43,13 @@ describe('MsgServer', function () {
     })
 
     it('Gives error if polling yeilds error', (done) => {
-      var data = 'some weird error'
+      let data = 'some weird error'
       msgServer.waitForResult(topic2, function (err, res) {
         assert.equal(err, data)
         assert.isUndefined(res)
         done()
       })
-      var errorTopic = topic2
+      let errorTopic = topic2
       errorTopic.name = 'error'
       setTimeout(
         postData.bind(null, errorTopic, data),
@@ -85,7 +85,7 @@ describe('MsgServer', function () {
     })
 
     it('Correctly waits for data', (done) => {
-      var data = '0x123456789'
+      let data = '0x123456789'
       msgServer.waitForResult(topic1, function (err, res) {
         assert.equal(res, data, 'Should get correct data.')
         assert.isNull(err)
@@ -96,7 +96,7 @@ describe('MsgServer', function () {
     })
 
     it('Gives error if error posted', (done) => {
-      var data = 'some weird error'
+      let data = 'some weird error'
       msgServer.waitForResult(topic2, function (err, res) {
         assert.equal(err, data)
         assert.isUndefined(res)
@@ -112,10 +112,9 @@ function postData (topic, data, cb) {
   let body = {}
   body[topic.name] = data
   if (!cb) cb = () => {}
-  xhr({
-    uri: topic.url,
+  request({
+    url: topic.url,
     method: 'POST',
-    rejectUnautohorized: false,
     json: body
   }, cb)
 }

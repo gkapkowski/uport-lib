@@ -1,8 +1,8 @@
-const assert = require('chai').assert
+import { assert } from 'chai'
 import UportSubprovider from '../lib/uportsubprovider.js'
 
-var pollShouldFail = false
-var mochMsgServer = {
+let pollShouldFail = false
+let mochMsgServer = {
   newTopic: (topicName) => {
     return {
       name: 'topic',
@@ -24,12 +24,12 @@ mochMsgServer.waitForResult = (topic, cb) => { mochMsgServer.pollForResult(topic
 
 const MSG_DATA = '0x0123456789abcdef'
 
-var subprovider
-var qrWasClosed = false
+let subprovider
+let qrWasClosed = false
 
 describe('UportSubprovider', () => {
   before(() => {
-    var opts = {
+    let opts = {
       msgServer: mochMsgServer,
       ethUriHandler: (uri) => {},
       closeQR: () => {
@@ -82,7 +82,7 @@ describe('UportSubprovider', () => {
     it('Use msgServer to get txHash', (done) => {
       qrWasClosed = false
       pollShouldFail = false
-      var initialUri = 'ethereum:me?value=10'
+      let initialUri = 'ethereum:me?value=10'
       subprovider.ethUriHandler = (uri) => {
         assert.equal(uri, initialUri + '&callback_url=http://url.com')
       }
@@ -139,10 +139,10 @@ describe('UportSubprovider', () => {
   })
 
   describe('handleRequest', () => {
-    var payload = {}
+    let payload = {}
     it('Should pass on request not handled', (done) => {
-      var nextCalled = false
-      var next = () => { nextCalled = true }
+      let nextCalled = false
+      let next = () => { nextCalled = true }
       payload.method = 'eth_sendRawTransaction'
       subprovider.handleRequest(payload, next)
       assert.isTrue(nextCalled)

@@ -9,9 +9,10 @@ let web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl))
 // create random address
 let chars = '0123456789abcdef'
 let addr1 = '0x'
-for (let i = 40; i > 0; --i) addr1 += chars[Math.floor(Math.random() * chars.length)]
 let autosinger
 let status
+
+for (let i = 40; i > 0; --i) addr1 += chars[Math.floor(Math.random() * chars.length)]
 
 describe('uport-lib integration tests', function () {
   this.timeout(10000)
@@ -137,7 +138,7 @@ describe('uport-lib integration tests', function () {
   })
 
   it('use contract', (done) => {
-    var coolStatus = 'Writing some tests!'
+    let coolStatus = 'Writing some tests!'
     status.updateStatus(coolStatus, (err, res) => {
       assert.isNull(err)
       status.getStatus.call(web3.eth.defaultAccount, (err, myStatus) => {
