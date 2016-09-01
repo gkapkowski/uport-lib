@@ -1,6 +1,6 @@
 {
   "name": "uport-lib",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Library for integrating uPort into your DApp",
   "main": "dist/uport-lib.js",
   "module": "dist/uport-lib.mjs",
@@ -10,7 +10,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "pretest": "npm run build",
-    "test": ""
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
