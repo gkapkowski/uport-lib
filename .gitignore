@@ -38,3 +38,5 @@ jspm_packages
 
 # Test Coverage
 coverage
+
+.DS_Store
