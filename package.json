@@ -1,6 +1,6 @@
 {
   "name": "uport-lib",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Library for integrating uPort into your DApp",
   "main": "dist/uport-lib.js",
   "module": "dist/uport-lib.mjs",
