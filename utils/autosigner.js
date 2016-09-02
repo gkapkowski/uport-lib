@@ -15,20 +15,20 @@ const SEED = 'unhappy nerve cancel reject october fix vital pulse cash behind cu
 
 class Autosigner {
 
-  constructor (rpcUrl, keystore, pwDerivedKey) {
+  constructor (web3Provider, keystore, pwDerivedKey) {
     keystore.generateNewAddress(pwDerivedKey)
     this.address = '0x' + keystore.getAddresses()[0]
     this.keystore = keystore
     this.pwDerivedKey = pwDerivedKey
-    this.web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl))
+    this.web3 = new Web3(web3Provider)
   }
 
-  static load (rpcUrl, cb) {
+  static load (web3Provider, cb) {
     Lightwallet.keystore.deriveKeyFromPassword(PASSWORD, (err, pwDerivedKey) => {
       if (err) cb(err)
       let KeystoreMethod = Lightwallet.keystore
       let Keystore = new KeystoreMethod(SEED, pwDerivedKey)
-      let autosinger = new Autosigner(rpcUrl, Keystore, pwDerivedKey)
+      let autosinger = new Autosigner(web3Provider, Keystore, pwDerivedKey)
       cb(null, autosinger)
     })
   }
@@ -38,29 +38,44 @@ class Autosigner {
     let body = {}
     if (res.to === 'me') {
       body.address = this.address
-    } else { body.tx = this.sendTx(res) }
-    setTimeout(Autosigner.postData.bind(null, res.callback_url, body), 3000)
+      setTimeout(Autosigner.postData.bind(null, res.callback_url, body), 3000)
+    } else {
+      this.sendTx(res, (err, tx) => {
+        if (err) throw new Error(err)
+        body.tx = tx
+        setTimeout(Autosigner.postData.bind(null, res.callback_url, body), 3000)
+      })
+    }
   }
 
   closeQr () {}
 
-  sendTx (params) {
-    let signedTx = this.createAndSignTx(params)
-    return this.web3.eth.sendRawTransaction(signedTx)
+  sendTx (params, cb) {
+    this.createAndSignTx(params, (err, signedTx) => {
+      if (err) cb(err)
+      this.web3.eth.sendRawTransaction(signedTx, (err, txHash) => {
+        if (err) cb(err)
+        cb(null, txHash)
+      })
+    })
   }
 
-  createAndSignTx (params) {
-    let txObj = {
-      gasPrice: 10000000000000,
-      gasLimit: 3000000,
-      nonce: this.web3.eth.getTransactionCount(this.address)
-    }
-    if (params.to) { txObj.to = params.to }
-    if (params.value) { txObj.value = this.web3.toHex(params.value) }
-    if (params.data) { txObj.data = params.data }
+  createAndSignTx (params, cb) {
+    this.web3.eth.getTransactionCount(this.address, (err, nonce) => {
+      if (err) cb(err)
+      let txObj = {
+        gasPrice: 10000000000000,
+        gasLimit: 3000000,
+        nonce: nonce
+      }
+      if (params.to) { txObj.to = params.to }
+      if (params.value) { txObj.value = this.web3.toHex(params.value) }
+      if (params.data) { txObj.data = params.data }
 
-    let tx = new Transaction(txObj).serialize().toString('hex')
-    return '0x' + Lightwallet.signing.signTx(this.keystore, this.pwDerivedKey, tx, this.address)
+      let tx = new Transaction(txObj).serialize().toString('hex')
+      let signedTx = '0x' + Lightwallet.signing.signTx(this.keystore, this.pwDerivedKey, tx, this.address)
+      cb(null, signedTx)
+    })
   }
 
   static parse (uri) {
