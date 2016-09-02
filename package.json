@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "is-mobile": "^0.2.2",
+    "nets": "^3.2.0",
     "qr-image": "^3.1.0",
     "request": "^2.74.0",
     "web3-provider-engine": "^7.8.1",
@@ -78,7 +79,7 @@
     "eth-lightwallet": "^2.4.3",
     "ethereumjs-tx": "^1.1.1",
     "istanbul": "^0.4.4",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.2",
     "reify": "^0.3.8",
     "rollup": "^0.34.10",
     "rollup-plugin-buble": "^0.13.0",
@@ -97,7 +98,6 @@
     "babel-register": "^6.11.6",
     "babelrc-rollup": "^3.0.0",
     "eslint": "^3.2.2",
-    "mocha": "^3.0.2",
     "rollup-plugin-babel": "^2.6.1"
   }
 }
