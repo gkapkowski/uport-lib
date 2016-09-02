@@ -3,6 +3,8 @@ import Web3 from 'web3'
 import { Uport } from '../lib/index'
 import Autosigner from '../utils/autosigner'
 import startProviders from './providerUtil'
+import ProviderEngine from 'web3-provider-engine'
+import Web3Subprovider from 'web3-provider-engine/subproviders/web3'
 
 import testData from './testData.json'
 
@@ -22,10 +24,9 @@ describe('uport-lib integration tests', function () {
 
     startProviders((err, provs) => {
       if (err) { throw err }
-      web3Provider = provs.web3Provider
-      web3 = new Web3(web3Provider)
+      web3 = new Web3(provs.web3Provider)
       // Create Autosigner
-      Autosigner.load(web3Provider, (err, as) => {
+      Autosigner.load(provs.web3Provider, (err, as) => {
         if (err) { throw err }
         autosinger = as
 
@@ -44,9 +45,13 @@ describe('uport-lib integration tests', function () {
             // Autosigner is a qrDisplay
             // that automatically signs transactions
             let uport = new Uport('Integration Tests', { qrDisplay: autosinger })
-            let uportProvider = uport.getUportProvider(web3Provider.host)
+            let uportSubprovider = uport.getUportSubprovider()
+            web3Provider = new ProviderEngine()
+            web3Provider.addProvider(uportSubprovider)
+            web3Provider.addProvider(new Web3Subprovider(provs.web3Provider))
+            web3Provider.start()
 
-            web3.setProvider(uportProvider)
+            web3.setProvider(web3Provider)
             done()
           })
         })
