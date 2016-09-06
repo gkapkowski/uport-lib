@@ -62,6 +62,7 @@
       "describe",
       "it",
       "before",
+      "after",
       "should"
     ]
   },
