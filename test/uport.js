@@ -4,7 +4,7 @@ import { Uport } from '../lib/index'
 import Autosigner from '../utils/autosigner'
 import ProviderEngine from 'web3-provider-engine'
 import Web3Subprovider from 'web3-provider-engine/subproviders/web3'
-// import TestRPC from 'ethereumjs-testrpc'
+import TestRPC from 'ethereumjs-testrpc'
 
 import testData from './testData.json'
 
@@ -22,8 +22,8 @@ describe('uport-lib integration tests', function () {
   before((done) => {
     global.navigator = {}
 
-    // let testrpcProv = TestRPC.provider()
-    let testrpcProv = new Web3.providers.HttpProvider('http://localhost:8545')
+    let testrpcProv = TestRPC.provider()
+    // let testrpcProv = new Web3.providers.HttpProvider('http://localhost:8545')
     web3 = new Web3(testrpcProv)
     // Create Autosigner
     Autosigner.load(testrpcProv, (err, as) => {
