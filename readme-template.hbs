@@ -72,15 +72,7 @@ The `openQr` function is called each time some information needs to get to the p
 The `closeQr` is called once the phone has taken an action on the data in the QR-code.
 
 ## Testing
-To test, make sure `ethereumjs-testrpc` is installed and running, then you can run `npm test`
-
-```
-$ npm install -g ethereumjs-testrpc
-$ testrpc
-```
-
-then
-
+To run the tests simply do:
 ```
 $ npm test
 ```
