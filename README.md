@@ -32,7 +32,7 @@ Integrating **uport** into your DApp is simple. You only need to use the `web3` 
 
 You can use any rpc url that works with the regular web3 http provider.
 
-```
+```js
 import { Uport } from 'uport-lib'
 
 let web3   = new Web3()
@@ -57,7 +57,7 @@ Check out the examples folder for how to integrate **uport** in your DApp
 
 ### Getting the persona object of the connected user
 In many cases it's desirable to get information on the connected user, such as name and profile picture. Since this information is stored on ipfs we need to provide uport-lib with an ipfs provider on creation. Here we use infura as an example.
-```
+```js
 let opts = {
   ipfsProvider: {
     host: 'ipfs.infura.io',
@@ -80,7 +80,7 @@ uport.getUserPersona().then((persona) => {
 
 This is achieved by doing the following:
 
-```
+```js
 let opts = {
   qrDisplay: {
     openQr(data) { // your code here },
@@ -96,7 +96,7 @@ The `closeQr` is called once the phone has taken an action on the data in the QR
 
 ### Interacting with persona objects of other users
 You can also import the `Persona` and the `MutablePersona` classes from uport lib to interact with any persona in the `uport-registry`.
-```
+```js
 import { Persona, MutablePersona } from 'uport-lib'
 
 let userAddress = "0x..."
