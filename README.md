@@ -90,7 +90,7 @@ This class is the main entry point for interaction with uport.
     * [.getUportProvider(rpcUrl)](#Uport.getUportProvider) ⇒ <code>Object</code>
     * [.getUportProvider()](#Uport.getUportProvider) ⇒ <code>Object</code>
     * [.setProviders(web3Provider, ipfsProvider)](#Uport.setProviders)
-    * [.getUserPersona()](#Uport.getUserPersona) ⇒ <code>[MutablePersona](#MutablePersona)</code>
+    * [.getUserPersona()](#Uport.getUserPersona) ⇒ <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code>
 
 <a name="Uport.constructor"></a>
 
@@ -143,11 +143,11 @@ Not that the ipfsProvider can also be set in the constructor.
 
 <a name="Uport.getUserPersona"></a>
 
-### Uport.getUserPersona() ⇒ <code>[MutablePersona](#MutablePersona)</code>
+### Uport.getUserPersona() ⇒ <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code>
 This method returns an instance of MutablePersona of the current uport user.
 
 **Kind**: static method of <code>[Uport](#Uport)</code>  
-**Returns**: <code>[MutablePersona](#MutablePersona)</code> - a MutablePersona instantiated with the address of the connected uport user  
+**Returns**: <code>[Promise.&lt;MutablePersona&gt;](#MutablePersona)</code> - a MutablePersona instantiated with the address of the connected uport user  
 
 <a name="Persona"></a>
 
