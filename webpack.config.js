@@ -2,7 +2,7 @@
 const webpack = require('webpack')
 
 // Plugin Setup
-const commonsPlugin = new webpack.optimize.CommonsChunkPlugin('uport-lib.cjs.js')
+const commonsPlugin = new webpack.optimize.CommonsChunkPlugin('uportlib.cjs.js')
 const globalsPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
   'process.env': { 'NODE_ENV': JSON.stringify('development') }
@@ -13,7 +13,7 @@ module.exports = {
   entry: './lib/index.js',
   output: {
     path: 'dist',
-    filename: 'uport-lib.js'
+    filename: 'uportlib.js'
   },
   module: {
     loaders: [

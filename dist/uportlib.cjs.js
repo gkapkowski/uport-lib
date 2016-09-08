@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".uport-lib.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".uportlib.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

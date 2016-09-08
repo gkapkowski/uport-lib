@@ -2,11 +2,11 @@
   "name": "uport-lib",
   "version": "1.2.0",
   "description": "Library for integrating uPort into your DApp",
-  "main": "dist/uport-lib.js",
+  "main": "dist/uportlib.js",
   "scripts": {
     "prebuild": "standard --verbose | snazzy",
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js -w",
     "pretest": "npm run build",
     "test": "mocha"
   },
