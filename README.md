@@ -76,9 +76,9 @@ uport.getUserPersona().then((persona) => {
 ```
 
 ### Custom display of QR codes
-`uport-lib` features a default QR-code display function, but you might want to display the QR-code in another way.
+`uport-lib` features a default QR-code display function, which injects a div containing the QR-code into the DOM. You might want to display the QR-code in a different way.
 
-This is achieved by doing the following:
+You can provide an object with two functions when uport is created. The `openQr` function is called when the user needs to confirm something on the uport app. The data argument is a uri that needs to be displayed in a QR-code so that the uport app can scan it. The `closeQr` function is called when the action has been confirmed in the uport app and the QR-code can be removed from the screen.
 
 ```js
 let opts = {
