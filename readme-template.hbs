@@ -33,13 +33,15 @@ Integrating **uport** into your DApp is simple. You only need to use the `web3` 
 You can use any rpc url that works with the regular web3 http provider.
 
 ```
-let web3   = new Web3();
-let uport  = new Uport("My dapp name");
+import { Uport } from 'uport-lib'
 
-let rpcUrl = "http://localhost:8545";
-let uportProvider = uport.getUportProvider(rpcUrl);
+let web3   = new Web3()
+let uport  = new Uport("My dapp name")
 
-web3.setProvider(uportProvider);
+let rpcUrl = "http://localhost:8545"
+let uportProvider = uport.getUportProvider(rpcUrl)
+
+web3.setProvider(uportProvider)
 ```
 
 After the above setup, you can now use the `web3` object as normal.
@@ -53,26 +55,59 @@ The following calls will show a QR code for the user to scan:
 
 Check out the examples folder for how to integrate **uport** in your DApp
 
+### Getting the persona object of the connected user
+In many cases it's desirable to get information on the connected user, such as name and profile picture. Since this information is stored on ipfs we need to provide uport-lib with an ipfs provider on creation. Here we use infura as an example.
+```
+let opts = {
+  ipfsProvider: {
+    host: 'ipfs.infura.io',
+    port: '5001',
+    protocol: 'https',
+    root: ''
+  }
+}
+let uport = new Uport("My dapp name", opts)
+let rpcUrl = "http://localhost:8545"
+let uportProvider = uport.getUportProvider(rpcUrl)
+
+uport.getUserPersona().then((persona) => { 
+  let profile = persona.getProfile()
+})
+```
+
 ### Custom display of QR codes
 `uport-lib` features a default QR-code display function, but you might want to display the QR-code in another way.
 
-This is simply acheived by doing the following:
+This is achieved by doing the following:
 
 ```
-let qrDisplay = {
-  openQr(data) { // your code here },
-  closeQr()    { // your code here }
+let opts = {
+  qrDisplay: {
+    openQr(data) { // your code here },
+    closeQr()    { // your code here }
+  }
 }
-
-const uport = new Uport("My dapp name", qrDisplay);
+let uport = new Uport("My dapp name", opts)
 ```
 
 The `openQr` function is called each time some information needs to get to the phone.
 
 The `closeQr` is called once the phone has taken an action on the data in the QR-code.
 
+### Interacting with persona objects of other users
+You can also import the `Persona` and the `MutablePersona` classes from uport lib to interact with any persona in the `uport-registry`.
+```
+import { Persona, MutablePersona } from 'uport-lib'
+
+let userAddress = "0x..."
+let ipfsProvider = { ... }
+let persona = new Persona(userAddress, ipfsProvider, web3.currentProvider)
+persona.load().then(() => { ... })
+```
+More information on how to use personas can be found in the [uport-persona](https://github.com/ConsenSys/uport-persona) repo, or by reading the documentation below.
+
 ## Testing
-To run the tests simply do:
+To run the tests simply type:
 ```
 $ npm test
 ```
