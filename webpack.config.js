@@ -2,7 +2,6 @@
 const webpack = require('webpack')
 
 // Plugin Setup
-const commonsPlugin = new webpack.optimize.CommonsChunkPlugin('uportlib.cjs.js')
 const globalsPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
   'process.env': { 'NODE_ENV': JSON.stringify('development') }
@@ -12,6 +11,7 @@ const globalsPlugin = new webpack.DefinePlugin({
 module.exports = {
   entry: './lib/index.js',
   output: {
+    library: ['uportlib'],
     path: 'dist',
     filename: 'uportlib.js'
   },
@@ -32,5 +32,5 @@ module.exports = {
     extensions: ['', '.js', '.json']
   },
   devTool: 'inline-source-map',
-  plugins: [commonsPlugin, globalsPlugin]
+  plugins: [globalsPlugin]
 }

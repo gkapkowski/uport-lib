@@ -1,27 +1,30 @@
-![uport](https://ipfs.pics/ipfs/QmVHY83dQyym1gDWeMBom7vLJfQ6iGycSWDYZgt2n9Lzah)
+[![uport][uport-image]][uport-url]
+[![uport chat][gitter-image]][gitter-url]
 
-Join our online chat at [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/ConsenSys/uport-lib)
-
-<!--[![NPM version][npm-image]][npm-url] [![Gitter chat][gitter-image]][gitter-url] [![Downloads][downloads-image]][downloads-url]-->
-
-<!--[![NPM][nodei-image]][nodei-url]-->
+<!--npm-->
+<!--
+  [![NPM version][npm-image]][npm-url]
+  [![Downloads][downloads-image]][downloads-url]
+  [![NPM][nodei-image]][nodei-url]
+-->
 
 <!--build-->
-<!--[![Build Status][travis-image]][travis-url] [![Appveyor Status][appveyor-image]][appveyor-url]  [![Coverage Status][coveralls-image]][coveralls-url]-->
+<!--
+  [![Build Status][travis-image]][travis-url]
+  [![Appveyor Status][appveyor-image]][appveyor-url]  
+  [![Coverage Status][coveralls-image]][coveralls-url]
+-->
 
 <!--dependencies-->
-<!--[![Dependency Status][david-image]][david-url] [![devDependency Status][david-dev-image]][david-dev-url] [![peerDependency Status][david-peer-image]][david-peer-url]-->
-
-<!--donation-->
-<!--[![gratipay donate button][gratipay-image]][gratipay-url] [![Donate to sokra][donate-image]][donate-url]-->
-
-<!--[![BADGINATOR][badginator-image]][badginator-url]-->
-
-<!-- TODO: JSNEXT:MAIN -->
+<!--
+  [![Dependency Status][david-image]][david-url]
+  [![devDependency Status][david-dev-image]][david-dev-url]
+  [![peerDependency Status][david-peer-image]][david-peer-url]
+-->
 
 # Introduction
 
-**Uport** is a client-side library in which the end-user's keys are kept securely on their phone. Thus, we need to send all transactions to the phone for the user to sign them.
+**uPort** is a client-side library in which the end-user's keys are kept securely on their phone. Thus, we need to send all transactions to the phone for the user to sign them.
 
 This is accomplished by showing the user a QR-code for each transaction, the user can then verify the transaction on the phone and send it to the Ethereum network.
 
@@ -92,3 +95,28 @@ then
 ```
 $ npm test
 ```
+[uport-image]: https://ipfs.pics/ipfs/QmVHY83dQyym1gDWeMBom7vLJfQ6iGycSWDYZgt2n9Lzah
+[uport-url]: https://uport.me
+[gitter-image]: https://img.shields.io/badge/gitter-ConsenSys%2Fuport-lib-brightgreen.svg
+[gitter-url]: https://gitter.im/ConsenSys/uport-lib
+
+<!--
+[travis-url]: https://travis-ci.org/webpack/webpack
+[travis-image]: https://img.shields.io/travis/webpack/webpack/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/sokra/webpack/branch/master
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/github/webpack/webpack?svg=true
+[coveralls-url]: https://coveralls.io/r/webpack/webpack/
+[coveralls-image]: https://img.shields.io/coveralls/webpack/webpack.svg
+[npm-url]: https://www.npmjs.com/package/webpack
+[npm-image]: https://img.shields.io/npm/v/webpack.svg
+[downloads-image]: https://img.shields.io/npm/dm/webpack.svg
+[downloads-url]: http://badge.fury.io/js/webpack
+[david-url]: https://david-dm.org/webpack/webpack
+[david-image]: https://img.shields.io/david/webpack/webpack.svg
+[david-dev-url]: https://david-dm.org/webpack/webpack#info=devDependencies
+[david-dev-image]: https://david-dm.org/webpack/webpack/dev-status.svg
+[david-peer-url]: https://david-dm.org/webpack/webpack#info=peerDependencies
+[david-peer-image]: https://david-dm.org/webpack/webpack/peer-status.svg
+[nodei-image]: https://nodei.co/npm/webpack.png?downloads=true&downloadRank=true&stars=true
+[nodei-url]: https://www.npmjs.com/package/webpack
+-->
