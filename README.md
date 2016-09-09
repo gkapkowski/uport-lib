@@ -1,4 +1,5 @@
 [![uport][uport-image]][uport-url]
+
 [![uport chat][gitter-image]][gitter-url]
 
 <!--npm-->
@@ -384,7 +385,7 @@ A static function for checking if a token is valid.
 
 | Param | Type |
 | --- | --- |
-| token | <code>Object</code> | 
+| token | <code>Object</code> |
 
 <a name="Persona.privateKeyToPublicKey"></a>
 
@@ -396,7 +397,7 @@ A static function for checking if a token is valid.
 
 | Param | Type |
 | --- | --- |
-| privateKey | <code>String</code> | 
+| privateKey | <code>String</code> |
 
 
 <a name="MutablePersona"></a>
@@ -535,5 +536,3 @@ Sets the public encryption key of the persona.
 | --- | --- | --- |
 | pubEncKey | <code>String</code> | the public encryption key of the persona |
 | privSignKey | <code>String</code> | the private signing key of the persona |
-
-
