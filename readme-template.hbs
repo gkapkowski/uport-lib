@@ -37,14 +37,35 @@ In order to make this flow easy for developers, `uport-lib` provides a custom we
 ---------------------------------------------
 
 ## Using uport in your dapp
-Integrating **Uport** into your DApp is simple.
-<!-- You only need to use the `web3` provider given by the `uport-lib` instead of the regular `web3` library. -->
 
-[[[[[[[INSERT REAL EXAMPLE HERE]]]]]]]
+### Getting the persona object of the connected user
+In many cases it's desirable to get information on the connected user, such as name and profile picture.
+Since this information is stored on ipfs we need to provide uport-lib with an ipfs provider on creation.
+Here we use [Infura](https://infura.io/) as an example.
 
+```js
+let options = {
+  ipfsProvider: {
+    host: 'ipfs.infura.io',
+    port: '5001',
+    protocol: 'https',
+    root: ''
+  }
+}
+
+let uport = new Uport("My dapp name", options)
+let rpcUrl = "http://localhost:8545"
+let uportProvider = uport.getUportProvider(rpcUrl)
+
+uport.getUserPersona()
+     .then((persona) => {
+       let profile = persona.getProfile()
+       console.log(profile)
+     })
+```
 ---------------------------------------------
 
-###Custom Display of QR codes
+### Custom Display of QR codes
 
 `uport-lib` features a default QR-code display function, which injects a `<div>` containing the QR-code into the DOM.
 However, you might want to display the QR-code in a different way.
@@ -57,8 +78,8 @@ The `closeQr` function is called when the action has been confirmed in the uport
 ```js
 let options = {
   qrDisplay: {
-    openQr(data) { // your code here },
-    closeQr()    { // your code here }
+    openQr(data, cb) { // your code here },
+    closeQr(cb) { // your code here }
   }
 }
 let uport = new Uport("My dapp name", options)
@@ -88,7 +109,7 @@ More information on how to use personas can be found in the [uport-persona](http
 
 ---------------------------------------------
 
-###Custom RPC URL
+### Custom RPC URL
 
 If you would also like, you can use any custom rpc url that works with the regular web3 http provider.
 Here is an example of that custom setup below.
@@ -116,31 +137,6 @@ The following calls will show a QR code for the user to scan:
 
 Check out the examples folder too for how to integrate **uport** in your DApp
 
-### Getting the persona object of the connected user
-In many cases it's desirable to get information on the connected user, such as name and profile picture.
-Since this information is stored on ipfs we need to provide uport-lib with an ipfs provider on creation.
-Here we use [Infura](https://infura.io/) as an example.
-
-```js
-let options = {
-  ipfsProvider: {
-    host: 'ipfs.infura.io',
-    port: '5001',
-    protocol: 'https',
-    root: ''
-  }
-}
-
-let uport = new Uport("My dapp name", options)
-let rpcUrl = "http://localhost:8545"
-let uportProvider = uport.getUportProvider(rpcUrl)
-
-uport.getUserPersona()
-     .then((persona) => {
-       let profile = persona.getProfile()
-       console.log(profile)
-     })
-```
 ---------------------------------
 
 ## Contributing
@@ -154,12 +150,13 @@ npm run build
 npm run watch
 npm run gen-readme
 ```
+---------------------------------------------
 
 <!-- Badge Variables -->
 
 [uport-image]: https://ipfs.pics/ipfs/QmVHY83dQyym1gDWeMBom7vLJfQ6iGycSWDYZgt2n9Lzah
 [uport-url]: https://uport.me
-[gitter-image]: https://img.shields.io/badge/gitter-ConsenSys%2Fuport-lib-brightgreen.svg
+[gitter-image]: https://img.shields.io/badge/gitter-uport--lib-red.svg?style=flat-square
 [gitter-url]: https://gitter.im/ConsenSys/uport-lib
 
 <!-- TODO: Add applicable badges
