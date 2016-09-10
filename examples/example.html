@@ -83,24 +83,60 @@
       <!--Scripts-->
       <script type="text/javascript" src="../dist/uportlib.js"></script>
       <script>
-          let appName = document.querySelector('title').textContent
-          document.getElementById('appName').textContent = appName
 
-          let UportInstance = window.uportlib.Uport
-          let app = new UportInstance(appName)
+          // App Name Grab and Inject
+          let appName = document.querySelector('title').textContent;
+          document.getElementById('appName').textContent = appName;
 
-          console.dir(app)
-          // let uportlib = new uportlib("Simple HTML example")
+          // App Steup
+          let rpcUrl     = "http://localhost:8545";
+          let UportObj   = window.uportlib.Uport;
+          let PersonaObj = window.uportlib.Persona;
 
-          // let persona = uport.getUserPersona('0x000000000000000000')
+          // I put this in temporrily
+          // so people dont need to also go get web3
+          let web3Obj    = window.uportlib.Web3;
 
-          // const getCoinbase = function() {
-          //     web3.eth.getCoinbase(function(err, address) {
-          //         console.log("address: " + address)
-          //         web3.eth.defaultAccount = address
-          //         document.getElementById("addr").innerHTML = "Address: " + address
-          //     })
-          // }
+          console.log(window.uportlib);
+
+          let webInstance = new web3Obj();
+
+          // App options
+          let options = {
+            ipfsProvider: {
+              host: 'ipfs.infura.io',
+              port: '5001',
+              protocol: 'https',
+              root: ''
+            },
+            // ???? does it go here?
+            // web3Provider: {
+            //
+            // }
+            // qrDisplay: {
+            //   openQr: () => { },
+            //   closeQr: () => { }
+            // }
+          };
+
+          let app = new UportObj(appName, options);
+          // Why must we do this afterwards and not in config?
+          // let uportProvider = app.getUportProvider(rpcUrl);
+          // webInstance.setProvider(uportProvider);
+
+          console.log(app);
+          console.log(app.getUserPersona());
+
+          // app.getUserPersona().then((myPersona) => {
+          //    let profile = myPersona.getProfile()
+          //    console.log(profile)
+          //  }).then() => {
+          //
+          //    otherPersona.load()
+          //      .then((attributes) => {
+          //        console.log(attributes)
+          //      })
+          //  })
 
           // This contract ABI has already been generated for you
           // Generating contract ABI's is out of scope of this document

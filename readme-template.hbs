@@ -56,6 +56,7 @@ let options = {
 let uport = new Uport("My dapp name", options)
 let rpcUrl = "http://localhost:8545"
 let uportProvider = uport.getUportProvider(rpcUrl)
+// Where is the provider used ^^ - Merge Issue?
 
 uport.getUserPersona()
      .then((persona) => {
@@ -77,9 +78,10 @@ The `closeQr` function is called when the action has been confirmed in the uport
 
 ```js
 let options = {
+  ipfsProvider: { ... }
   qrDisplay: {
-    openQr(data, cb) { // your code here },
-    closeQr(cb) { // your code here }
+    openQr(data) { // your code here },
+    closeQr() { // your code here }
   }
 }
 let uport = new Uport("My dapp name", options)
@@ -102,7 +104,10 @@ import { Persona, MutablePersona } from 'uport-lib'
 let userAddress = "0x..."
 let ipfsProvider = { ... }
 let persona = new Persona(userAddress, ipfsProvider, web3.currentProvider)
-persona.load().then(() => { ... })
+persona.load()
+       .then((attributes) => {
+         console.log(attributes)
+       })
 ```
 
 More information on how to use personas can be found in the [uport-persona](https://github.com/ConsenSys/uport-persona) repo, or by reading the documentation below.
