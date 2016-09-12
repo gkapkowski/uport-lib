@@ -88,16 +88,19 @@
       </section> -->
 
       <script>
+          // DOM Selector Shortcut
+          let $ = (selector) => document.querySelector(selector)
+
           // App Name Grab and Inject
-          let appName = document.querySelector('title').textContent;
-          document.getElementById('appName').textContent = appName;
+          let appName = $('title').textContent;
+          $('#appName').textContent = appName;
 
           // App Steup
           let rpcUrl     = "https://consensysnet.infura.io:8545";
           let Uport      = window.uportlib.Uport;
 
-          console.log(window.uportlib);
-
+          // Not included in uport-lib
+          // Must import/install yourself
           let web3 = new Web3();
 
           // App options
@@ -116,14 +119,16 @@
 
           const getCoinbase = function() {
             web3.eth.getCoinbase(function(err, address) {
+              if (err) { throw err }
               console.log("address: " + address)
               web3.eth.defaultAccount = address
-              document.getElementById("addr").innerHTML = address
+              $("#addr").innerHTML = address
 
               uport.getUserPersona().then((userPersona) => {
                 let profile = userPersona.getProfile()
-                document.getElementById("name").innerHTML = profile.name
+                $("#name").innerHTML = profile.name
               })
+              $('#connectUportBtn').style.display = 'none'
             })
           }
 
@@ -167,7 +172,7 @@
             let statusMsg = document.getElementById("sts").value
             console.log(statusMsg)
             status.updateStatus(statusMsg, function(e, r) {
-              document.getElementById("txHash").innerHTML = "Tx hash: " + r
+              $("#txHash").innerHTML = "Tx hash: " + r
             })
           }
 
