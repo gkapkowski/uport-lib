@@ -12,12 +12,13 @@
     <script type="text/javascript" src="../dist/uportlib.js"></script>
     <script type="text/javascript" src="../node_modules/web3/dist/web3.js"></script>
     <style>
-      body { padding: 10px 30px }
+      main { padding: 10px 30px }
       header { background: #EEE }
       .btn-sm{ padding: 3px 10px; border-radius: 0; }
     </style>
   </head>
   <body>
+    <main>
 
       <header>
         <h1 id="appName">Uport Test</h1>
@@ -87,123 +88,124 @@
         <table>
       </section> -->
 
-      <script>
-          // DOM Selector Shortcut
-          let $ = (selector) => document.querySelector(selector)
+    </main>
+    <script>
+        // DOM Selector Shortcut
+        let $ = (selector) => document.querySelector(selector)
 
-          // App Name Grab and Inject
-          let appName = $('title').textContent;
-          $('#appName').textContent = appName;
+        // App Name Grab and Inject
+        let appName = $('title').textContent;
+        $('#appName').textContent = appName;
 
-          // App Steup
-          let rpcUrl     = "https://consensysnet.infura.io:8545";
-          let Uport      = window.uportlib.Uport;
+        // App Steup
+        let rpcUrl     = "https://consensysnet.infura.io:8545";
+        let Uport      = window.uportlib.Uport;
 
-          // Not included in uport-lib
-          // Must import/install yourself
-          let web3 = new Web3();
+        // Not included in uport-lib
+        // Must import/install yourself
+        let web3 = new Web3();
 
-          // App options
-          let options = {
-            ipfsProvider: {
-              host: 'ipfs.infura.io',
-              port: '5001',
-              protocol: 'https',
-              root: ''
-            },
-          }
+        // App options
+        let options = {
+          ipfsProvider: {
+            host: 'ipfs.infura.io',
+            port: '5001',
+            protocol: 'https',
+            root: ''
+          },
+        }
 
-          let uport = new Uport(appName, options);
-          let uportProvider = uport.getUportProvider(rpcUrl);
-          web3.setProvider(uportProvider);
+        let uport = new Uport(appName, options);
+        let uportProvider = uport.getUportProvider(rpcUrl);
+        web3.setProvider(uportProvider);
 
-          const getCoinbase = function() {
-            web3.eth.getCoinbase(function(err, address) {
-              if (err) { throw err }
-              console.log("address: " + address)
-              web3.eth.defaultAccount = address
-              $("#addr").innerHTML = address
+        const getCoinbase = function() {
+          web3.eth.getCoinbase(function(err, address) {
+            if (err) { throw err }
+            console.log("address: " + address)
+            web3.eth.defaultAccount = address
+            $("#addr").innerHTML = address
 
-              uport.getUserPersona().then((userPersona) => {
-                let profile = userPersona.getProfile()
-                $("#name").innerHTML = profile.name
-              })
-              $('#connectUportBtn').style.display = 'none'
+            uport.getUserPersona().then((userPersona) => {
+              let profile = userPersona.getProfile()
+              $("#name").innerHTML = profile.name
             })
-          }
+            $('#connectUportBtn').style.display = 'none'
+          })
+        }
 
-          // This contract ABI has already been generated for you
-          // Generating contract ABI's is out of scope of this document
-          const updateStatus = function() {
-            let statusContract = web3.eth.contract(
-              [
-                {
-                  "constant": false,
-                  "inputs": [
-                    {
-                      "name": "status",
-                      "type": "string"
-                    }
-                  ],
-                  "name": "updateStatus",
-                  "outputs": [],
-                  "type": "function"
-                },
-                {
-                  "constant": false,
-                  "inputs": [
-                    {
-                      "name": "addr",
-                      "type": "address"
-                    }
-                  ],
-                  "name": "getStatus",
-                  "outputs": [
-                    {
-                      "name": "",
-                      "type": "string"
-                    }
-                  ],
-                  "type": "function"
-                }
-              ]
-            )
-            let status = statusContract.at("0x60dd15dec1732d6c8a6125b21f77d039821e5b93")
-            let statusMsg = document.getElementById("sts").value
-            console.log(statusMsg)
-            status.updateStatus(statusMsg, function(e, r) {
-              $("#txHash").innerHTML = "Tx hash: " + r
-            })
-          }
+        // This contract ABI has already been generated for you
+        // Generating contract ABI's is out of scope of this document
+        const updateStatus = function() {
+          let statusContract = web3.eth.contract(
+            [
+              {
+                "constant": false,
+                "inputs": [
+                  {
+                    "name": "status",
+                    "type": "string"
+                  }
+                ],
+                "name": "updateStatus",
+                "outputs": [],
+                "type": "function"
+              },
+              {
+                "constant": false,
+                "inputs": [
+                  {
+                    "name": "addr",
+                    "type": "address"
+                  }
+                ],
+                "name": "getStatus",
+                "outputs": [
+                  {
+                    "name": "",
+                    "type": "string"
+                  }
+                ],
+                "type": "function"
+              }
+            ]
+          )
+          let status = statusContract.at("0x60dd15dec1732d6c8a6125b21f77d039821e5b93")
+          let statusMsg = document.getElementById("sts").value
+          console.log(statusMsg)
+          status.updateStatus(statusMsg, function(e, r) {
+            $("#txHash").innerHTML = "Tx hash: " + r
+          })
+        }
 
-          // const sendEther = function() {
-          //   let toAddr = document.getElementById('sendTo').value
-          //   let valueEth = document.getElementById('amount').value
-          //
-          //   let value = parseFloat(valueEth) * 1.0e18
-          //
-          //   let gasPrice = 100000000000
-          //   let gas = 500000
-          //
-          //   web3.eth.sendTransaction(
-          //     {
-          //       to: toAddr,
-          //       value: value,
-          //       gasPrice: gasPrice,
-          //       gas: gas
-          //     },
-          //     function(err, txhash) {
-          //       console.log('error: ' + err)
-          //       console.log('txhash: ' + txhash)
-          //     }
-          //   )
-          // }
+        // const sendEther = function() {
+        //   let toAddr = document.getElementById('sendTo').value
+        //   let valueEth = document.getElementById('amount').value
+        //
+        //   let value = parseFloat(valueEth) * 1.0e18
+        //
+        //   let gasPrice = 100000000000
+        //   let gas = 500000
+        //
+        //   web3.eth.sendTransaction(
+        //     {
+        //       to: toAddr,
+        //       value: value,
+        //       gasPrice: gasPrice,
+        //       gas: gas
+        //     },
+        //     function(err, txhash) {
+        //       console.log('error: ' + err)
+        //       console.log('txhash: ' + txhash)
+        //     }
+        //   )
+        // }
 
-          window.onload = () => {document.querySelector('#connectUportBtn').click()}
-      </script>
-      <script>
-        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-        ':35729/livereload.js?snipver=1"></' + 'script>')
-      </script>
+        window.onload = () => {document.querySelector('#connectUportBtn').click()}
+    </script>
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
   </body>
 </html>
