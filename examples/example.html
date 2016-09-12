@@ -37,7 +37,7 @@
         <table>
         <button class="btn btn-sm btn-primary"
                 id="connectUportBtn"
-                onclick="getCoinbase()">
+                onclick="loginBtnClick()">
                   Connect uPort
         </button>
       </section>
@@ -90,19 +90,18 @@
 
     </main>
     <script>
-        // DOM Selector Shortcut
+        // DOM Selector Shortcut for this example
         let $ = (selector) => document.querySelector(selector)
 
-        // App Name Grab and Inject
+        // App Name reading for this example
         let appName = $('title').textContent;
         $('#appName').textContent = appName;
 
-        // App Steup
-        let rpcUrl     = "https://consensysnet.infura.io:8545";
-        let Uport      = window.uportlib.Uport;
+        ////////////////////////////////////////////////
 
-        // Not included in uport-lib
-        // Must import/install yourself
+        // App Steup
+        let rpcUrl = "https://consensysnet.infura.io:8545";
+        let Uport = window.uportlib.Uport;
         let web3 = new Web3();
 
         // App options
@@ -119,16 +118,18 @@
         let uportProvider = uport.getUportProvider(rpcUrl)
         web3.setProvider(uportProvider)
 
-        const getCoinbase = function () {
+        ////////////////////////////////////////////////
+
+        const loginBtnClick = function () {
           web3.eth.getCoinbase(function(err, address) {
             if (err) { throw err }
-            console.log("address: " + address)
+            console.log('Address: ' + address)
             web3.eth.defaultAccount = address
-            $("#addr").innerHTML = address
+            $('#addr').innerHTML = address
 
             uport.getUserPersona().then((userPersona) => {
               let profile = userPersona.getProfile()
-              $("#name").innerHTML = profile.name
+              $('#name').innerHTML = profile.name
             })
             $('#connectUportBtn').style.display = 'none'
           })
@@ -178,6 +179,7 @@
           })
         }
 
+        // TODO: Get this working :)
         // const sendEther = function () {
         //   let toAddr = document.getElementById('sendTo').value
         //   let valueEth = document.getElementById('amount').value
@@ -200,12 +202,12 @@
         //     }
         //   )
         // }
-
-        window.onload = () => {document.querySelector('#connectUportBtn').click()}
     </script>
     <script>
-      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-      ':35729/livereload.js?snipver=1"></' + 'script>')
+      document.write(
+        '<script src="http://' +
+        (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>')
     </script>
   </body>
 </html>

@@ -59,15 +59,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Web3 = exports.MutablePersona = exports.Persona = exports.Uport = undefined;
+	exports.MutablePersona = exports.Persona = exports.Uport = undefined;
 
 	var _uport = __webpack_require__(1);
 
 	var _uport2 = _interopRequireDefault(_uport);
-
-	var _web = __webpack_require__(503);
-
-	var _web2 = _interopRequireDefault(_web);
 
 	var _uportPersona = __webpack_require__(29);
 
@@ -76,7 +72,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Uport = _uport2.default;
 	exports.Persona = _uportPersona.Persona;
 	exports.MutablePersona = _uportPersona.MutablePersona;
-	exports.Web3 = _web2.default;
 
 /***/ },
 /* 1 */
