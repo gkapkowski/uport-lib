@@ -112,14 +112,14 @@
             port: '5001',
             protocol: 'https',
             root: ''
-          },
+          }
         }
 
-        let uport = new Uport(appName, options);
-        let uportProvider = uport.getUportProvider(rpcUrl);
-        web3.setProvider(uportProvider);
+        let uport = new Uport(appName, options)
+        let uportProvider = uport.getUportProvider(rpcUrl)
+        web3.setProvider(uportProvider)
 
-        const getCoinbase = function() {
+        const getCoinbase = function () {
           web3.eth.getCoinbase(function(err, address) {
             if (err) { throw err }
             console.log("address: " + address)
@@ -136,7 +136,7 @@
 
         // This contract ABI has already been generated for you
         // Generating contract ABI's is out of scope of this document
-        const updateStatus = function() {
+        const updateStatus = function () {
           let statusContract = web3.eth.contract(
             [
               {
@@ -178,7 +178,7 @@
           })
         }
 
-        // const sendEther = function() {
+        // const sendEther = function () {
         //   let toAddr = document.getElementById('sendTo').value
         //   let valueEth = document.getElementById('amount').value
         //
