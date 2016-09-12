@@ -34,7 +34,11 @@
             <tr><td><span>Status: </span><span id="status"></span></td></tr>
           </tobdy>
         <table>
-        <button class="btn btn-sm btn-primary" onclick="getCoinbase()">Connect uPort</button>
+        <button class="btn btn-sm btn-primary"
+                id="connectUportBtn"
+                onclick="getCoinbase()">
+                  Connect uPort
+        </button>
       </section>
 
       <hr/>
@@ -63,7 +67,7 @@
 
       <hr/>
 
-      <section>
+      <!-- <section>
         <h2>Send Ether</h2>
         <table>
           <thead>
@@ -81,7 +85,7 @@
             </tr>
           </tobdy>
         <table>
-      </section>
+      </section> -->
 
       <script>
           // App Name Grab and Inject
@@ -189,6 +193,12 @@
           //     }
           //   )
           // }
+
+          window.onload = () => {document.querySelector('#connectUportBtn').click()}
+      </script>
+      <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>')
       </script>
   </body>
 </html>
