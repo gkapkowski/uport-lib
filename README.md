@@ -1,5 +1,4 @@
 [![uport][uport-image]][uport-url]
-
 [![uport chat][gitter-image]][gitter-url]
 
 <!--npm-->
@@ -37,14 +36,19 @@ In order to make this flow easy for developers, `uport-lib` provides a custom we
 
 ---------------------------------------------
 
-## Using uport in your dapp
+## Using uPort in your dapp
 
-### Getting the persona object of the connected user
-In many cases it's desirable to get information on the connected user, such as name and profile picture.
-Since this information is stored on ipfs we need to provide uport-lib with an ipfs provider on creation.
+### Getting Started
+First we will instantiate the Uport and Web3 objects.
+Then we will get the information of the connected user.
+Since the information of the connected user is stored on ipfs we need to provide uport-lib with an ipfs provider upon on creation of Uport instance.
 Here we use [Infura](https://infura.io/) as an example.
 
 ```js
+import Web3 from 'web3'
+import { Uport } from 'uport-lib'
+
+let web3 = new Web3()
 let options = {
   ipfsProvider: {
     host: 'ipfs.infura.io',
@@ -53,10 +57,11 @@ let options = {
     root: ''
   }
 }
-
-let uport = new Uport("My dapp name", options)
+let uport = new Uport('MyDApp', options)
 let rpcUrl = "http://localhost:8545"
 let uportProvider = uport.getUportProvider(rpcUrl)
+
+web3.setProvider(uportProvider)
 
 uport.getUserPersona()
      .then((persona) => {
@@ -64,6 +69,18 @@ uport.getUserPersona()
        console.log(profile)
      })
 ```
+
+After the above setup, you can now use the `web3` object as normal.
+
+Also, the following calls will show a QR code for the user to scan:
+
+* `web3.eth.getCoinbase()` - returns your uport address
+* `web3.eth.getAccounts()`- returns your uport address in a list
+* `web3.eth.sendTransaction(txObj)` - returns a transaction hash
+* `myContract.myMethod()` - returns a transaction hash
+
+Check out the examples folder too for how to integrate **uport** in your DApp
+
 ---------------------------------------------
 
 ### Custom Display of QR codes
@@ -78,18 +95,17 @@ The `closeQr` function is called when the action has been confirmed in the uport
 
 ```js
 let options = {
+  ipfsProvider: { ... }
   qrDisplay: {
-    openQr(data, cb) { // your code here },
-    closeQr(cb) { // your code here }
+    openQr(data) { // your code here },
+    closeQr() { // your code here }
   }
 }
-let uport = new Uport("My dapp name", options)
 ```
 
 The `openQr` function is called each time some information needs to get to the phone.
 
 The `closeQr` is called once the phone has taken an action on the data in the QR-code.
-
 
 ---------------------------------------------
 
@@ -103,42 +119,15 @@ import { Persona, MutablePersona } from 'uport-lib'
 let userAddress = "0x..."
 let ipfsProvider = { ... }
 let persona = new Persona(userAddress, ipfsProvider, web3.currentProvider)
-persona.load().then(() => { ... })
+persona.load()
+       .then((attributes) => {
+         console.log(attributes)
+       })
 ```
 
 More information on how to use personas can be found in the [uport-persona](https://github.com/ConsenSys/uport-persona) repo, or by reading the documentation below.
 
 ---------------------------------------------
-
-### Custom RPC URL
-
-If you would also like, you can use any custom rpc url that works with the regular web3 http provider.
-Here is an example of that custom setup below.
-
-```js
-import { Uport } from 'uport-lib'
-
-let web3   = new Web3()
-let uport  = new Uport("My dapp name")
-
-let rpcUrl = "http://localhost:8545"
-let uportProvider = uport.getUportProvider(rpcUrl)
-
-web3.setProvider(uportProvider)
-```
-
-After the above setup, you can now use the `web3` object as normal.
-
-The following calls will show a QR code for the user to scan:
-
-* `web3.eth.getCoinbase()` - returns your uport address
-* `web3.eth.getAccounts()`- returns your uport address in a list
-* `web3.eth.sendTransaction(txObj)` - returns a transaction hash
-* `myContract.myMethod()` - returns a transaction hash
-
-Check out the examples folder too for how to integrate **uport** in your DApp
-
----------------------------------
 
 ## Contributing
 #### Testing / Building (& watching) / Docs
@@ -151,6 +140,7 @@ npm run build
 npm run watch
 npm run gen-readme
 ```
+
 ---------------------------------------------
 
 <!-- Badge Variables -->
@@ -385,7 +375,7 @@ A static function for checking if a token is valid.
 
 | Param | Type |
 | --- | --- |
-| token | <code>Object</code> |
+| token | <code>Object</code> | 
 
 <a name="Persona.privateKeyToPublicKey"></a>
 
@@ -397,7 +387,7 @@ A static function for checking if a token is valid.
 
 | Param | Type |
 | --- | --- |
-| privateKey | <code>String</code> |
+| privateKey | <code>String</code> | 
 
 
 <a name="MutablePersona"></a>
@@ -536,3 +526,5 @@ Sets the public encryption key of the persona.
 | --- | --- | --- |
 | pubEncKey | <code>String</code> | the public encryption key of the persona |
 | privSignKey | <code>String</code> | the private signing key of the persona |
+
+
