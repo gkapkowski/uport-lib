@@ -260,7 +260,7 @@ Class representing a persona.
     * [.getAllClaims()](#Persona.getAllClaims) ⇒ <code>JSON</code>
     * [.getClaims(attributesName)](#Persona.getClaims) ⇒ <code>JSON</code>
     * [.signAttribute(attribute, privSignKey, issuerId)](#Persona.signAttribute) ⇒ <code>Object</code>
-    * [.signMultipleAttributes(attribute, privSignKey, issuerId)](#Persona.signMultipleAttributes) ⇒ <code>Array</code>
+    * [.signMultipleAttributes(attributes, privSignKey, issuerId)](#Persona.signMultipleAttributes) ⇒ <code>Array</code>
     * [.isTokenValid(token)](#Persona.isTokenValid) ⇒ <code>Boolean</code>
     * [.privateKeyToPublicKey(privateKey)](#Persona.privateKeyToPublicKey) ⇒ <code>String</code>
 
@@ -354,7 +354,7 @@ Signs the given attribute to the persona. This method is to be used by third par
 
 <a name="Persona.signMultipleAttributes"></a>
 
-### Persona.signMultipleAttributes(attribute, privSignKey, issuerId) ⇒ <code>Array</code>
+### Persona.signMultipleAttributes(attributes, privSignKey, issuerId) ⇒ <code>Array</code>
 Same as addAttribute but for a list of attributes.
 
 **Kind**: static method of <code>[Persona](#Persona)</code>  
@@ -362,7 +362,7 @@ Same as addAttribute but for a list of attributes.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| attribute | <code>Array</code> | the attribute to add, in the format [{attrName: attr},...] |
+| attributes | <code>Array</code> | the attributes to add, in the format [{attrName: attr},...] |
 | privSignKey | <code>String</code> | the private signing key of the attestor |
 | issuerId | <code>String</code> | the ethereum address of the attestor |
 
