@@ -226,7 +226,7 @@ Get the subprovider that handles signing transactions using uport. Use this if y
 
 ### Uport.setProviders(web3Provider, ipfsProvider)
 A method for setting providers if not done previously. This is useful if you are using a custom provider engine for example.
-Not that the ipfsProvider can also be set in the constructor.
+Note that the ipfsProvider can also be set in the constructor.
 
 **Kind**: static method of <code>[Uport](#Uport)</code>  
 
